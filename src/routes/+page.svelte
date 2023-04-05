@@ -1,6 +1,66 @@
 <script lang="ts">
-  export const prerender = true;
+  import { base } from "$app/paths";
+  import LanguageIcons from "$lib/LanguageIcons.svelte";
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<div>
+  <div class="infoContainer">
+    <div class="pictureContainer" style="mask-image: url('{base}/Circle.png');">
+      <img
+        class="picture"
+        src="{base}/JezerPicture.jpeg"
+        alt="JezerM anime"
+        style="mask-image: url('{base}/Circle.png');"
+      />
+    </div>
+    <div id="infoSubContainer">
+      <h2>Jezer Mejía</h2>
+      <p>
+        I love Linux, coffee, Physics and Open Source.<br />
+        Low level programming enthusiast.<br />
+        Yet learning in UCA Nicaragua.
+      </p>
+      <LanguageIcons />
+    </div>
+  </div>
+
+  <div id="aboutMeContainer">
+    <h2>About me</h2>
+    <p>
+      I'm Jezer Josué Mejía Otero and I'm a developer just for fun. I love to create things that
+      everyone could benefit of, investing my time in open source development, from which we can
+      find some Linux applications, web pages, terminal based programs and so much more.
+    </p>
+    <p>
+      My true passion is Physics, but that will have to wait until I move to a country that offer
+      this career~
+    </p>
+
+    <p>
+      As stated above, I love Linux! Hence, I also love the terminal. I've always liked TypeScript
+      and C, but Rust has recently taken a part in my heart.
+    </p>
+  </div>
+</div>
+
+<style>
+  .infoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+  }
+  .picture {
+    width: 11.25em;
+    height: 11.25em;
+    mask-size: 100%;
+  }
+  .pictureContainer {
+    background-color: #ebdbb2;
+    padding: 0.4em;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+  }
+</style>
