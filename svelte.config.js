@@ -1,6 +1,7 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/kit/vite";
 
+const is_vercel = process.env.VERCEL;
 const dev = process.argv.includes("dev");
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -15,7 +16,7 @@ const config = {
     // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter(),
     paths: {
-      base: dev ? "" : "/portfolio",
+      base: dev | is_vercel ? "" : "/portfolio",
     },
   },
 };
