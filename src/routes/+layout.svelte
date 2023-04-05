@@ -1,14 +1,22 @@
 <script lang="ts">
+  import { fade } from "svelte/transition";
   import NavBar from "$lib/NavBar.svelte";
   import ExtraData from "$lib/ExtraData.svelte";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 </script>
 
 <div id="content">
   <NavBar />
 
   <div class="mainContainer">
-    <main>
-      <slot />
+    <main class="transitionContainer">
+      {#key data.pathname}
+        <div in:fade={{ duration: 250, delay: 250 }} out:fade={{ duration: 250 }}>
+          <slot />
+        </div>
+      {/key}
     </main>
     <aside>
       <ExtraData />
@@ -27,6 +35,20 @@
 
   :global(h2) {
     margin-top: 0;
+  }
+  :global(h4) {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+  }
+
+  .transitionContainer {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+  }
+  .transitionContainer > :global(*) {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   #content {
