@@ -1,7 +1,7 @@
-import type { PageLoad } from "./$types";
+import type { LayoutLoad } from "./$types";
 export const prerender = true;
 
 export const load = (({ url }) => {
   const { pathname } = url;
   return { pathname };
-}) satisfies PageLoad;
+}) satisfies LayoutLoad;
