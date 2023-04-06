@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: row;
     gap: 0.75em;
+    flex-wrap: wrap;
   }
   .iconsContainer > img {
     width: 2em;
