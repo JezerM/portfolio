@@ -1,6 +1,15 @@
 <script lang="ts">
+  const bornDate = new Date(2003, 11, 5);
+  const now = Date.now();
+
+  function getYearDifference(time1: number, time2: number): number {
+    const diffTime = time1 - time2;
+    const ageDate = new Date(diffTime);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
   const data = {
-    Age: 19,
+    Age: getYearDifference(now, bornDate.getTime()),
     Birthday: "Nov, 5th",
     Country: "Nicaragua",
     Gender: "Male",
