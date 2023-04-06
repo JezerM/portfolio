@@ -39,6 +39,17 @@
     "image": "/thumbnails/sea-greeter.png"
   },
   {
+    "name": "Web Greeter page",
+    "description": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
+    "link": "https://jezerm.github.io/web-greeter-page/",
+    "categories": [
+      "Web",
+      "Vue"
+    ],
+    "color": "blue",
+    "image": "/thumbnails/web-greeter-page.png"
+  },
+  {
     "name": "Dotfiles",
     "description": "My awesome and incredible dotfiles.",
     "link": "https://github.com/JezerM/dotfiles",
