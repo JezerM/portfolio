@@ -71,12 +71,10 @@
 
   .navElement > a {
     display: flex;
-    text-decoration: none;
     align-items: center;
     gap: 0.5em;
     padding: 1em 1.25em;
     background-color: transparent;
-    color: inherit;
   }
   .navElement > a:hover,
   .navElement > a:focus {

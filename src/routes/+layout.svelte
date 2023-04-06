@@ -40,8 +40,16 @@
     margin-top: 0;
     margin-bottom: 0.2em;
   }
+  :global(a) {
+    text-decoration: none;
+    color: inherit;
+  }
+  :global(a):visited {
+    color: inherit;
+  }
 
   .transitionContainer {
+    height: fit-content;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
