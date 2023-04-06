@@ -62,6 +62,10 @@
     :global(.card):hover {
       background-color: var(--cardColor);
       transform: scale(1.02);
+
+      @media (prefers-color-scheme: light) {
+        color: var(--bg);
+      }
     }
     :global(.card) > :global(.imgContainer) {
       background-color: var(--cardColor);
