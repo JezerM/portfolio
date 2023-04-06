@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Web Greeter",
+    "description": "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter.",
+    "link": "https://github.com/JezerM/web-greeter",
+    "categories": [
+      "Linux",
+      "LightDM",
+      "Web",
+      "Python"
+    ],
+    "color": "blue",
+    "image": "/thumbnails/web-greeter.png"
+  },
+  {
+    "name": "Nody Greeter",
+    "description": "LightDM greeter that allows to create wonderful themes with web technologies. Made in Node.js",
+    "link": "https://github.com/JezerM/nody-greeter",
+    "categories": [
+      "Linux",
+      "LightDM",
+      "Web",
+      "NodeJS"
+    ],
+    "color": "red",
+    "image": "/thumbnails/nody-greeter.png"
+  },
+  {
+    "name": "Sea Greeter",
+    "description": "LightDM greeter made with WebKit2GTK. This allows to create themes with web technologies... Yeah, the same but in another language.",
+    "link": "https://github.com/JezerM/sea-greeter",
+    "categories": [
+      "Linux",
+      "LightDM",
+      "Web",
+      "C"
+    ],
+    "color": "orange",
+    "image": "/thumbnails/sea-greeter.png"
+  },
+  {
+    "name": "Dotfiles",
+    "description": "My awesome and incredible dotfiles.",
+    "link": "https://github.com/JezerM/dotfiles",
+    "categories": [
+      "Linux",
+      "Config"
+    ],
+    "color": "purple",
+    "image": "/thumbnails/dotfiles.png"
+  },
+  {
+    "name": "HealthZone App",
+    "description": "Android application to manage medical appointments.",
+    "link": "https://github.com/JezerMejia/HealthZoneDAM",
+    "categories": [
+      "Android",
+      "Kotlin"
+    ],
+    "color": "aqua",
+    "image": "/thumbnails/healthzone.png"
+  },
+  {
+    "name": "Liberlú (Hackaton)",
+    "description": "Android game for kids made in one night. I'm still surprised I was able to do this.",
+    "link": "https://github.com/JezerMejia/HackatonProject",
+    "categories": [
+      "Android",
+      "Kotlin"
+    ],
+    "color": "blue",
+    "image": "/thumbnails/liberlu.png"
+  },
+  {
+    "name": "Sistema de Entrada y Salida",
+    "description": "A college course application to manage people Attendances in a X company.",
+    "link": "https://github.com/JezerMejia/PASistemaEyS",
+    "categories": [
+      "Linux",
+      "C#"
+    ],
+    "color": "green",
+    "image": ""
+  },
+  {
+    "name": "Tasky",
+    "description": "Task manager that includes a Pomodoro and SOUNDS!. Made in C++ without understanding C++.",
+    "link": "https://github.com/JezerM/tasky/tree/simple",
+    "categories": [
+      "Linux",
+      "C++"
+    ],
+    "color": "yellow",
+    "image": ""
+  }
+]
