@@ -1,7 +1,16 @@
 <script lang="ts">
   import { base } from "$app/paths";
+  import { writable, derived } from "svelte/store";
   import Card from "$lib/Card.svelte";
   import data from "$lib/projects.json";
+
+  let search = "";
+  let term = writable("");
+  let items = writable(data);
+  const filtered = derived([term, items], ([$term, $items]) =>
+    $items.filter((x) => x.name.toLowerCase().includes($term.toLowerCase()))
+  );
+  $: term.set(search);
 
   function parseProjectImageLink(link: string): string {
     if (link.startsWith("/")) {
@@ -11,8 +20,9 @@
   }
 </script>
 
+<input id="searchInput" type="text" bind:value={search} placeholder="Search..." />
 <div class="projectsContainer">
-  {#each data as project}
+  {#each $filtered as project}
     <a href={project.link} target="_blank">
       <Card src={parseProjectImageLink(project.image)} class={project.color}>
         <h4>{project.name}</h4>
@@ -49,6 +59,23 @@
   .projectDescription {
     font-size: 14px;
     margin: 0;
+  }
+
+  #searchInput {
+    width: 100%;
+    margin: 0 0 2em;
+    box-sizing: border-box;
+    padding: 0.75em 1em;
+    background-color: transparent;
+    border-color: #ebdbb2;
+    border-width: 0.3em;
+    border-style: solid;
+    color: #ebdbb2;
+    font-family: Monocraft;
+    font-size: 14px;
+  }
+  #searchInput::placeholder {
+    color: #bdae93;
   }
 
   :global(.card.red) {
