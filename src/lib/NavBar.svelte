@@ -7,19 +7,19 @@
   <ul id="navLinks">
     <li class="navElement blueLink">
       <a href="{base}/">
-        <ImgIcon src="{base}/icons/Home.png" color="#83a598" />
+        <ImgIcon src="{base}/icons/Home.png" class="bgFgBlue" />
         <span>Home</span>
       </a>
     </li>
     <li class="navElement purpleLink">
       <a href="{base}/projects">
-        <ImgIcon src="{base}/icons/Folder.png" color="#d3869b" />
+        <ImgIcon src="{base}/icons/Folder.png" class="bgFgPurple" />
         <span>My projects</span>
       </a>
     </li>
     <li class="navElement aquaLink">
       <a href="{base}/contact">
-        <ImgIcon src="{base}/icons/Contact.png" color="#8EC07C" />
+        <ImgIcon src="{base}/icons/Contact.png" class="bgFgAqua" />
         <span>Contact me</span>
       </a>
     </li>
@@ -28,17 +28,17 @@
   <ul id="socialLinks">
     <li class="navElement">
       <a href="http://discordapp.com/users/530819150969438208" target="_blank">
-        <ImgIcon src="{base}/icons/Discord.png" color="#5765F2" />
+        <ImgIcon src="{base}/icons/Discord.png" class="bgDiscord" />
       </a>
     </li>
     <li class="navElement">
       <a href="https://github.com/JezerM" target="_blank">
-        <ImgIcon src="{base}/icons/GitHub.png" color="#FFFFFF" />
+        <ImgIcon src="{base}/icons/GitHub.png" class="bgWhite" />
       </a>
     </li>
     <li class="navElement">
       <a href="https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/" target="_blank">
-        <ImgIcon src="{base}/icons/LinkedIn.png" color="#0B66C2" />
+        <ImgIcon src="{base}/icons/LinkedIn.png" class="bgLinkedIn" />
       </a>
     </li>
   </ul>
@@ -46,7 +46,7 @@
 
 <style>
   nav.navBar {
-    background-color: #3c3836;
+    background-color: var(--bg1);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -78,7 +78,7 @@
   }
   .navElement > a:hover,
   .navElement > a:focus {
-    background-color: #504945;
+    background-color: var(--bg2);
   }
   .navElement > a:visited {
     color: inherit;
@@ -90,12 +90,12 @@
   }
 
   .blueLink {
-    color: #83a598;
+    color: var(--fgBlue);
   }
   .purpleLink {
-    color: #d3869b;
+    color: var(--fgPurple);
   }
   .aquaLink {
-    color: #8ec07c;
+    color: var(--fgAqua);
   }
 </style>

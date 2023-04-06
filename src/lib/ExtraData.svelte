@@ -23,7 +23,7 @@
 <style>
   .infoContainer {
     padding: 2em;
-    background-color: #3c3836;
+    background-color: var(--bg1);
     display: flex;
     flex-direction: column;
     gap: 0.5em;
@@ -37,6 +37,6 @@
   }
 
   .blue {
-    color: #83a598;
+    color: var(--fgBlue);
   }
 </style>

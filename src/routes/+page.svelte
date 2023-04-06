@@ -43,7 +43,7 @@
   </div>
 </div>
 
-<style>
+<style lang="less">
   .infoContainer {
     display: flex;
     flex-direction: row;
@@ -58,7 +58,7 @@
     mask-size: 100%;
   }
   .pictureContainer {
-    background-color: #ebdbb2;
+    background-color: var(--fg);
     padding: 0.4em;
     mask-size: 100%;
     mask-repeat: no-repeat;

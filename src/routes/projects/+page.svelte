@@ -32,28 +32,29 @@
   {/each}
 </div>
 
-<style>
+<style lang="less">
   .projectsContainer {
     display: grid;
     gap: 1.5em;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .projectsContainer a {
-    grid-column: span 1 / span 1;
-    height: 100%;
-  }
 
-  .projectsContainer :global(.card) {
-    background-color: #282828;
-    height: 100%;
-    transition: background-color 0.25s, transform 0.5s;
-  }
-  .projectsContainer :global(.card):hover {
-    background-color: var(--cardColor);
-    transform: scale(1.02);
-  }
-  .projectsContainer :global(.card) > :global(.imgContainer) {
-    background-color: var(--cardColor);
+    a {
+      grid-column: span 1 / span 1;
+      height: 100%;
+    }
+
+    :global(.card) {
+      background-color: var(--bg);
+      height: 100%;
+      transition: background-color 0.25s, transform 0.5s;
+    }
+    :global(.card):hover {
+      background-color: var(--cardColor);
+      transform: scale(1.02);
+    }
+    :global(.card) > :global(.imgContainer) {
+      background-color: var(--cardColor);
+    }
   }
 
   .projectDescription {
@@ -67,36 +68,37 @@
     box-sizing: border-box;
     padding: 0.75em 1em;
     background-color: transparent;
-    border-color: #ebdbb2;
+    border-color: var(--fg);
     border-width: 0.3em;
     border-style: solid;
-    color: #ebdbb2;
+    color: var(--fg);
     font-family: Monocraft;
     font-size: 14px;
-  }
-  #searchInput::placeholder {
-    color: #bdae93;
+
+    &::placeholder {
+      color: var(--fg3);
+    }
   }
 
   :global(.card.red) {
-    --cardColor: #cc2410;
+    --cardColor: var(--bgRed);
   }
   :global(.card.green) {
-    --cardColor: #98971a;
+    --cardColor: var(--bgGreen);
   }
   :global(.card.yellow) {
-    --cardColor: #d79921;
+    --cardColor: var(--bgYellow);
   }
   :global(.card.blue) {
-    --cardColor: #458588;
+    --cardColor: var(--bgBlue);
   }
   :global(.card.purple) {
-    --cardColor: #b16286;
+    --cardColor: var(--bgPurple);
   }
   :global(.card.aqua) {
-    --cardColor: #689d6a;
+    --cardColor: var(--bgAqua);
   }
   :global(.card.orange) {
-    --cardColor: #d65d0e;
+    --cardColor: var(--bgOrange);
   }
 </style>

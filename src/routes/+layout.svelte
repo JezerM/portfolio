@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "../app.less";
   import { fade } from "svelte/transition";
   import NavBar from "$lib/NavBar.svelte";
   import ExtraData from "$lib/ExtraData.svelte";
@@ -24,39 +25,16 @@
   </div>
 </div>
 
-<style>
-  :global(body) {
-    display: block;
-    background-color: #282828;
-    color: #ebdbb2;
-    font-family: Monocraft;
-    margin: 0;
-  }
-
-  :global(h2) {
-    margin-top: 0;
-  }
-  :global(h4) {
-    margin-top: 0;
-    margin-bottom: 0.2em;
-  }
-  :global(a) {
-    text-decoration: none;
-    color: inherit;
-  }
-  :global(a):visited {
-    color: inherit;
-  }
-
+<style lang="less">
   .transitionContainer {
     height: fit-content;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
-  }
-  .transitionContainer > :global(*) {
-    grid-column: 1;
-    grid-row: 1;
+    > :global(*) {
+      grid-column: 1;
+      grid-row: 1;
+    }
   }
 
   #content {
@@ -72,16 +50,9 @@
   main {
     grid-column: span 3 / span 3;
     padding: 2em;
-    background-color: #3c3836;
+    background-color: var(--bg1);
   }
   aside {
     grid-column: span 1 / span 1;
-  }
-
-  @font-face {
-    font-family: "Monocraft";
-    font-style: normal;
-    font-weight: 500;
-    src: url("/Monocraft.otf");
   }
 </style>

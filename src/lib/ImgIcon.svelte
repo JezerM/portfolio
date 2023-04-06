@@ -1,9 +1,10 @@
 <script lang="ts">
   export let src: string;
-  export let color: string;
+  let className: string = "";
+  export { className as class };
 </script>
 
-<div class="icon" style="mask-image: url({src}); background-color: {color}" />
+<div class="icon {className}" style="mask-image: url({src})" />
 
 <style>
   .icon {

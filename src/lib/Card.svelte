@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<style>
+<style lang="less">
   .card {
     display: flex;
     flex-direction: column;
@@ -28,8 +28,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .imgContainer > img {
-    width: 100%;
+
+    > img {
+      width: 100%;
+    }
   }
 </style>

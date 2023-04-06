@@ -6,10 +6,10 @@
   </p>
 </div>
 
-<style>
+<style lang="less">
   a {
     text-decoration-line: underline;
     text-decoration-thickness: 0.1em;
-    color: #83a598;
+    color: var(--fgBlue);
   }
 </style>
