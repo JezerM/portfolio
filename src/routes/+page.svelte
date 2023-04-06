@@ -44,13 +44,17 @@
 </div>
 
 <style lang="less">
+  @import (reference) "../app.less";
   .infoContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: start;
     align-items: center;
     gap: 1.5em;
     margin-bottom: 1.5em;
+    @media (min-width: @md) {
+      flex-direction: row;
+    }
   }
   .picture {
     width: 11.25em;

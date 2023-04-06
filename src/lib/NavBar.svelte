@@ -44,49 +44,76 @@
   </ul>
 </nav>
 
-<style>
+<style lang="less">
+  @import (reference) "../app.less";
   nav.navBar {
     background-color: var(--bg1);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    > ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
-  nav.navBar > ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+  #navLinks {
+    > .navElement {
+      span {
+        display: none;
+        @media (min-width: @md) {
+          display: block;
+        }
+      }
+    }
   }
 
   #socialLinks {
     gap: 0em;
+
+    > .navElement {
+      display: none;
+      @media (min-width: @nm) {
+        display: block;
+      }
+      :global(div.icon) {
+        width: 1.5em;
+        height: 1.5em;
+        @media (min-width: @sm) {
+          width: 2em;
+          height: 2em;
+        }
+        image-rendering: pixelated;
+      }
+
+      > a {
+        padding: 0em 0.8em;
+        height: 100%;
+      }
+    }
   }
 
-  #socialLinks > .navElement :global(div.icon) {
-    width: 2em;
-    height: 2em;
-    image-rendering: pixelated;
-  }
+  .navElement {
+    > a {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      padding: 1em 1.25em;
+      background-color: transparent;
 
-  .navElement > a {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 1em 1.25em;
-    background-color: transparent;
-  }
-  .navElement > a:hover,
-  .navElement > a:focus {
-    background-color: var(--bg2);
-  }
-  .navElement > a:visited {
-    color: inherit;
-  }
+      &:hover,
+      &:focus {
+        background-color: var(--bg2);
+      }
 
-  #socialLinks > .navElement > a {
-    padding: 0em 0.8em;
-    height: 100%;
+      &:visited {
+        color: inherit;
+      }
+    }
   }
 
   .blueLink {

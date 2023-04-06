@@ -26,6 +26,7 @@
 </div>
 
 <style lang="less">
+  @import (reference) "../app.less";
   .transitionContainer {
     height: fit-content;
     display: grid;
@@ -38,21 +39,42 @@
   }
 
   #content {
-    margin: 3em 5em;
+    margin: 1.5em;
+
+    @media (min-width: @md) {
+      margin: 2em 3em;
+    }
+    @media (min-width: @lg) {
+      margin: 3em 5em;
+    }
   }
 
   .mainContainer {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    @media (min-width: @lg) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (min-width: @xl) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
     margin-top: 2em;
     gap: 2em;
   }
   main {
-    grid-column: span 3 / span 3;
+    grid-column: span 1 / span 1;
     padding: 2em;
     background-color: var(--bg1);
+
+    @media (min-width: @lg) {
+      grid-column: span 2 / span 2;
+    }
+    @media (min-width: @xl) {
+      grid-column: span 3 / span 3;
+    }
   }
   aside {
+    width: 100%;
     grid-column: span 1 / span 1;
   }
 </style>

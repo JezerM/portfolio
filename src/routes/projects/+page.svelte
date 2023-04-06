@@ -33,10 +33,21 @@
 </div>
 
 <style lang="less">
+  @import (reference) "../../app.less";
   .projectsContainer {
     display: grid;
     gap: 1.5em;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    @media (min-width: @md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    @media (min-width: @xl) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    @media (min-width: @2xl) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 
     a {
       grid-column: span 1 / span 1;

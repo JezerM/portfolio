@@ -9,6 +9,7 @@
 <style>
   .icon {
     mask-size: 100%;
+    mask-repeat: no-repeat;
     image-rendering: pixelated;
     width: 1.5em;
     height: 1.5em;
