@@ -77,7 +77,7 @@
 
   <ul id="socialLinks">
     <li class="navElement alwaysVisible">
-      <button class="darkToggle" on:click={() => toggleDarkMode()}>
+      <button class="darkToggle" on:click={() => toggleDarkMode()} title="Toggle dark mode">
         <ImgIcon
           src={darkMode ? `${base}/icons/Moon.png` : `${base}/icons/Sun.png`}
           class="bgFgBlue"
@@ -85,17 +85,21 @@
       </button>
     </li>
     <li class="navElement">
-      <a href="http://discordapp.com/users/530819150969438208" target="_blank">
+      <a href="http://discordapp.com/users/530819150969438208" target="_blank" title="Discord user">
         <ImgIcon src="{base}/icons/Discord.png" class="bgDiscord" />
       </a>
     </li>
     <li class="navElement">
-      <a href="https://github.com/JezerM" target="_blank">
+      <a href="https://github.com/JezerM" target="_blank" title="GitHub profile">
         <ImgIcon src="{base}/icons/GitHub.png" class="bgWhite" />
       </a>
     </li>
     <li class="navElement">
-      <a href="https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/" target="_blank">
+      <a
+        href="https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/"
+        target="_blank"
+        title="LinkedIn profile"
+      >
         <ImgIcon src="{base}/icons/LinkedIn.png" class="bgLinkedIn" />
       </a>
     </li>
