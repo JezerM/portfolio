@@ -175,9 +175,7 @@
     }
   }
   .darkToggle {
-    font-size: inherit;
     padding: 0em 0.8em !important;
-    border: 0;
     height: 100%;
   }
 
