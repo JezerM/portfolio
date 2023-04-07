@@ -33,7 +33,7 @@
   --fgOrange: #fe8019;
   --fgGray: #928374;
 
-  &:not(.dark) {
+  &:is(.light) {
     --bg: #fbf1c7;
     --bg0h: #f9f5d7;
     --bg0s: #f2e5bc;
@@ -84,10 +84,12 @@
 @xl: 1280px;
 @2xl: 1536px;
 
-body {
-  display: block;
+html {
   background-color: var(--bg);
   color: var(--fg);
+}
+body {
+  display: block;
   font-family: Monocraft;
   margin: 0;
 }
@@ -161,7 +163,7 @@ a {
   background-color: #ffffff;
 }
 
-:root:not(.dark) {
+:root:is(.light) {
   .bgWhite {
     background-color: #000000;
   }

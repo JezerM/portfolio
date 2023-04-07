@@ -68,7 +68,7 @@
     }
   }
 
-  :global(:root):not(.dark) {
+  :global(:root):is(.light) {
     :global(.card):hover {
       color: var(--bg);
     }

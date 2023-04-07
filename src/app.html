@@ -9,9 +9,12 @@
     <script>
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ? document.documentElement.classList.add("dark")
-        : document.documentElement.classList.remove("dark");
+        ? document.documentElement.classList.remove("light")
+        : document.documentElement.classList.add("light");
     </script>
+    <noscript>
+      <link rel="stylesheet" href="%sveltekit.assets%/queries.css" />
+    </noscript>
   </head>
   <body>
     <div>%sveltekit.body%</div>

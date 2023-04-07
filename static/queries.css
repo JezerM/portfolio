@@ -1,0 +1,45 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #fbf1c7;
+    --bg0h: #f9f5d7;
+    --bg0s: #f2e5bc;
+    --bg0: #fbf1c7;
+    --bg1: #ebdbb2;
+    --bg2: #d5c4a1;
+    --bg3: #bdae93;
+    --bg4: #a89984;
+
+    --bgRed: #cc241d;
+    --bgGreen: #98971a;
+    --bgYellow: #d79921;
+    --bgBlue: #458588;
+    --bgPurple: #b16286;
+    --bgAqua: #689d6a;
+    --bgOrange: #d65d0e;
+    --bgGray: #7c6f64;
+
+    --fg: #3c3836;
+    --fg0: #282828;
+    --fg1: #3c3836;
+    --fg2: #504945;
+    --fg3: #665c54;
+    --fg4: #7c6f64;
+
+    --fgRed: #9d0006;
+    --fgGreen: #79740e;
+    --fgYellow: #b57614;
+    --fgBlue: #076678;
+    --fgPurple: #8f3f71;
+    --fgAqua: #427b58;
+    --fgOrange: #af3a03;
+    --fgGray: #928374;
+  }
+
+  .bgWhite {
+    background-color: #000000;
+  }
+
+  .card:hover {
+    color: var(--bg);
+  }
+}
