@@ -159,7 +159,10 @@ a {
 }
 .bgWhite {
   background-color: #ffffff;
-  @media (prefers-color-scheme: light) {
+}
+
+:root:not(.dark) {
+  .bgWhite {
     background-color: #000000;
   }
 }
