@@ -1,6 +1,56 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import { base } from "$app/paths";
   import ImgIcon from "$lib/ImgIcon.svelte";
+
+  let darkMode = false;
+  let forced = false;
+
+  function setAppearance(isDark: boolean) {
+    darkMode = isDark;
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }
+  function setForcedAppearance() {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+
+    if ((prefersDark && darkMode) || (prefersLight && !darkMode)) {
+      forced = false;
+    } else {
+      forced = true;
+    }
+  }
+
+  if (browser) {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      setAppearance(true);
+    } else {
+      setAppearance(false);
+    }
+    setForcedAppearance();
+
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (ev) => {
+      if (forced) return;
+      if (ev.matches) {
+        setAppearance(true);
+      } else {
+        setAppearance(false);
+      }
+    });
+  }
+
+  function toggleDarkMode() {
+    setAppearance(!darkMode);
+    setForcedAppearance();
+  }
 </script>
 
 <nav class="navBar">
@@ -26,6 +76,14 @@
   </ul>
 
   <ul id="socialLinks">
+    <li class="navElement alwaysVisible">
+      <button class="darkToggle" on:click={() => toggleDarkMode()}>
+        <ImgIcon
+          src={darkMode ? `${base}/icons/Moon.png` : `${base}/icons/Sun.png`}
+          class="bgFgBlue"
+        />
+      </button>
+    </li>
     <li class="navElement">
       <a href="http://discordapp.com/users/530819150969438208" target="_blank">
         <ImgIcon src="{base}/icons/Discord.png" class="bgDiscord" />
@@ -75,7 +133,7 @@
   #socialLinks {
     gap: 0em;
 
-    > .navElement {
+    > .navElement:not(.alwaysVisible) {
       display: none;
       @media (min-width: @nm) {
         display: block;
@@ -98,7 +156,8 @@
   }
 
   .navElement {
-    > a {
+    > a,
+    .darkToggle {
       display: flex;
       align-items: center;
       gap: 0.5em;
@@ -114,6 +173,12 @@
         color: inherit;
       }
     }
+  }
+  .darkToggle {
+    font-size: inherit;
+    padding: 0em 0.8em !important;
+    border: 0;
+    height: 100%;
   }
 
   .blueLink {

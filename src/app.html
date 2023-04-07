@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>JezerM's portfolio</title>
     %sveltekit.head%
+    <script>
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+    </script>
   </head>
   <body>
     <div>%sveltekit.body%</div>
