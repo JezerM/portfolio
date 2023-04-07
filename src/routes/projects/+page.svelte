@@ -3,12 +3,29 @@
   import { writable, derived } from "svelte/store";
   import Card from "$lib/Card.svelte";
   import data from "$lib/projects.json";
+  import FilterButton from "$lib/FilterButton.svelte";
+
+  type Data = (typeof data)[0];
+
+  const flat = data.flatMap((v) => v.categories);
+  const categories = Array.from(new Set(flat));
+
+  const selectedCategories = new Set<string>();
+  const selectedTerms = writable(selectedCategories);
 
   let search = "";
   let term = writable("");
-  let items = writable(data);
-  const filtered = derived([term, items], ([$term, $items]) =>
-    $items.filter((x) => x.name.toLowerCase().includes($term.toLowerCase()))
+
+  const filtered = derived(
+    [term, selectedTerms, writable(data)],
+    ([$term, $selectedTerms, $items]) => {
+      let f: Data[] = $items.filter((x) => x.name.toLowerCase().includes($term.toLowerCase()));
+      if ($selectedTerms.size > 0) {
+        const s = Array.from($selectedTerms);
+        f = f.filter((v) => s.every((p) => v.categories.includes(p)));
+      }
+      return f;
+    }
   );
   $: term.set(search);
 
@@ -18,9 +35,32 @@
     }
     return link;
   }
+
+  function toggleCategory(category: string) {
+    if (selectedCategories.has(category)) {
+      selectedCategories.delete(category);
+    } else {
+      selectedCategories.add(category);
+    }
+    selectedTerms.set(selectedCategories);
+  }
+  function clearSelectedCategories() {
+    selectedCategories.clear();
+    selectedTerms.set(selectedCategories);
+  }
 </script>
 
 <input id="searchInput" type="text" bind:value={search} placeholder="Search..." />
+<div id="categoriesContainer">
+  <FilterButton text="Clear" disableClick on:click={() => clearSelectedCategories()} />
+  {#each categories as cat}
+    <FilterButton
+      text={cat}
+      active={$selectedTerms.has(cat)}
+      on:click={() => toggleCategory(cat)}
+    />
+  {/each}
+</div>
 <div class="projectsContainer">
   {#each $filtered as project}
     <a href={project.link} target="_blank">
@@ -81,7 +121,7 @@
 
   #searchInput {
     width: 100%;
-    margin: 0 0 2em;
+    margin: 0 0 1em;
     box-sizing: border-box;
     padding: 0.75em 1em;
     background-color: transparent;
@@ -95,6 +135,14 @@
     &::placeholder {
       color: var(--fg3);
     }
+  }
+
+  #categoriesContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    margin: 0 0 1em;
   }
 
   :global(.card.red) {
