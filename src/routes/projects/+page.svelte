@@ -64,7 +64,7 @@
       <Card class={project.color}>
         <picture slot="image">
           <source srcset="{base}{project.image}" />
-          <img src="{base}{getPngLink(project.image)}" alt="" />
+          <img src="{base}{getPngLink(project.image)}" alt="" width="2880" height="1800" />
         </picture>
 
         <h4>{project.name}</h4>
