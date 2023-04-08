@@ -110,6 +110,7 @@
     }
 
     :global(.imgContainer) > :global(picture) {
+      display: contents;
       height: 100%;
       height: -webkit-fill-available;
       height: fill-available;

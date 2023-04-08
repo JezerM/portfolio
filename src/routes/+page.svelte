@@ -1,18 +1,23 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import LanguageIcons from "$lib/LanguageIcons.svelte";
+
+  const CircleUrl = `${base}/Circle.png`;
 </script>
 
 <div>
   <div class="infoContainer">
-    <div class="pictureContainer" style="mask-image: url('{base}/Circle.png');">
+    <div
+      class="pictureContainer"
+      style="mask-image: url('{CircleUrl}'); -webkit-mask-image: url('{CircleUrl}')"
+    >
       <picture>
         <source type="image/avif" srcset="{base}/JezerPicture.avif" />
         <img
           class="picture"
           src="{base}/JezerPicture.jpeg"
           alt="JezerM anime"
-          style="mask-image: url('{base}/Circle.png');"
+          style="mask-image: url('{base}/Circle.png'); -webkit-mask-image: url('{CircleUrl}')"
         />
       </picture>
     </div>
@@ -63,11 +68,14 @@
     width: 11.25em;
     height: 11.25em;
     mask-size: 100%;
+    -webkit-mask-size: 100%;
   }
   .pictureContainer {
     background-color: var(--fg);
     padding: 0.4em;
     mask-size: 100%;
     mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
   }
 </style>
