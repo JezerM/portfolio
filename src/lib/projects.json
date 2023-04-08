@@ -10,7 +10,7 @@
       "Python"
     ],
     "color": "blue",
-    "image": "/thumbnails/web-greeter.png"
+    "image": "/thumbnails/web-greeter.avif"
   },
   {
     "name": "Nody Greeter",
@@ -23,7 +23,7 @@
       "NodeJS"
     ],
     "color": "red",
-    "image": "/thumbnails/nody-greeter.png"
+    "image": "/thumbnails/nody-greeter.avif"
   },
   {
     "name": "Sea Greeter",
@@ -36,7 +36,7 @@
       "C"
     ],
     "color": "orange",
-    "image": "/thumbnails/sea-greeter.png"
+    "image": "/thumbnails/sea-greeter.avif"
   },
   {
     "name": "Web Greeter page",
@@ -47,7 +47,7 @@
       "Vue"
     ],
     "color": "blue",
-    "image": "/thumbnails/web-greeter-page.png"
+    "image": "/thumbnails/web-greeter-page.avif"
   },
   {
     "name": "Dotfiles",
@@ -58,7 +58,7 @@
       "Config"
     ],
     "color": "purple",
-    "image": "/thumbnails/dotfiles.png"
+    "image": "/thumbnails/dotfiles.avif"
   },
   {
     "name": "HealthZone App",
@@ -69,7 +69,7 @@
       "Kotlin"
     ],
     "color": "aqua",
-    "image": "/thumbnails/healthzone.png"
+    "image": "/thumbnails/healthzone.avif"
   },
   {
     "name": "Liberlú (Hackaton)",
@@ -80,7 +80,7 @@
       "Kotlin"
     ],
     "color": "blue",
-    "image": "/thumbnails/liberlu.png"
+    "image": "/thumbnails/liberlu.avif"
   },
   {
     "name": "Sistema de Entrada y Salida",

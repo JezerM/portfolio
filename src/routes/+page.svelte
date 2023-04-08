@@ -6,12 +6,15 @@
 <div>
   <div class="infoContainer">
     <div class="pictureContainer" style="mask-image: url('{base}/Circle.png');">
-      <img
-        class="picture"
-        src="{base}/JezerPicture.jpeg"
-        alt="JezerM anime"
-        style="mask-image: url('{base}/Circle.png');"
-      />
+      <picture>
+        <source type="image/avif" srcset="{base}/JezerPicture.avif" />
+        <img
+          class="picture"
+          src="{base}/JezerPicture.jpeg"
+          alt="JezerM anime"
+          style="mask-image: url('{base}/Circle.png');"
+        />
+      </picture>
     </div>
     <div id="infoSubContainer">
       <h2>Jezer Mejía</h2>

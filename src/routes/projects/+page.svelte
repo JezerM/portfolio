@@ -29,11 +29,8 @@
   );
   $: term.set(search);
 
-  function parseProjectImageLink(link: string): string {
-    if (link.startsWith("/")) {
-      return `${base}${link}`;
-    }
-    return link;
+  function getPngLink(link: string): string {
+    return link.replace(/\.avif/i, ".png");
   }
 
   function toggleCategory(category: string) {
@@ -64,7 +61,12 @@
 <div class="projectsContainer">
   {#each $filtered as project}
     <a href={project.link} target="_blank">
-      <Card src={parseProjectImageLink(project.image)} class={project.color}>
+      <Card class={project.color}>
+        <picture slot="image">
+          <source srcset="{base}{project.image}" />
+          <img src="{base}{getPngLink(project.image)}" alt="" />
+        </picture>
+
         <h4>{project.name}</h4>
         <p class="projectDescription">{project.description}</p>
       </Card>
@@ -105,6 +107,11 @@
     }
     :global(.card) > :global(.imgContainer) {
       background-color: var(--cardColor);
+    }
+
+    :global(.imgContainer) > :global(picture) {
+      height: 100%;
+      height: -webkit-fill-available;
     }
   }
 

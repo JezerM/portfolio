@@ -1,12 +1,11 @@
 <script lang="ts">
-  export let src: string = "";
   let className: string = "";
   export { className as class };
 </script>
 
 <div class="card {className}">
   <div class="imgContainer">
-    <img {src} alt="" />
+    <slot name="image" />
   </div>
   <div class="cardContent">
     <slot />
@@ -29,7 +28,7 @@
     justify-content: center;
     align-items: center;
 
-    > img {
+    :global(img) {
       width: 100%;
     }
   }
