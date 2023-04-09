@@ -7,17 +7,14 @@
 
 <div>
   <div class="infoContainer">
-    <div
-      class="pictureContainer"
-      style="mask-image: url('{CircleUrl}'); -webkit-mask-image: url('{CircleUrl}')"
-    >
+    <div class="pictureContainer" style="--mask-image: url('{CircleUrl}');">
       <picture>
         <source type="image/avif" srcset="{base}/JezerPicture.avif" />
         <img
           class="picture"
           src="{base}/JezerPicture.jpeg"
           alt="JezerM anime"
-          style="mask-image: url('{base}/Circle.png'); -webkit-mask-image: url('{CircleUrl}')"
+          style="--mask-image: url('{CircleUrl}');"
         />
       </picture>
     </div>
@@ -67,14 +64,18 @@
   .picture {
     width: 11.25em;
     height: 11.25em;
+    mask-image: var(--mask-image);
     mask-size: 100%;
+    -webkit-mask-image: var(--mask-image);
     -webkit-mask-size: 100%;
   }
   .pictureContainer {
     background-color: var(--fg);
     padding: 0.4em;
+    mask-image: var(--mask-image);
     mask-size: 100%;
     mask-repeat: no-repeat;
+    -webkit-mask-image: var(--mask-image);
     -webkit-mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
   }
