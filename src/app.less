@@ -99,7 +99,7 @@ h2 {
 }
 h4 {
   margin-top: 0;
-  margin-bottom: 0.2em;
+  margin-bottom: @width1;
 }
 a {
   text-decoration: none;
@@ -175,4 +175,53 @@ button {
   font-family: inherit;
   color: inherit;
   border: 0;
+}
+
+@width2: 0.6em;
+@width1: 0.3em;
+.pixelBorder {
+  clip-path: polygon(
+    0 @width2,
+    @width1 @width2,
+    @width1 @width1,
+    @width2 @width1,
+    @width2 0,
+
+    calc(100% - @width2) 0,
+    calc(100% - @width2) @width1,
+    calc(100% - @width1) @width1,
+    calc(100% - @width1) @width2,
+    100% @width2,
+
+    100% calc(100% - @width2),
+    calc(100% - @width1) calc(100% - @width2),
+    calc(100% - @width1) calc(100% - @width1),
+    calc(100% - @width2) calc(100% - @width1),
+    calc(100% - @width2) 100%,
+
+    @width2 100%,
+    @width2 calc(100% - @width1),
+    @width1 calc(100% - @width1),
+    @width1 calc(100% - @width2),
+    0% calc(100% - @width2)
+  );
+}
+.pixelSimpleBorder {
+  clip-path: polygon(
+    0 @width1,
+    @width1 @width1,
+    @width1 0,
+
+    calc(100% - @width1) 0,
+    calc(100% - @width1) @width1,
+    100% @width1,
+
+    100% calc(100% - @width1),
+    calc(100% - @width1) calc(100% - @width1),
+    calc(100% - @width1) 100%,
+
+    @width1 100%,
+    @width1 calc(100% - @width1),
+    0% calc(100% - @width1)
+  );
 }

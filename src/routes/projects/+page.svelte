@@ -47,7 +47,15 @@
   }
 </script>
 
-<input id="searchInput" type="text" bind:value={search} placeholder="Search..." />
+<div id="searchContainer" class="pixelSimpleBorder">
+  <input
+    id="searchInput"
+    class="pixelSimpleBorder"
+    type="text"
+    bind:value={search}
+    placeholder="Search..."
+  />
+</div>
 <div id="categoriesContainer">
   <FilterButton text="Clear" disableClick on:click={() => clearSelectedCategories()} />
   {#each categories as cat}
@@ -114,6 +122,7 @@
       height: 100%;
       height: -webkit-fill-available;
       height: fill-available;
+      height: -moz-available;
     }
   }
 
@@ -128,15 +137,30 @@
     margin: 0;
   }
 
-  #searchInput {
+  #searchContainer {
     width: 100%;
     margin: 0 0 1em;
+    position: relative;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: absolute;
+      background-color: var(--fg);
+      z-index: -1;
+    }
+  }
+
+  #searchInput {
+    width: -webkit-fill-available;
+    width: fill-available;
+    width: -moz-available;
     box-sizing: border-box;
     padding: 0.75em 1em;
-    background-color: transparent;
-    border-color: var(--fg);
-    border-width: 0.3em;
-    border-style: solid;
+    background-color: var(--bg1);
+    margin: 0.3rem;
+    border: none;
     color: var(--fg);
     font-family: Monocraft;
     font-size: 14px;

@@ -16,7 +16,7 @@
   };
 </script>
 
-<div class="infoContainer">
+<div class="infoContainer pixelBorder">
   <h2>Extra data</h2>
 
   {#each Object.entries(data) as [key, value]}

@@ -12,7 +12,7 @@
   <NavBar />
 
   <div class="mainContainer">
-    <main class="transitionContainer">
+    <main class="transitionContainer pixelBorder">
       {#key data.pathname}
         <div in:fade={{ duration: 250, delay: 250 }} out:fade={{ duration: 250 }}>
           <slot />

@@ -53,7 +53,7 @@
   }
 </script>
 
-<nav class="navBar">
+<nav class="navBar pixelSimpleBorder">
   <ul id="navLinks">
     <li class="navElement blueLink">
       <a href="{base}/">
