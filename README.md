@@ -1,6 +1,7 @@
 # Portfolio
 
-Hi! This is my portfolio. Made with SvelteKit.
+Hi! This is my portfolio. Made with SvelteKit. Layout inspired in
+[Sammwy.com](https://sammwy.com).
 
 All the pixel icons were made from scratch by me and inspired by FontAwesome
 icons as well as [NES.css](https://github.com/nostalgic-css/NES.css),
