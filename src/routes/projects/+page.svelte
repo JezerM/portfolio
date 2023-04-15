@@ -71,7 +71,7 @@
     <a href={project.link} target="_blank">
       <Card class={project.color}>
         <picture slot="image">
-          <source srcset="{base}{project.image}" />
+          <source type="image/avif" srcset="{base}{project.image}" />
           <img src="{base}{getPngLink(project.image)}" alt="" width="2880" height="1800" />
         </picture>
 
