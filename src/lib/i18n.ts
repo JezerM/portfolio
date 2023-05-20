@@ -1,4 +1,3 @@
-import { browser } from "$app/environment";
 import { init, addMessages } from "svelte-i18n";
 
 import en from "../locales/en.json";
@@ -14,5 +13,5 @@ const defaultLocale = "en";
 
 init({
   fallbackLocale: defaultLocale,
-  initialLocale: browser ? window.navigator.language : defaultLocale,
+  initialLocale: defaultLocale,
 });
