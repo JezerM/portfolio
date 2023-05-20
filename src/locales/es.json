@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "projects": "Mis projectos",
+    "contact": "Contáctame",
+    "toggle_dark_mode": "Alternar modo oscuro",
+    "discord_user": "Usuario de Discord",
+    "github_profile": "Perfil de GitHub",
+    "linkedin_profile": "Perfil de LinkedIn"
+  }
+}

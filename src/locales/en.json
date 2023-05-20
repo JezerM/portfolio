@@ -1,0 +1,11 @@
+{
+  "navigation": {
+    "home": "Home",
+    "projects": "My projects",
+    "contact": "Contact me",
+    "toggle_dark_mode": "Toggle dark mode",
+    "discord_user": "Discord user",
+    "github_profile": "GitHub profile",
+    "linkedin_profile": "LinkedIn profile"
+  }
+}
