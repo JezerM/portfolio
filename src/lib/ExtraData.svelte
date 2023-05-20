@@ -15,10 +15,15 @@
 
   const data = {
     age: getYearDifference(now, bornDate.getTime()),
-    birthday: get(_)("extra_data.birthday_value"),
+    birthday: $_("extra_data.birthday_value"),
     country: "Nicaragua",
-    gender: get(_)("extra_data.gender_value"),
+    gender: $_("extra_data.gender_value"),
   };
+
+  _.subscribe((v) => {
+    data.birthday = v("extra_data.birthday_value");
+    data.gender = v("extra_data.gender_value");
+  });
 
   function localizePath(target: string): string {
     let route = get(page).route.id;
