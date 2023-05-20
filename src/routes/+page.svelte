@@ -3,6 +3,8 @@
   import LanguageIcons from "$lib/LanguageIcons.svelte";
 
   const CircleUrl = `${base}/Circle.png`;
+
+  import { _ } from "svelte-i18n";
 </script>
 
 <div>
@@ -21,29 +23,24 @@
     <div id="infoSubContainer">
       <h2>Jezer Mejía</h2>
       <p>
-        I love Linux, coffee, Physics and Open Source.<br />
-        Low level programming enthusiast.<br />
-        Yet learning in UCA Nicaragua.
+        {$_("home.info_1")}<br />
+        {$_("home.info_2")}<br />
+        {$_("home.info_3")}
       </p>
       <LanguageIcons />
     </div>
   </div>
 
   <div id="aboutMeContainer">
-    <h2>About me</h2>
+    <h2>{$_("home.about_title")}</h2>
     <p>
-      I'm Jezer Josué Mejía Otero and I'm a developer just for fun. I love to create things that
-      everyone could benefit of, investing my time in open source development, from which we can
-      find some Linux applications, web pages, terminal based programs and so much more.
+      {$_("home.about_1")}
     </p>
     <p>
-      My true passion is Physics, but that will have to wait until I move to a country that offer
-      this career~
+      {$_("home.about_2")}
     </p>
-
     <p>
-      As stated above, I love Linux! Hence, I also love the terminal. I've always liked TypeScript
-      and C, but Rust has recently taken a part in my heart.
+      {$_("home.about_3")}
     </p>
   </div>
 </div>
