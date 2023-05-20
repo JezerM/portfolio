@@ -1,13 +1,16 @@
-<div>
-  <h2>Contact me</h2>
+<script lang="ts">
+  import { _ } from "svelte-i18n";
+</script>
+
+<div class="contact">
+  <h2>{$_("contact.title")}</h2>
   <p>
-    If you want to hire me, ask me about my projects or anything else, you can contact me through
-    <a href="mailto:amyuki4@icloud.com">Email</a> or Discord.
+    {@html $_("contact.desc_1")}
   </p>
 </div>
 
 <style lang="less">
-  a {
+  .contact :global(a) {
     text-decoration-line: underline;
     text-decoration-thickness: 0.1em;
     color: var(--fgBlue);

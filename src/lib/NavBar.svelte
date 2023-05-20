@@ -2,7 +2,6 @@
   import { browser } from "$app/environment";
   import { base } from "$app/paths";
   import { _ } from "svelte-i18n";
-  import { get } from "svelte/store";
   import { locale } from "svelte-i18n";
   import ImgIcon from "$lib/ImgIcon.svelte";
 
@@ -80,7 +79,11 @@
 
   <ul id="socialLinks">
     <li class="navElement alwaysVisible">
-      <button class="darkToggle" on:click={() => toggleDarkMode()} title="Toggle dark mode">
+      <button
+        class="darkToggle"
+        on:click={() => toggleDarkMode()}
+        title={$_("navigation.toggle_dark_mode")}
+      >
         <ImgIcon
           src={darkMode ? `${base}/icons/Moon.png` : `${base}/icons/Sun.png`}
           class="bgFgBlue"
@@ -88,12 +91,16 @@
       </button>
     </li>
     <li class="navElement">
-      <a href="http://discordapp.com/users/530819150969438208" target="_blank" title="Discord user">
+      <a
+        href="http://discordapp.com/users/530819150969438208"
+        target="_blank"
+        title={$_("navigation.discord_user")}
+      >
         <ImgIcon src="{base}/icons/Discord.png" class="bgDiscord" />
       </a>
     </li>
     <li class="navElement">
-      <a href="https://github.com/JezerM" target="_blank" title="GitHub profile">
+      <a href="https://github.com/JezerM" target="_blank" title={$_("navigation.github_profile")}>
         <ImgIcon src="{base}/icons/GitHub.png" class="bgWhite" />
       </a>
     </li>
@@ -101,7 +108,7 @@
       <a
         href="https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/"
         target="_blank"
-        title="LinkedIn profile"
+        title={$_("navigation.linkedin_profile")}
       >
         <ImgIcon src="{base}/icons/LinkedIn.png" class="bgLinkedIn" />
       </a>
@@ -170,6 +177,7 @@
       gap: 0.5em;
       padding: 1em 1.25em;
       background-color: transparent;
+      cursor: pointer;
 
       &:hover,
       &:focus {

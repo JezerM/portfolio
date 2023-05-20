@@ -1,11 +1,33 @@
 {
   "navigation": {
     "home": "Inicio",
-    "projects": "Mis projectos",
+    "projects": "Mis proyectos",
     "contact": "Contáctame",
     "toggle_dark_mode": "Alternar modo oscuro",
     "discord_user": "Usuario de Discord",
     "github_profile": "Perfil de GitHub",
     "linkedin_profile": "Perfil de LinkedIn"
+  },
+  "extra_data": {
+    "title": "Datos extras",
+    "age": "Edad",
+    "birthday": "Cumpleaños",
+    "birthday_value": "5 de Nov",
+    "country": "País",
+    "gender": "Género",
+    "gender_value": "Masculino"
+  },
+  "home": {
+    "info_1": "Me encanta Linux, el café, la Física y el Open Source.",
+    "info_2": "Entusiasta de la programación de bajo nivel.",
+    "info_3": "Aún estudiando en la UCA Nicaragua.",
+    "about_title": "Sobre mí",
+    "about_1": "Soy Jezer Josué Mejía Otero, un desarrollador sólo por diversión. Me encanta crear cosas de las que cualquiera pueda beneficiarse, invirtiendo mi tiempo en el desarrollo open source de lo cual podemos encontrar algunas aplicaciones de Linux, páginas webs, programas de terminal y mucho más.",
+    "about_2": "Mi verdadera pasión es la Física, pero eso tendrá que esperar hasta que me mueva a un país que ofrezca esta carrera~",
+    "about_3": "Como se mencionó antes, ¡Me encanta Linux! Por ende, también me encantan las terminales. Siempre me ha gustado TypeScript y C, pero Rust recientemente se ha ganado un lugar en mi corazón."
+  },
+  "contact": {
+    "title": "Contáctame",
+    "desc_1": "Si quieres contratarme, preguntarme sobre mis proyectos o cualquier otra cosa, puedes contactarme por <a href=\"mailto:amyuki4@icloud.com\">Email</a> o Discord."
   }
 }

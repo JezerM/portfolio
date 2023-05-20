@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { get } from "svelte/store";
+  import { _ } from "svelte-i18n";
+
   const bornDate = new Date(2003, 11, 5);
   const now = Date.now();
 
@@ -9,19 +12,19 @@
   }
 
   const data = {
-    Age: getYearDifference(now, bornDate.getTime()),
-    Birthday: "Nov, 5th",
-    Country: "Nicaragua",
-    Gender: "Male",
+    age: getYearDifference(now, bornDate.getTime()),
+    birthday: get(_)("extra_data.birthday_value"),
+    country: "Nicaragua",
+    gender: get(_)("extra_data.gender_value"),
   };
 </script>
 
 <div class="infoContainer pixelBorder">
-  <h3>Extra data</h3>
+  <h3>{$_("extra_data.title")}</h3>
 
   {#each Object.entries(data) as [key, value]}
     <div class="data">
-      <span>{key}</span>
+      <span>{$_(`extra_data.${key}`)}</span>
       <span>{value}</span>
     </div>
   {/each}
