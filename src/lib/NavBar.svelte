@@ -1,6 +1,7 @@
 <script lang="ts">
   import { browser } from "$app/environment";
   import { base } from "$app/paths";
+  import { _ } from "svelte-i18n";
   import ImgIcon from "$lib/ImgIcon.svelte";
 
   let darkMode = false;
@@ -58,19 +59,19 @@
     <li class="navElement blueLink">
       <a href="{base}/">
         <ImgIcon src="{base}/icons/Home.png" class="bgFgBlue" />
-        <span>Home</span>
+        <span>{$_("navigation.home")}</span>
       </a>
     </li>
     <li class="navElement purpleLink">
       <a href="{base}/projects">
         <ImgIcon src="{base}/icons/Folder.png" class="bgFgPurple" />
-        <span>My projects</span>
+        <span>{$_("navigation.projects")}</span>
       </a>
     </li>
     <li class="navElement aquaLink">
       <a href="{base}/contact">
         <ImgIcon src="{base}/icons/Contact.png" class="bgFgAqua" />
-        <span>Contact me</span>
+        <span>{$_("navigation.contact")}</span>
       </a>
     </li>
   </ul>

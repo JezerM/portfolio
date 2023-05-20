@@ -3,6 +3,8 @@
   import LanguageIcons from "$lib/LanguageIcons.svelte";
 
   const CircleUrl = `${base}/Circle.png`;
+
+  import { _ } from "svelte-i18n";
 </script>
 
 <div>
