@@ -3,6 +3,7 @@
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import { locale, locales, _ } from "svelte-i18n";
+  import { getUnlocalizedPath } from "./utils";
 
   const bornDate = new Date(2003, 11, 5);
   const now = Date.now();
@@ -26,14 +27,8 @@
   });
 
   function localizePath(target: string): string {
-    let route = get(page).route.id;
-
-    if (route?.startsWith("/")) route = route.substring(1);
-    const splitted = route?.split("/");
-    if (splitted && get(locales).includes(splitted[0])) {
-      splitted?.shift();
-      route = splitted?.join("/") ?? null;
-    }
+    let route: string = get(page).data.pathname;
+    route = getUnlocalizedPath(route);
 
     if (target == "en") return `/${route}`;
     return `/${target}/${route}`;
