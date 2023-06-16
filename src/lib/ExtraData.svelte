@@ -37,7 +37,7 @@
     const el = event.target as HTMLSelectElement;
     const lang = el.value;
     const path = localizePath(lang);
-    goto(path);
+    goto(path, { noScroll: true });
     locale.set(lang);
   }
 </script>
