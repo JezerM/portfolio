@@ -26,6 +26,9 @@
     "about_2": "Mi verdadera pasión es la Física, pero eso tendrá que esperar hasta que me mueva a un país que ofrezca esta carrera~",
     "about_3": "Como se mencionó antes, ¡Me encanta Linux! Por ende, también me encantan las terminales. Siempre me ha gustado TypeScript y C, pero Rust recientemente se ha ganado un lugar en mi corazón."
   },
+  "projects": {
+    "clear": "Limpiar"
+  },
   "contact": {
     "title": "Contáctame",
     "desc_1": "Si quieres contratarme, preguntarme sobre mis proyectos o cualquier otra cosa, puedes contactarme por <a href=\"mailto:jezer.mejia@icloud.com\">Email</a> o Discord."

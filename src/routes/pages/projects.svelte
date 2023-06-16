@@ -4,7 +4,7 @@
   import Card from "$lib/Card.svelte";
   import data from "$lib/projects.json";
   import FilterButton from "$lib/FilterButton.svelte";
-  import { locale } from "svelte-i18n";
+  import { locale, _ } from "svelte-i18n";
   console.log("\tInside projects", $locale);
 
   type Data = (typeof data)[0];
@@ -70,7 +70,11 @@
   />
 </div>
 <div id="categoriesContainer">
-  <FilterButton text="Clear" disableClick on:click={() => clearSelectedCategories()} />
+  <FilterButton
+    text={$_("projects.clear")}
+    disableClick
+    on:click={() => clearSelectedCategories()}
+  />
   {#each categories as cat}
     <FilterButton
       text={cat}
