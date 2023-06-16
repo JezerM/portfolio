@@ -4,7 +4,8 @@
 
   const CircleUrl = `${base}/Circle.png`;
 
-  import { _ } from "svelte-i18n";
+  import { _, locale } from "svelte-i18n";
+  console.log("\tInside Home", $locale);
 </script>
 
 <div>
@@ -46,7 +47,7 @@
 </div>
 
 <style lang="less">
-  @import (reference) "../app.less";
+  @import (reference) "../../app.less";
   .infoContainer {
     display: flex;
     flex-direction: column;

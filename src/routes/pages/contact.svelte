@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { _ } from "svelte-i18n";
+  import { locale, _ } from "svelte-i18n";
+
+  console.log("\tInside contact", $locale);
 </script>
 
 <div class="contact">

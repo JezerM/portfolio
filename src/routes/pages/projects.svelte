@@ -4,6 +4,8 @@
   import Card from "$lib/Card.svelte";
   import data from "$lib/projects.json";
   import FilterButton from "$lib/FilterButton.svelte";
+  import { locale } from "svelte-i18n";
+  console.log("\tInside projects", $locale);
 
   type Data = (typeof data)[0];
 
@@ -31,6 +33,17 @@
 
   function getPngLink(link: string): string {
     return link.replace(/\.avif/i, ".png");
+  }
+
+  function getProjectDescription(project: Data): string {
+    switch ($locale) {
+      case "en":
+        return project.description.en;
+      case "es":
+        return project.description.es;
+      default:
+    }
+    return "";
   }
 
   function toggleCategory(category: string) {
@@ -76,7 +89,9 @@
         </picture>
 
         <h4>{project.name}</h4>
-        <p class="projectDescription">{project.description}</p>
+        <p class="projectDescription">
+          {getProjectDescription(project)}
+        </p>
       </Card>
     </a>
   {/each}
