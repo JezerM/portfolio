@@ -1,9 +1,23 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { get } from "svelte/store";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
-  import { locale, locales, _ } from "svelte-i18n";
+  import { locale, _ } from "svelte-i18n";
   import { getUnlocalizedPath } from "./utils";
+  import ImgIcon from "./ImgIcon.svelte";
+  import LanguageIcons from "./LanguageIcons.svelte";
+
+  let cvLang: string;
+  $: switch ($locale) {
+    case "es":
+      cvLang = "spanish";
+      break;
+    case "en":
+    default:
+      cvLang = "english";
+      break;
+  }
 
   const bornDate = new Date(2003, 11, 5);
   const now = Date.now();
@@ -52,9 +66,29 @@
     </div>
   {/each}
 
+  <div class="data">
+    <label for="cvLink">Currículum Vitae</label>
+    <div class="actionContainer pixelSimpleBorder">
+      <a
+        id="cvLink"
+        class="actionElement pixelSimpleBorder"
+        href="{base}/cv/{cvLang}.pdf"
+        target="_blank"
+        title={$_("extra_data.cv_title")}
+      >
+        <span>{$_("extra_data.cv_open")}</span>
+        <ImgIcon src="{base}/icons/Folder.png" class="bgFg" />
+      </a>
+    </div>
+  </div>
+
   <span class="blue">#SOSNicaragua</span>
-  <div id="localeOptionsContainer" class="pixelSimpleBorder">
-    <select id="localeOptions" class="pixelSimpleBorder" on:change={handleLocaleChange}>
+  <div id="localeOptionsContainer" class="actionContainer pixelSimpleBorder">
+    <select
+      id="localeOptions"
+      class="actionElement pixelSimpleBorder"
+      on:change={handleLocaleChange}
+    >
       <option value="en" selected={$locale == "en"}>English</option>
       <option value="es" selected={$locale == "es"}>Español</option>
     </select>
@@ -75,14 +109,20 @@
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+
+    > span:last-child {
+      text-align: end;
+    }
   }
 
   .blue {
     color: var(--fgBlue);
   }
 
-  #localeOptionsContainer {
-    width: 100%;
+  .actionContainer {
+    display: flex;
     position: relative;
 
     &::before {
@@ -95,11 +135,7 @@
       z-index: -1;
     }
   }
-
-  #localeOptions {
-    width: -webkit-fill-available;
-    width: fill-available;
-    width: -moz-available;
+  .actionContainer > .actionElement {
     appearance: none;
     box-sizing: border-box;
     background-color: var(--bg1);
@@ -110,5 +146,31 @@
     color: var(--fg);
     font-family: Monocraft;
     font-size: 14px;
+
+    transition: background-color 0.25s;
+
+    &:hover {
+      background-color: var(--bg2);
+    }
+  }
+  #localeOptionsContainer {
+    width: 100%;
+  }
+  #localeOptions {
+    width: -webkit-fill-available;
+    width: fill-available;
+    width: -moz-available;
+  }
+
+  #cvLink {
+    display: flex;
+    gap: 0.5em;
+    padding: 0.5em;
+
+    transition: background-color 0.25s;
+
+    &:hover {
+      background-color: var(--bg2);
+    }
   }
 </style>
