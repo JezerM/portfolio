@@ -15,7 +15,8 @@
     "birthday_value": "5 de Nov",
     "country": "País",
     "gender": "Género",
-    "gender_value": "Masculino"
+    "gender_value": "Masculino",
+    "cv_open": "Abrir"
   },
   "home": {
     "info_1": "Me encanta Linux, el café, la Física y el Open Source.",

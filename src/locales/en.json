@@ -15,7 +15,8 @@
     "birthday_value": "Nov, 5th",
     "country": "Country",
     "gender": "Gender",
-    "gender_value": "Male"
+    "gender_value": "Male",
+    "cv_open": "Open"
   },
   "home": {
     "info_1": "I love Linux, coffee, Physics and Open Source.",
