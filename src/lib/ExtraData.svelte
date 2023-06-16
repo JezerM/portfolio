@@ -6,7 +6,6 @@
   import { locale, _ } from "svelte-i18n";
   import { getUnlocalizedPath } from "./utils";
   import ImgIcon from "./ImgIcon.svelte";
-  import LanguageIcons from "./LanguageIcons.svelte";
 
   let cvLang: string;
   $: switch ($locale) {
@@ -92,6 +91,7 @@
       <option value="en" selected={$locale == "en"}>English</option>
       <option value="es" selected={$locale == "es"}>Español</option>
     </select>
+    <ImgIcon src="{base}/icons/CaretDown.png" class="bgFg selectIcon" />
   </div>
 </div>
 
@@ -153,6 +153,15 @@
       background-color: var(--bg2);
     }
   }
+  :global(.selectIcon) {
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    right: 0.75em;
+    pointer-events: none;
+  }
   #localeOptionsContainer {
     width: 100%;
   }
@@ -160,6 +169,7 @@
     width: -webkit-fill-available;
     width: fill-available;
     width: -moz-available;
+    position: relative;
   }
 
   #cvLink {
