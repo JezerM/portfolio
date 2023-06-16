@@ -1,8 +1,11 @@
+import { dev } from "$app/environment";
+import { inject } from "@vercel/analytics";
+import "$lib/i18n";
+import type { LayoutLoad } from "./$types";
 import { locale } from "svelte-i18n";
+locale.set("en");
 
 export const prerender = true;
-
-import type { LayoutLoad } from "./$types";
 
 export const load = (({ url, params }) => {
   const { pathname } = url;
@@ -16,6 +19,8 @@ export const load = (({ url, params }) => {
       locale.set("en");
       break;
   }
-  console.log(params);
+  console.log(pathname, params);
   return { pathname, language };
 }) satisfies LayoutLoad;
+
+inject({ mode: dev ? "development" : "production" });
