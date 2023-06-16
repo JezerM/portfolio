@@ -1,7 +1,10 @@
 [
   {
     "name": "Web Greeter",
-    "description": "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter.",
+    "description": {
+      "en": "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter.",
+      "es": "Un moderno y visualmente atractivo greeter para LightDM. Fork de lightdm-webkit2-greeter."
+    },
     "link": "https://github.com/JezerM/web-greeter",
     "categories": [
       "Linux",
@@ -14,7 +17,10 @@
   },
   {
     "name": "Nody Greeter",
-    "description": "LightDM greeter that allows to create wonderful themes with web technologies. Made in Node.js",
+    "description": {
+      "en": "LightDM greeter that allows to create wonderful themes with web technologies. Made in Node.js",
+      "es": "Greeter de LightDM que permite crear hermosos temas con tecnologías web. Hecho con Node.js"
+    },
     "link": "https://github.com/JezerM/nody-greeter",
     "categories": [
       "Linux",
@@ -27,7 +33,10 @@
   },
   {
     "name": "Sea Greeter",
-    "description": "LightDM greeter made with WebKit2GTK. This allows to create themes with web technologies... Yeah, the same but in another language.",
+    "description": {
+      "en": "LightDM greeter made with WebKit2GTK. This allows to create themes with web technologies... Yeah, the same but in another language.",
+      "es": "Greeter de LightDM hecho con WebKit2GTK. Te permite crear temas con tecnologías web... Sí, lo mismo de antes pero en otro lenguaje."
+    },
     "link": "https://github.com/JezerM/sea-greeter",
     "categories": [
       "Linux",
@@ -40,7 +49,10 @@
   },
   {
     "name": "Web Greeter page",
-    "description": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
+    "description": {
+      "en": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
+      "es": "Página web que tiene por objetivo presentar mis 3 greeters para LightDM, así como contener los temas por defecto y de la comunidad."
+    },
     "link": "https://jezerm.github.io/web-greeter-page/",
     "categories": [
       "Web",
@@ -51,7 +63,10 @@
   },
   {
     "name": "Dotfiles",
-    "description": "My awesome and incredible dotfiles.",
+    "description": {
+      "en": "My awesome and incredible dotfiles.",
+      "es": "Mis increíbles, awesome!, dotfiles."
+    },
     "link": "https://github.com/JezerM/dotfiles",
     "categories": [
       "Linux",
@@ -62,7 +77,10 @@
   },
   {
     "name": "HealthZone App",
-    "description": "Android application to manage medical appointments.",
+    "description": {
+      "en": "Android application to manage medical appointments.",
+      "es": "Aplicación de Android para gestionar citas médicas."
+    },
     "link": "https://github.com/JezerMejia/HealthZoneDAM",
     "categories": [
       "Android",
@@ -73,7 +91,10 @@
   },
   {
     "name": "Liberlú (Hackaton)",
-    "description": "Android game for kids made in one night. I'm still surprised I was able to do this.",
+    "description": {
+      "en": "Android game for kids made in one night. I'm still surprised I was able to do this.",
+      "es": "Juego de Android para niños hecho en una noche. Aún me sorprende que haya sido capaz de hacer esto."
+    },
     "link": "https://github.com/JezerMejia/HackatonProject",
     "categories": [
       "Android",
@@ -84,7 +105,10 @@
   },
   {
     "name": "Sistema de Entrada y Salida",
-    "description": "A college course application to manage people Attendances in a X company.",
+    "description": {
+      "en": "A college course application to manage people Attendances in a X company.",
+      "es": "Una aplicación de una asignatura universitaria para manejar las Asistencias en una compañía X."
+    },
     "link": "https://github.com/JezerMejia/PASistemaEyS",
     "categories": [
       "Linux",
@@ -95,7 +119,10 @@
   },
   {
     "name": "Tasky",
-    "description": "Task manager that includes a Pomodoro and SOUNDS!. Made in C++ without understanding C++.",
+    "description": {
+      "en": "Task manager that includes a Pomodoro and SOUNDS!. Made in C++ without understanding C++.",
+      "es": "Programa de gestión de tareas que incluye un Pomodoro y SONIDOS!. Hecho en C++ sin entender C++."
+    },
     "link": "https://github.com/JezerM/tasky/tree/simple",
     "categories": [
       "Linux",

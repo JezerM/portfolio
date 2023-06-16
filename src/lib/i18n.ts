@@ -6,8 +6,8 @@ import es from "../locales/es.json";
 addMessages("en", en);
 addMessages("es", es);
 
-console.log(es);
-console.log(en);
+//console.log(es);
+//console.log(en);
 
 const defaultLocale = "en";
 
