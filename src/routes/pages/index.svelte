@@ -14,7 +14,7 @@
       <picture class="picture">
         <source type="image/avif" srcset="{base}/JezerPicture.avif" />
         <img
-          src="{base}/JezerPicture.jpeg"
+          src="{base}/JezerPicture.png"
           alt="JezerM anime"
           style="--mask-image: url('{CircleUrl}');"
         />
@@ -72,7 +72,7 @@
     height: 100%;
   }
   .pictureContainer {
-    background-color: var(--fg);
+    background-color: var(--fgPurple);
     padding: 0.4em;
     mask-image: var(--mask-image);
     mask-size: 100%;
