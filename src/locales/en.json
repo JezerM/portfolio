@@ -8,6 +8,9 @@
     "github_profile": "GitHub profile",
     "linkedin_profile": "LinkedIn profile"
   },
+  "head": {
+    "description": "My portfolio. It includes my information, the projects I have made and my contact info."
+  },
   "extra_data": {
     "title": "Extra data",
     "age": "Age",

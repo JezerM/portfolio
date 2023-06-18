@@ -4,6 +4,7 @@
   import NavBar from "$lib/NavBar.svelte";
   import ExtraData from "$lib/ExtraData.svelte";
   import { getUnlocalizedPath } from "$lib/utils";
+  import { _ } from "svelte-i18n";
   import type { LayoutData } from "./$types";
 
   export let data: LayoutData;
@@ -31,6 +32,12 @@
     previous = data.pathname;
   }
 </script>
+
+<svelte:head>
+  <meta name="description" content={$_("head.description")} />
+  <meta property="og:description" content={$_("head.description")} />
+  <meta name="twitter:description" content={$_("head.description")} />
+</svelte:head>
 
 <div id="content">
   <NavBar />
