@@ -3,13 +3,17 @@
     "home": "Home",
     "projects": "My projects",
     "contact": "Contact me",
+    "blog": "Blog",
     "toggle_dark_mode": "Toggle dark mode",
     "discord_user": "Discord user",
     "github_profile": "GitHub profile",
     "linkedin_profile": "LinkedIn profile"
   },
   "head": {
-    "description": "My portfolio. It includes my information, the projects I have made and my contact info."
+    "description": "My portfolio. It includes my information, the projects I have made and my contact info.",
+    "home_title": "JezerM's portfolio",
+    "projects_title": "Portfolio - Projects",
+    "contact_title": "Portfolio - Contact"
   },
   "extra_data": {
     "title": "Extra data",
