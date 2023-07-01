@@ -236,3 +236,109 @@ select {
     0% calc(100% - @width1)
   );
 }
+
+@keyframes topZoomHide {
+  from {
+    scale: 1;
+    opacity: 1;
+    filter: none;
+  }
+  to {
+    scale: 1.8;
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+@keyframes topZoomShow {
+  from {
+    scale: 1.8;
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@keyframes bottomZoomHide {
+  from {
+    scale: 1;
+    opacity: 1;
+    filter: none;
+  }
+  to {
+    scale: 0;
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+@keyframes bottomZoomShow {
+  from {
+    scale: 0;
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+    filter: none;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.topZoom {
+  position: fixed;
+  transform-origin: top center;
+  opacity: 0;
+
+  &.hide {
+    animation: topZoomHide 1.5s ease-in-out forwards;
+    @media (prefers-reduced-motion) {
+      animation-name: "fadeOut";
+    }
+  }
+  &.show {
+    animation: topZoomShow 1.5s ease-in-out forwards;
+    animation-delay: 500ms;
+    @media (prefers-reduced-motion) {
+      animation-name: "fadeIn";
+    }
+  }
+}
+
+.bottomZoom {
+  position: fixed;
+  transform-origin: top center;
+  opacity: 0;
+
+  &.hide {
+    animation: bottomZoomHide 1.5s ease-in-out forwards;
+    @media (prefers-reduced-motion) {
+      animation-name: "fadeOut";
+    }
+  }
+  &.show {
+    animation: bottomZoomShow 1.5s ease-in-out forwards;
+    animation-delay: 500ms;
+    @media (prefers-reduced-motion) {
+      animation-name: "fadeIn";
+    }
+  }
+}
