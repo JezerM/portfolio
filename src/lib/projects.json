@@ -6,12 +6,7 @@
       "es": "Un moderno y visualmente atractivo greeter para LightDM. Fork de lightdm-webkit2-greeter."
     },
     "link": "https://github.com/JezerM/web-greeter",
-    "categories": [
-      "Linux",
-      "LightDM",
-      "Web",
-      "Python"
-    ],
+    "categories": ["Linux", "LightDM", "Web", "Python"],
     "color": "blue",
     "image": "/thumbnails/web-greeter.avif"
   },
@@ -22,12 +17,7 @@
       "es": "Greeter de LightDM que permite crear hermosos temas con tecnologías web. Hecho con Node.js"
     },
     "link": "https://github.com/JezerM/nody-greeter",
-    "categories": [
-      "Linux",
-      "LightDM",
-      "Web",
-      "NodeJS"
-    ],
+    "categories": ["Linux", "LightDM", "Web", "NodeJS"],
     "color": "red",
     "image": "/thumbnails/nody-greeter.avif"
   },
@@ -38,12 +28,7 @@
       "es": "Greeter de LightDM hecho con WebKit2GTK. Te permite crear temas con tecnologías web... Sí, lo mismo de antes pero en otro lenguaje."
     },
     "link": "https://github.com/JezerM/sea-greeter",
-    "categories": [
-      "Linux",
-      "LightDM",
-      "Web",
-      "C"
-    ],
+    "categories": ["Linux", "LightDM", "Web", "C"],
     "color": "orange",
     "image": "/thumbnails/sea-greeter.avif"
   },
@@ -54,10 +39,7 @@
       "es": "Página web que tiene por objetivo presentar mis 3 greeters para LightDM, así como contener los temas por defecto y de la comunidad."
     },
     "link": "https://jezerm.github.io/web-greeter-page/",
-    "categories": [
-      "Web",
-      "Vue"
-    ],
+    "categories": ["Web", "Vue"],
     "color": "blue",
     "image": "/thumbnails/web-greeter-page.avif"
   },
@@ -68,10 +50,7 @@
       "es": "Mis increíbles, awesome!, dotfiles."
     },
     "link": "https://github.com/JezerM/dotfiles",
-    "categories": [
-      "Linux",
-      "Config"
-    ],
+    "categories": ["Linux", "Config"],
     "color": "purple",
     "image": "/thumbnails/dotfiles.avif"
   },
@@ -82,10 +61,7 @@
       "es": "Aplicación de Android para gestionar citas médicas."
     },
     "link": "https://github.com/JezerMejia/HealthZoneDAM",
-    "categories": [
-      "Android",
-      "Kotlin"
-    ],
+    "categories": ["Android", "Kotlin"],
     "color": "aqua",
     "image": "/thumbnails/healthzone.avif"
   },
@@ -96,10 +72,7 @@
       "es": "Juego de Android para niños hecho en una noche. Aún me sorprende que haya sido capaz de hacer esto."
     },
     "link": "https://github.com/JezerMejia/HackatonProject",
-    "categories": [
-      "Android",
-      "Kotlin"
-    ],
+    "categories": ["Android", "Kotlin"],
     "color": "blue",
     "image": "/thumbnails/liberlu.avif"
   },
@@ -110,10 +83,7 @@
       "es": "Una aplicación de una asignatura universitaria para manejar las Asistencias en una compañía X."
     },
     "link": "https://github.com/JezerMejia/PASistemaEyS",
-    "categories": [
-      "Linux",
-      "C#"
-    ],
+    "categories": ["Linux", "C#"],
     "color": "green",
     "image": "/thumbnails/sistemaeys.avif"
   },
@@ -124,10 +94,7 @@
       "es": "Programa de gestión de tareas que incluye un Pomodoro y SONIDOS!. Hecho en C++ sin entender C++."
     },
     "link": "https://github.com/JezerM/tasky/tree/simple",
-    "categories": [
-      "Linux",
-      "C++"
-    ],
+    "categories": ["Linux", "C++"],
     "color": "purple",
     "image": "/thumbnails/tasky.avif"
   }
