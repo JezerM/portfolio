@@ -69,17 +69,6 @@
     }
   }
 
-  #content {
-    margin: 1.5em;
-
-    @media (min-width: @md) {
-      margin: 2em 3em;
-    }
-    @media (min-width: @lg) {
-      margin: 3em 5em;
-    }
-  }
-
   .mainContainer {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
