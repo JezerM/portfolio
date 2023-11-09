@@ -78,7 +78,7 @@
   </ul>
 
   <ul id="socialLinks">
-    <li class="navElement alwaysVisible">
+    <li class="navElement alwaysVisible hideNotJavascript">
       <button
         class="darkToggle"
         on:click={() => toggleDarkMode()}
