@@ -10,14 +10,18 @@
 
 <div>
   <div class="infoContainer">
-    <div class="pictureContainer" style="--mask-image: url('{CircleUrl}');">
-      <picture class="picture">
+    <div
+      class="pictureContainer"
+      style:mask-image="url('{CircleUrl}')"
+      style:-webkit-mask-image="url('{CircleUrl}')"
+    >
+      <picture
+        class="picture"
+        style:mask-image="url('{CircleUrl}')"
+        style:-webkit-mask-image="url('{CircleUrl}')"
+      >
         <source type="image/avif" srcset="{base}/JezerPicture.avif" />
-        <img
-          src="{base}/JezerPicture.png"
-          alt="JezerM anime"
-          style="--mask-image: url('{CircleUrl}');"
-        />
+        <img src="{base}/JezerPicture.png" alt="JezerM anime" />
       </picture>
     </div>
     <div id="infoSubContainer">
@@ -62,9 +66,7 @@
     display: block;
     width: 11.25em;
     height: 11.25em;
-    mask-image: var(--mask-image);
     mask-size: 100%;
-    -webkit-mask-image: var(--mask-image);
     -webkit-mask-size: 100%;
   }
   .picture > img {
@@ -74,10 +76,8 @@
   .pictureContainer {
     background-color: var(--fgPurple);
     padding: 0.4em;
-    mask-image: var(--mask-image);
     mask-size: 100%;
     mask-repeat: no-repeat;
-    -webkit-mask-image: var(--mask-image);
     -webkit-mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
   }
