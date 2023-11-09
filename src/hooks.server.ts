@@ -1,4 +1,4 @@
-import type { RequestEvent, Handle } from "@sveltejs/kit";
+import type { Handle } from "@sveltejs/kit";
 import { locale } from "svelte-i18n";
 import { get } from "svelte/store";
 

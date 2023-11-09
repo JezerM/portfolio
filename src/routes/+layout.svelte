@@ -29,13 +29,13 @@
     };
   }
 
-  function zoomIn(_node: HTMLElement, _params: unknown) {
+  function zoomIn(_node: HTMLElement) {
     return {
       delay: 0,
       duration: 1500,
     };
   }
-  function zoomOut(_node: HTMLElement, _params: unknown) {
+  function zoomOut(_node: HTMLElement) {
     return {
       delay: 250,
       duration: 1500,
