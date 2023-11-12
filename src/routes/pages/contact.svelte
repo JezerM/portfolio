@@ -1,5 +1,6 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
+  import { socialLinks } from "$root/lib/store";
 
   console.log("\tInside contact", $locale);
 </script>
@@ -9,6 +10,19 @@
   <p>
     {@html $_("contact.desc_1")}
   </p>
+
+  <h3>Social links</h3>
+  <ul>
+    <li>
+      <a href={socialLinks.github}>GitHub</a>
+    </li>
+    <li>
+      <a href={socialLinks.linkedin}>Linkedin</a>
+    </li>
+    <li>
+      <a href={socialLinks.discord}>Discord</a>
+    </li>
+  </ul>
 </div>
 
 <style lang="less">

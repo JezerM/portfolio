@@ -118,6 +118,7 @@
 
 <style lang="less">
   @import (reference) "../app.less";
+
   nav.navBar {
     background-color: var(--bg1);
     display: flex;
@@ -137,7 +138,7 @@
     > .navElement {
       span {
         display: none;
-        @media (min-width: @md) {
+        @media (min-width: 974px) {
           display: block;
         }
       }
@@ -149,9 +150,11 @@
 
     > .navElement:not(.alwaysVisible) {
       display: none;
-      @media (min-width: @nm) {
+
+      @media (min-width: @socialLinksMin) {
         display: block;
       }
+
       :global(div.icon) {
         width: 1.5em;
         height: 1.5em;
