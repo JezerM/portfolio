@@ -23,7 +23,8 @@
     "country": "País",
     "gender": "Género",
     "gender_value": "Masculino",
-    "cv_open": "Abrir"
+    "cv_open": "Abrir",
+    "language": "Idioma"
   },
   "home": {
     "info_1": "Me encanta Linux, el café, la Física y el Open Source.",

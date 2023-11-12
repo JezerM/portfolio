@@ -45,5 +45,8 @@
 }
 
 .hideNotJavascript {
-  display: none;
+  display: none !important;
+}
+.flexNotJavascript {
+  display: flex !important;
 }

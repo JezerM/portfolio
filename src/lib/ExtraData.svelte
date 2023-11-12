@@ -82,7 +82,8 @@
   </div>
 
   <span class="blue">#SOSNicaragua</span>
-  <div id="localeOptionsContainer" class="actionContainer pixelSimpleBorder">
+
+  <div id="localeOptionsContainer" class="actionContainer pixelSimpleBorder hideNotJavascript">
     <select
       id="localeOptions"
       class="actionElement pixelSimpleBorder"
@@ -92,6 +93,18 @@
       <option value="es" selected={$locale == "es"}>Español</option>
     </select>
     <ImgIcon src="{base}/icons/CaretDown.png" class="bgFg selectIcon" />
+  </div>
+
+  <div class="localeLinkContainer flexNotJavascript">
+    <span>{$_("extra_data.language")}</span>
+    <ul>
+      <li>
+        <a href={localizePath("en")}>English</a>
+      </li>
+      <li>
+        <a href={localizePath("es")}>Spanish</a>
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -181,6 +194,24 @@
 
     &:hover {
       background-color: var(--bg2);
+    }
+  }
+
+  .localeLinkContainer {
+    display: none;
+    flex-direction: column;
+    padding-top: 0.25em;
+
+    ul {
+      margin: 0;
+      margin-top: 0.5em;
+      li {
+        transition: color 0.25s;
+
+        &:hover {
+          color: var(--fgBlue);
+        }
+      }
     }
   }
 </style>

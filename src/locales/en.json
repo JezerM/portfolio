@@ -23,7 +23,8 @@
     "country": "Country",
     "gender": "Gender",
     "gender_value": "Male",
-    "cv_open": "Open"
+    "cv_open": "Open",
+    "language": "Language"
   },
   "home": {
     "info_1": "I love Linux, coffee, Physics and Open Source.",
