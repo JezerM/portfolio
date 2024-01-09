@@ -69,6 +69,26 @@
     }
   }
 
+  main {
+    grid-column: span 1 / span 1;
+    padding: 1.5em;
+    background-color: var(--bg1);
+
+    @media (min-width: @sm) {
+      padding: 2em;
+    }
+    @media (min-width: @lg) {
+      grid-column: span 2 / span 2;
+    }
+    @media (min-width: @xl) {
+      grid-column: span 3 / span 3;
+    }
+  }
+  aside {
+    width: 100%;
+    grid-column: span 1 / span 1;
+  }
+
   .mainContainer {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -80,21 +100,5 @@
     }
     margin-top: 2em;
     gap: 2em;
-  }
-  main {
-    grid-column: span 1 / span 1;
-    padding: 2em;
-    background-color: var(--bg1);
-
-    @media (min-width: @lg) {
-      grid-column: span 2 / span 2;
-    }
-    @media (min-width: @xl) {
-      grid-column: span 3 / span 3;
-    }
-  }
-  aside {
-    width: 100%;
-    grid-column: span 1 / span 1;
   }
 </style>

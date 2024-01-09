@@ -109,12 +109,18 @@
 </div>
 
 <style lang="less">
+  @import (reference) "../app.less";
+
   .infoContainer {
-    padding: 2em;
+    padding: 1.5em;
     background-color: var(--bg1);
     display: flex;
     flex-direction: column;
     gap: 0.5em;
+
+    @media (min-width: @sm) {
+      padding: 2em;
+    }
   }
 
   .data {
