@@ -28,5 +28,5 @@ export function localizePath(lang: string): string {
   let endRoute = `${base}/${lang}/${route}`;
   if (lang == "en") endRoute = `${base}/${route}`;
 
-  return endRoute.replace(/([^:]\/)\/+/g, "$1");
+  return endRoute.replace(/\/+/g, "/");
 }
