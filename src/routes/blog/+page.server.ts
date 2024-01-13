@@ -1,4 +1,4 @@
-import { fetchMarkdownPosts } from "$root/lib/server/utils";
+import { fetchMarkdownPosts } from "$lib/server/utils";
 import type { PageServerLoad } from "./$types";
 
 export const load = (async () => {

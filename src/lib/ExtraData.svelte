@@ -1,10 +1,8 @@
 <script lang="ts">
   import { base } from "$app/paths";
-  import { get } from "svelte/store";
-  import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import { locale, _ } from "svelte-i18n";
-  import { getUnlocalizedPath } from "./utils";
+  import { localizePath } from "./utils";
   import ImgIcon from "./ImgIcon.svelte";
 
   let cvLang: string;
@@ -27,25 +25,13 @@
     return Math.abs(ageDate.getUTCFullYear() - 1970);
   }
 
-  const data = {
+  $: data = {
     age: getYearDifference(now, bornDate.getTime()),
     birthday: $_("extra_data.birthday_value"),
     country: "Nicaragua",
     gender: $_("extra_data.gender_value"),
   };
 
-  _.subscribe((v) => {
-    data.birthday = v("extra_data.birthday_value");
-    data.gender = v("extra_data.gender_value");
-  });
-
-  function localizePath(target: string): string {
-    let route: string = get(page).data.pathname;
-    route = getUnlocalizedPath(route);
-
-    if (target == "en") return `/${route}`;
-    return `/${target}/${route}`;
-  }
   function handleLocaleChange(event: Event) {
     const el = event.target as HTMLSelectElement;
     const lang = el.value;

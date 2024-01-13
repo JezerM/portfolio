@@ -1,4 +1,4 @@
-import type { IMarkdown } from "$root/lib/server/utils";
+import type { IMarkdown } from "$lib/server/utils";
 import type { PageLoad } from "./$types";
 
 export const load = (async ({ params }) => {

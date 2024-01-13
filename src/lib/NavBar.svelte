@@ -4,6 +4,7 @@
   import { _ } from "svelte-i18n";
   import { locale } from "svelte-i18n";
   import ImgIcon from "$lib/ImgIcon.svelte";
+  import { baseLocale } from "./i18n";
 
   let darkMode = false;
   let forced = false;
@@ -58,19 +59,19 @@
 <nav class="navBar pixelSimpleBorder">
   <ul id="navLinks">
     <li class="navElement blueLink">
-      <a href="{base}{$locale == 'en' ? '' : '/' + $locale}/">
+      <a href="{$baseLocale}/">
         <ImgIcon src="{base}/icons/Home.png" class="bgFgBlue" />
         <span>{$_("navigation.home")}</span>
       </a>
     </li>
     <li class="navElement purpleLink">
-      <a href="{base}{$locale == 'en' ? '' : '/' + $locale}/projects">
+      <a href="{$baseLocale}/projects">
         <ImgIcon src="{base}/icons/Folder.png" class="bgFgPurple" />
         <span>{$_("navigation.projects")}</span>
       </a>
     </li>
     <li class="navElement aquaLink">
-      <a href="{base}{$locale == 'en' ? '' : '/' + $locale}/contact">
+      <a href="{$baseLocale}/contact">
         <ImgIcon src="{base}/icons/Contact.png" class="bgFgAqua" />
         <span>{$_("navigation.contact")}</span>
       </a>

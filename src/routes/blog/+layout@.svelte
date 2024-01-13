@@ -2,11 +2,11 @@
   import { base } from "$app/paths";
   import { locale } from "svelte-i18n";
 
-  let baseLocale = $locale == "en" ? "" : `/${$locale}`;
+  let baseLocale = $locale == "en" ? "" : locale;
 </script>
 
 <div id="content">
-  <a href="{base}{baseLocale}/">Portfolio</a>
+  <a href="{base}/{baseLocale}">Portfolio</a>
   <a href="{base}/blog">Blog</a>
   <main>
     <slot />
