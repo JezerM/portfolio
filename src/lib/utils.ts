@@ -11,6 +11,10 @@ export function getUnlocalizedPath(path: string): string {
     splitted?.shift();
     route = splitted?.join("/") ?? null;
   }
+  if (splitted && base == splitted[0]) {
+    splitted?.shift();
+    route = splitted?.join("/") ?? null;
+  }
   return route;
 }
 
@@ -18,8 +22,8 @@ export function getUnlocalizedPath(path: string): string {
  * Returns current path with the specified locale
  */
 export function localizePath(lang: string): string {
-  let route: string = get(page).url.pathname;
-  route = getUnlocalizedPath(route);
+  let route = get(page).route.id ?? "";
+  route = route?.replace("[[language=lang]]", "");
 
   let endRoute = `${base}/${lang}/${route}`;
   if (lang == "en") endRoute = `${base}/${route}`;
