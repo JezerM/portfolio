@@ -1,5 +1,6 @@
 import { dev } from "$app/environment";
 import { inject } from "@vercel/analytics";
+import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 import "$lib/i18n";
 import type { LayoutLoad } from "./$types";
 
@@ -12,3 +13,4 @@ export const load = (({ url, params }) => {
 }) satisfies LayoutLoad;
 
 inject({ mode: dev ? "development" : "production" });
+injectSpeedInsights();

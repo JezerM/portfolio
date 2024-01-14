@@ -34,6 +34,7 @@
   "type": "module",
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
+    "@vercel/speed-insights": "^1.0.3",
     "svelte-i18n": "^4.0.0"
   }
 }
