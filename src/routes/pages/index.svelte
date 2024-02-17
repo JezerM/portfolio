@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import LanguageIcons from "$lib/LanguageIcons.svelte";
 
-  const CircleUrl = `${base}/Circle.png`;
+  const CircleUrl = `/Circle.png`;
 
   import { _, locale } from "svelte-i18n";
   console.log("\tInside Home", $locale);
@@ -15,14 +14,13 @@
       style:mask-image="url('{CircleUrl}')"
       style:-webkit-mask-image="url('{CircleUrl}')"
     >
-      <picture
+      <enhanced:img
         class="picture"
         style:mask-image="url('{CircleUrl}')"
         style:-webkit-mask-image="url('{CircleUrl}')"
-      >
-        <source type="image/avif" srcset="{base}/JezerPicture.avif" />
-        <img src="{base}/JezerPicture.png" alt="JezerM anime" />
-      </picture>
+        src="/static/JezerPicture.png"
+        alt="JezerM anime"
+      />
     </div>
     <div id="infoSubContainer">
       <h2>Jezer Mejía</h2>
@@ -68,10 +66,6 @@
     height: 11.25em;
     mask-size: 100%;
     -webkit-mask-size: 100%;
-  }
-  .picture > img {
-    width: 100%;
-    height: 100%;
   }
   .pictureContainer {
     background-color: var(--fgPurple);

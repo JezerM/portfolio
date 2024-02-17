@@ -8,7 +8,7 @@
     "link": "https://github.com/JezerM/web-greeter",
     "categories": ["Linux", "LightDM", "Web", "Python"],
     "color": "blue",
-    "image": "/thumbnails/web-greeter.avif"
+    "image": "/thumbnails/web-greeter.png"
   },
   {
     "name": "Nody Greeter",
@@ -19,7 +19,7 @@
     "link": "https://github.com/JezerM/nody-greeter",
     "categories": ["Linux", "LightDM", "Web", "NodeJS"],
     "color": "red",
-    "image": "/thumbnails/nody-greeter.avif"
+    "image": "/thumbnails/nody-greeter.png"
   },
   {
     "name": "Sea Greeter",
@@ -30,7 +30,7 @@
     "link": "https://github.com/JezerM/sea-greeter",
     "categories": ["Linux", "LightDM", "Web", "C"],
     "color": "orange",
-    "image": "/thumbnails/sea-greeter.avif"
+    "image": "/thumbnails/sea-greeter.png"
   },
   {
     "name": "Web Greeter page",
@@ -41,7 +41,7 @@
     "link": "https://jezerm.github.io/web-greeter-page/",
     "categories": ["Web", "Vue"],
     "color": "blue",
-    "image": "/thumbnails/web-greeter-page.avif"
+    "image": "/thumbnails/web-greeter-page.png"
   },
   {
     "name": "Dotfiles",
@@ -52,7 +52,7 @@
     "link": "https://github.com/JezerM/dotfiles",
     "categories": ["Linux", "Config"],
     "color": "purple",
-    "image": "/thumbnails/dotfiles.avif"
+    "image": "/thumbnails/dotfiles.png"
   },
   {
     "name": "HealthZone App",
@@ -63,7 +63,7 @@
     "link": "https://github.com/JezerMejia/HealthZoneDAM",
     "categories": ["Android", "Kotlin"],
     "color": "aqua",
-    "image": "/thumbnails/healthzone.avif"
+    "image": "/thumbnails/healthzone.png"
   },
   {
     "name": "Liberlú (Hackaton)",
@@ -74,7 +74,7 @@
     "link": "https://github.com/JezerMejia/HackatonProject",
     "categories": ["Android", "Kotlin"],
     "color": "blue",
-    "image": "/thumbnails/liberlu.avif"
+    "image": "/thumbnails/liberlu.png"
   },
   {
     "name": "Sistema de Entrada y Salida",
@@ -85,7 +85,7 @@
     "link": "https://github.com/JezerMejia/PASistemaEyS",
     "categories": ["Linux", "C#"],
     "color": "green",
-    "image": "/thumbnails/sistemaeys.avif"
+    "image": "/thumbnails/sistemaeys.png"
   },
   {
     "name": "Tasky",
@@ -96,6 +96,6 @@
     "link": "https://github.com/JezerM/tasky/tree/simple",
     "categories": ["Linux", "C++"],
     "color": "purple",
-    "image": "/thumbnails/tasky.avif"
+    "image": "/thumbnails/tasky.png"
   }
 ]

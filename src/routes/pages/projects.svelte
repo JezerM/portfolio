@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import { writable, derived } from "svelte/store";
   import Card from "$lib/Card.svelte";
   import data from "$lib/projects.json";
   import FilterButton from "$lib/FilterButton.svelte";
+  import { thumbnails } from "$lib/images";
   import { locale, _ } from "svelte-i18n";
   console.log("\tInside projects", $locale);
 
@@ -31,10 +31,6 @@
   );
   $: term.set(search);
 
-  function getPngLink(link: string): string {
-    return link.replace(/\.avif/i, ".png");
-  }
-
   function getProjectDescription(project: Data): string {
     switch ($locale) {
       case "en":
@@ -44,6 +40,14 @@
       default:
     }
     return "";
+  }
+
+  async function getThumbnail(project: Data): Promise<string | undefined> {
+    const value = thumbnails[`/static${project.image}`];
+    const result = await value();
+    if (!result) return undefined;
+    console.log(result);
+    return result.default;
   }
 
   function toggleCategory(category: string) {
@@ -87,10 +91,16 @@
   {#each $filtered as project}
     <a href={project.link} target="_blank">
       <Card class={project.color}>
-        <picture slot="image">
-          <source type="image/avif" srcset="{base}{project.image}" />
-          <img src="{base}{getPngLink(project.image)}" alt="" width="2880" height="1800" />
-        </picture>
+        <div style="width: 100%; height: -webkit-fill-available;" slot="image">
+          {#await getThumbnail(project) then src}
+            <enhanced:img
+              class="picture"
+              {src}
+              alt={project.name}
+              sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
+            />
+          {/await}
+        </div>
 
         <h4>{project.name}</h4>
         <p class="projectDescription">
@@ -136,8 +146,8 @@
       background-color: var(--cardColor);
     }
 
-    :global(.imgContainer) > :global(picture) {
-      display: contents;
+    :global(.imgContainer) :global(picture) {
+      display: flex;
       height: 100%;
       height: -webkit-fill-available;
       height: fill-available;
