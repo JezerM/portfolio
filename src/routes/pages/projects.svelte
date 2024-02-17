@@ -92,10 +92,10 @@
     <a href={project.link} target="_blank">
       <Card class={project.color}>
         <div style="width: 100%; height: -webkit-fill-available;" slot="image">
-          {#await getThumbnail(project) then src}
+          {#await getThumbnail(project) then image}
             <enhanced:img
               class="picture"
-              {src}
+              src={image}
               alt={project.name}
               sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
             />
