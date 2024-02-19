@@ -17,22 +17,13 @@
   ];
 </script>
 
-<div class="iconsContainer">
+<div class="flex flex-row flex-wrap gap-3">
   {#each imageNames as name}
-    <img src="{base}/icons/{name}.png" alt={name} title={name} />
+    <img
+      src="{base}/icons/{name}.png"
+      alt={name}
+      title={name}
+      class="size-8 [image-rendering:pixelated]"
+    />
   {/each}
 </div>
-
-<style>
-  .iconsContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 0.75em;
-    flex-wrap: wrap;
-  }
-  .iconsContainer > img {
-    width: 2em;
-    height: 2em;
-    image-rendering: pixelated;
-  }
-</style>

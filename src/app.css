@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Monocraft";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/Monocraft.otf");
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: Monocraft, Menlo, system-ui;
+  }
+}

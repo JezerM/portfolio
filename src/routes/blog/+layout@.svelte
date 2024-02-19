@@ -5,17 +5,10 @@
   let baseLocale = $locale == "en" ? "" : locale;
 </script>
 
-<div id="content">
+<div class="m-5 md:mx-12 md:my-8 lg:mx-20 lg:my-12">
   <a href="{base}/{baseLocale}">Portfolio</a>
   <a href="{base}/blog">Blog</a>
-  <main>
+  <main class="p-8">
     <slot />
   </main>
 </div>
-
-<style lang="less">
-  @import (reference) "../../app.less";
-  main {
-    padding: 2em;
-  }
-</style>

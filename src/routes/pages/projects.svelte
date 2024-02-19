@@ -31,6 +31,25 @@
   );
   $: term.set(search);
 
+  const colorVariants: { [key: string]: string } = {
+    red: "bg-red-bg dark:bg-red-fg",
+    green: "bg-green-bg dark:bg-green-fg",
+    yellow: "bg-yellow-bg dark:bg-yellow-fg",
+    blue: "bg-blue-bg dark:bg-blue-fg",
+    purple: "bg-purple-bg dark:bg-purple-fg",
+    aqua: "bg-aqua-bg dark:bg-aqua-fg",
+    orange: "bg-orange-bg dark:bg-orange-fg",
+  };
+  const hoverColorVariants: { [key: string]: string } = {
+    red: "hover:!bg-red-bg",
+    green: "hover:!bg-green-bg",
+    yellow: "hover:!bg-yellow-bg",
+    blue: "hover:!bg-blue-bg",
+    purple: "hover:!bg-purple-bg",
+    aqua: "hover:!bg-aqua-bg",
+    orange: "hover:!bg-orange-bg",
+  };
+
   function getProjectDescription(project: Data): string {
     switch ($locale) {
       case "en":
@@ -44,9 +63,9 @@
 
   async function getThumbnail(project: Data): Promise<string | undefined> {
     const value = thumbnails[`/static${project.image}`];
-    const result = await value();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const result = (await value()) as any;
     if (!result) return undefined;
-    console.log(result);
     return result.default;
   }
 
@@ -64,16 +83,17 @@
   }
 </script>
 
-<div id="searchContainer" class="pixelSimpleBorder">
+<div
+  class="relative mb-4 w-full pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 dark:before:bg-light-1"
+>
   <input
-    id="searchInput"
-    class="pixelSimpleBorder"
+    class="m-[0.3rem] box-border w-[fill-available] bg-light-1 px-4 py-3 text-sm text-dark-1 placeholder-dark-3 pixel-border dark:bg-dark-1 dark:text-light-1 dark:placeholder-light-3"
     type="text"
     bind:value={search}
     placeholder="Search..."
   />
 </div>
-<div id="categoriesContainer">
+<div class="mb-4 flex flex-row flex-wrap gap-1">
   <FilterButton
     text={$_("projects.clear")}
     disableClick
@@ -87,14 +107,21 @@
     />
   {/each}
 </div>
-<div class="projectsContainer">
+<div class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
   {#each $filtered as project}
-    <a href={project.link} target="_blank">
-      <Card class={project.color}>
-        <div style="width: 100%; height: -webkit-fill-available;" slot="image">
+    <a href={project.link} target="_blank" class="col-span-1 h-full">
+      <Card
+        class="
+        bg-light-0 dark:bg-dark
+        {hoverColorVariants[project.color]}
+        group h-full transition-all duration-300 hover:scale-[102%]
+        "
+        imageClass={colorVariants[project.color]}
+      >
+        <div class="h-[fill-available] w-full" slot="image">
           {#await getThumbnail(project) then image}
             <enhanced:img
-              class="picture"
+              class="flex h-[fill-available]"
               src={image}
               alt={project.name}
               sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
@@ -102,130 +129,11 @@
           {/await}
         </div>
 
-        <h4>{project.name}</h4>
-        <p class="projectDescription">
+        <h4 class="font-bold group-hover:text-light-0">{project.name}</h4>
+        <p class="text-sm group-hover:text-light-0">
           {getProjectDescription(project)}
         </p>
       </Card>
     </a>
   {/each}
 </div>
-
-<style lang="less">
-  @import (reference) "../../app.less";
-  .projectsContainer {
-    display: grid;
-    gap: 1.5em;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-
-    @media (min-width: @md) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    @media (min-width: @xl) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    @media (min-width: @2xl) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    a {
-      grid-column: span 1 / span 1;
-      height: 100%;
-    }
-
-    :global(.card) {
-      background-color: var(--bg);
-      height: 100%;
-      transition: background-color 0.25s, transform 0.5s;
-    }
-    :global(.card):hover {
-      background-color: var(--cardColor);
-      transform: scale(1.02);
-    }
-    :global(.card) > :global(.imgContainer) {
-      background-color: var(--cardColor);
-    }
-
-    :global(.imgContainer) :global(picture) {
-      display: flex;
-      height: 100%;
-      height: -webkit-fill-available;
-      height: fill-available;
-      height: -moz-available;
-    }
-  }
-
-  :global(:root):is(.light) {
-    :global(.card):hover {
-      color: var(--bg);
-    }
-  }
-
-  .projectDescription {
-    font-size: 14px;
-    margin: 0;
-  }
-
-  #searchContainer {
-    width: 100%;
-    margin: 0 0 1em;
-    position: relative;
-    &::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      background-color: var(--fg);
-      z-index: -1;
-    }
-  }
-
-  #searchInput {
-    width: -webkit-fill-available;
-    width: fill-available;
-    width: -moz-available;
-    box-sizing: border-box;
-    padding: 0.75em 1em;
-    background-color: var(--bg1);
-    margin: 0.3rem;
-    border: none;
-    color: var(--fg);
-    font-family: Monocraft;
-    font-size: 14px;
-
-    &::placeholder {
-      color: var(--fg3);
-    }
-  }
-
-  #categoriesContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25em;
-    margin: 0 0 1em;
-  }
-
-  :global(.card.red) {
-    --cardColor: var(--bgRed);
-  }
-  :global(.card.green) {
-    --cardColor: var(--bgGreen);
-  }
-  :global(.card.yellow) {
-    --cardColor: var(--bgYellow);
-  }
-  :global(.card.blue) {
-    --cardColor: var(--bgBlue);
-  }
-  :global(.card.purple) {
-    --cardColor: var(--bgPurple);
-  }
-  :global(.card.aqua) {
-    --cardColor: var(--bgAqua);
-  }
-  :global(.card.orange) {
-    --cardColor: var(--bgOrange);
-  }
-</style>

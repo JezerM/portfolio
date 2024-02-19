@@ -1,5 +1,4 @@
 <script lang="ts">
-  import "../../app.less";
   import { fade } from "svelte/transition";
   import NavBar from "$lib/NavBar.svelte";
   import ExtraData from "$lib/ExtraData.svelte";
@@ -39,66 +38,21 @@
   <meta name="twitter:description" content={$_("head.description")} />
 </svelte:head>
 
-<div id="content">
+<div class="m-5 md:mx-12 md:my-8 lg:mx-20 lg:my-12">
   <NavBar />
 
-  <div class="mainContainer">
-    <main class="transitionContainer pixelBorder">
+  <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3 xl:grid-cols-4">
+    <main
+      class="col-span-1 grid h-fit bg-light-1 p-6 pixel-border-2 dark:bg-dark-1 sm:p-8 lg:col-span-2 xl:col-span-3"
+    >
       {#key previous}
         <div in:fade={fadeIn} out:fade={fadeOut}>
           <slot />
         </div>
       {/key}
     </main>
-    <aside>
+    <aside class="col-span-1 w-full">
       <ExtraData />
     </aside>
   </div>
 </div>
-
-<style lang="less">
-  @import (reference) "../../app.less";
-  .transitionContainer {
-    height: fit-content;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    > :global(*) {
-      grid-column: 1;
-      grid-row: 1;
-    }
-  }
-
-  main {
-    grid-column: span 1 / span 1;
-    padding: 1.5em;
-    background-color: var(--bg1);
-
-    @media (min-width: @sm) {
-      padding: 2em;
-    }
-    @media (min-width: @lg) {
-      grid-column: span 2 / span 2;
-    }
-    @media (min-width: @xl) {
-      grid-column: span 3 / span 3;
-    }
-  }
-  aside {
-    width: 100%;
-    grid-column: span 1 / span 1;
-  }
-
-  .mainContainer {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    @media (min-width: @lg) {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    @media (min-width: @xl) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    margin-top: 2em;
-    gap: 2em;
-  }
-</style>

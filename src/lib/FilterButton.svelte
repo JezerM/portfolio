@@ -5,38 +5,11 @@
   export let active = false;
 </script>
 
-<button class:active on:click={() => (active = disableClick ? active : !active)} on:click>
+<button
+  class="bg-light-0 px-3 py-2 text-sm transition-colors hover:bg-blue-bg data-[active]:!bg-aqua-bg-light data-[active]:hover:!bg-aqua-fg dark:bg-dark dark:hover:bg-blue-bg"
+  on:click={() => (active = disableClick ? active : !active)}
+  on:click
+  data-active={active ? "" : undefined}
+>
   <span>{text}</span>
 </button>
-
-<noscript>
-  <style lang="less">
-    @media (prefers-color-scheme: light) {
-      button:hover,
-      button:active {
-        color: var(--bg);
-      }
-    }
-  </style>
-</noscript>
-
-<style lang="less">
-  button {
-    font-size: 14px;
-    padding: 0.5em 0.75em;
-    background-color: var(--bg);
-    &.active {
-      background-color: var(--bgAqua);
-    }
-    &:hover {
-      background-color: var(--bgBlue);
-    }
-  }
-
-  :global(:root):is(.light) {
-    button:hover,
-    button:active {
-      color: var(--bg);
-    }
-  }
-</style>

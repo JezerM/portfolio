@@ -2,7 +2,6 @@
   import { browser } from "$app/environment";
   import { base } from "$app/paths";
   import { _ } from "svelte-i18n";
-  import { locale } from "svelte-i18n";
   import ImgIcon from "$lib/ImgIcon.svelte";
   import { baseLocale } from "./i18n";
 
@@ -12,9 +11,9 @@
   function setAppearance(isDark: boolean) {
     darkMode = isDark;
     if (darkMode) {
-      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
     }
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }
@@ -56,155 +55,79 @@
   }
 </script>
 
-<nav class="navBar pixelSimpleBorder">
-  <ul id="navLinks">
-    <li class="navElement blueLink">
-      <a href="{$baseLocale}/">
-        <ImgIcon src="{base}/icons/Home.png" class="bgFgBlue" />
+<nav class="flex flex-row justify-between bg-light-1 pixel-border dark:bg-dark-1">
+  <ul class="flex flex-row">
+    <li class="text-blue-fg-light dark:text-blue-fg">
+      <a
+        href="{$baseLocale}/"
+        class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
+      >
+        <ImgIcon src="{base}/icons/Home.png" class="bg-blue-fg-light dark:bg-blue-fg" />
         <span>{$_("navigation.home")}</span>
       </a>
     </li>
-    <li class="navElement purpleLink">
-      <a href="{$baseLocale}/projects">
-        <ImgIcon src="{base}/icons/Folder.png" class="bgFgPurple" />
+    <li class="text-purple-fg-light dark:text-purple-fg">
+      <a
+        href="{$baseLocale}/projects"
+        class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
+      >
+        <ImgIcon src="{base}/icons/Folder.png" class="bg-purple-fg-light dark:bg-purple-fg" />
         <span>{$_("navigation.projects")}</span>
       </a>
     </li>
-    <li class="navElement aquaLink">
-      <a href="{$baseLocale}/contact">
-        <ImgIcon src="{base}/icons/Contact.png" class="bgFgAqua" />
+    <li class="text-aqua-fg-light dark:text-aqua-fg">
+      <a
+        href="{$baseLocale}/contact"
+        class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
+      >
+        <ImgIcon src="{base}/icons/Contact.png" class="bg-aqua-fg-light dark:bg-aqua-fg" />
         <span>{$_("navigation.contact")}</span>
       </a>
     </li>
   </ul>
 
-  <ul id="socialLinks">
-    <li class="navElement alwaysVisible hideNotJavascript">
+  <ul class="flex flex-row">
+    <li class="hideNotJavascript">
       <button
-        class="darkToggle"
+        class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
         on:click={() => toggleDarkMode()}
         title={$_("navigation.toggle_dark_mode")}
       >
         <ImgIcon
           src={darkMode ? `${base}/icons/Moon.png` : `${base}/icons/Sun.png`}
-          class="bgFgBlue"
+          class="bg-blue-bg-light dark:bg-blue-fg"
         />
       </button>
     </li>
-    <li class="navElement">
+    <li class="hidden min-[510px]:block">
       <a
         href="http://discordapp.com/users/530819150969438208"
         target="_blank"
         title={$_("navigation.discord_user")}
+        class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/Discord.png" class="bgDiscord" />
+        <ImgIcon src="{base}/icons/Discord.png" class="size-6 bg-discord sm:size-8" />
       </a>
     </li>
-    <li class="navElement">
-      <a href="https://github.com/JezerM" target="_blank" title={$_("navigation.github_profile")}>
-        <ImgIcon src="{base}/icons/GitHub.png" class="bgWhite" />
+    <li class="hidden min-[510px]:block">
+      <a
+        href="https://github.com/JezerM"
+        target="_blank"
+        title={$_("navigation.github_profile")}
+        class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
+      >
+        <ImgIcon src="{base}/icons/GitHub.png" class="size-6 bg-black dark:bg-white sm:size-8" />
       </a>
     </li>
-    <li class="navElement">
+    <li class="hidden min-[510px]:block">
       <a
         href="https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/"
         target="_blank"
         title={$_("navigation.linkedin_profile")}
+        class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/LinkedIn.png" class="bgLinkedIn" />
+        <ImgIcon src="{base}/icons/LinkedIn.png" class="size-6 bg-linkedin sm:size-8" />
       </a>
     </li>
   </ul>
 </nav>
-
-<style lang="less">
-  @import (reference) "../app.less";
-
-  nav.navBar {
-    background-color: var(--bg1);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    > ul {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  #navLinks {
-    > .navElement {
-      span {
-        display: none;
-        @media (min-width: 974px) {
-          display: block;
-        }
-      }
-    }
-  }
-
-  #socialLinks {
-    gap: 0em;
-
-    > .navElement:not(.alwaysVisible) {
-      display: none;
-
-      @media (min-width: @socialLinksMin) {
-        display: block;
-      }
-
-      :global(div.icon) {
-        width: 1.5em;
-        height: 1.5em;
-        @media (min-width: @sm) {
-          width: 2em;
-          height: 2em;
-        }
-        image-rendering: pixelated;
-      }
-
-      > a {
-        padding: 0em 0.8em;
-        height: 100%;
-      }
-    }
-  }
-
-  .navElement {
-    > a,
-    .darkToggle {
-      display: flex;
-      align-items: center;
-      gap: 0.5em;
-      padding: 1em 1.25em;
-      background-color: transparent;
-      cursor: pointer;
-
-      &:hover,
-      &:focus {
-        background-color: var(--bg2);
-      }
-
-      &:visited {
-        color: inherit;
-      }
-    }
-  }
-  .darkToggle {
-    padding: 0em 0.8em !important;
-    height: 100%;
-  }
-
-  .blueLink {
-    color: var(--fgBlue);
-  }
-  .purpleLink {
-    color: var(--fgPurple);
-  }
-  .aquaLink {
-    color: var(--fgAqua);
-  }
-</style>

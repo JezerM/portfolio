@@ -73,14 +73,15 @@
     <script>
       localStorage.theme === "dark" ||
       (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-        ? document.documentElement.classList.remove("light")
-        : document.documentElement.classList.add("light");
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+      console.log(localStorage.theme);
     </script>
     <noscript>
       <link rel="stylesheet" href="%sveltekit.assets%/queries.css" />
     </noscript>
   </head>
-  <body>
+  <body class="text-dark-1 dark:text-light-1 bg-light-0 dark:bg-dark">
     <div>%sveltekit.body%</div>
   </body>
 </html>

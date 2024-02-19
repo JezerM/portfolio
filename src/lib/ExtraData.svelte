@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { base } from "$app/paths";
   import { goto } from "$app/navigation";
   import { locale, _ } from "svelte-i18n";
   import { localizePath } from "./utils";
@@ -41,169 +40,63 @@
   }
 </script>
 
-<div class="infoContainer pixelBorder">
-  <h3>{$_("extra_data.title")}</h3>
+<div class="flex flex-col gap-2 bg-light-1 p-6 pixel-border-2 dark:bg-dark-1 sm:p-8">
+  <h3 class="mb-4 text-lg font-bold">{$_("extra_data.title")}</h3>
 
   {#each Object.entries(data) as [key, value]}
-    <div class="data">
+    <div class="flex w-full flex-row items-center justify-between gap-2">
       <span>{$_(`extra_data.${key}`)}</span>
-      <span>{value}</span>
+      <span class="text-end">{value}</span>
     </div>
   {/each}
 
-  <div class="data">
+  <div class="flex w-full flex-row items-center justify-between gap-2">
     <label for="cvLink">Currículum Vitae</label>
-    <div class="actionContainer pixelSimpleBorder">
+    <div
+      class="group relative flex pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 before:transition-colors dark:before:bg-light-1 [&:is(:hover,:focus-within)]:before:bg-orange-bg"
+    >
       <a
-        id="cvLink"
-        class="actionElement pixelSimpleBorder"
-        href="{base}/cv/{cvLang}.pdf"
+        class="m-[0.3rem] flex items-center gap-2 bg-light-1 p-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
+        href="/cv/{cvLang}.pdf"
         target="_blank"
         title={$_("extra_data.cv_title")}
       >
         <span>{$_("extra_data.cv_open")}</span>
-        <ImgIcon src="{base}/icons/Folder.png" class="bgFg" />
+        <ImgIcon
+          src="/icons/Folder.png"
+          class="bg-dark-1 group-[&:is(:hover,:focus-within)]:bg-light-1 dark:bg-light-1"
+        />
       </a>
     </div>
   </div>
 
-  <span class="blue">#SOSNicaragua</span>
+  <span class="text-blue-fg-light dark:text-blue-fg">#SOSNicaragua</span>
 
-  <div id="localeOptionsContainer" class="actionContainer pixelSimpleBorder hideNotJavascript">
+  <div
+    class="hideNotJavascript group relative flex w-full pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 before:transition-colors dark:before:bg-light-1 [&:is(:hover,:focus-within)]:before:bg-orange-bg"
+  >
     <select
-      id="localeOptions"
-      class="actionElement pixelSimpleBorder"
+      class="relative m-[0.3rem] box-border flex w-full appearance-none gap-2 rounded-none bg-light-1 px-4 py-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
       on:change={handleLocaleChange}
     >
       <option value="en" selected={$locale == "en"}>English</option>
       <option value="es" selected={$locale == "es"}>Español</option>
     </select>
-    <ImgIcon src="{base}/icons/CaretDown.png" class="bgFg selectIcon" />
+    <ImgIcon
+      src="/icons/CaretDown.png"
+      class="pointer-events-none absolute bottom-1/2 right-3 top-1/2 mb-auto mt-auto bg-dark-1 group-[&:is(:hover,:focus-within)]:bg-light-1 dark:bg-light-1"
+    />
   </div>
 
-  <div class="localeLinkContainer flexNotJavascript">
+  <div class="flexNotJavascript hidden flex-col pt-1">
     <span>{$_("extra_data.language")}</span>
-    <ul>
-      <li>
+    <ul class="ml-2 mt-2">
+      <li class="transition-colors hover:text-blue-fg-light">
         <a href={localizePath("en")}>English</a>
       </li>
-      <li>
+      <li class="transition-colors hover:text-blue-fg-light">
         <a href={localizePath("es")}>Spanish</a>
       </li>
     </ul>
   </div>
 </div>
-
-<style lang="less">
-  @import (reference) "../app.less";
-
-  .infoContainer {
-    padding: 1.5em;
-    background-color: var(--bg1);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-
-    @media (min-width: @sm) {
-      padding: 2em;
-    }
-  }
-
-  .data {
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0.5em;
-
-    > span:last-child {
-      text-align: end;
-    }
-  }
-
-  .blue {
-    color: var(--fgBlue);
-  }
-
-  .actionContainer {
-    display: flex;
-    position: relative;
-
-    &::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      background-color: var(--fg);
-      z-index: -1;
-    }
-  }
-  .actionContainer > .actionElement {
-    appearance: none;
-    box-sizing: border-box;
-    background-color: var(--bg1);
-    border-radius: 0;
-    border: 0;
-    margin: 0.3rem;
-    padding: 0.5em 1em;
-    color: var(--fg);
-    font-family: Monocraft;
-    font-size: 14px;
-
-    transition: background-color 0.25s;
-
-    &:hover {
-      background-color: var(--bg2);
-    }
-  }
-  :global(.selectIcon) {
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    margin-top: auto;
-    margin-bottom: auto;
-    right: 0.75em;
-    pointer-events: none;
-  }
-  #localeOptionsContainer {
-    width: 100%;
-  }
-  #localeOptions {
-    width: -webkit-fill-available;
-    width: fill-available;
-    width: -moz-available;
-    position: relative;
-  }
-
-  #cvLink {
-    display: flex;
-    gap: 0.5em;
-    padding: 0.5em;
-
-    transition: background-color 0.25s;
-
-    &:hover {
-      background-color: var(--bg2);
-    }
-  }
-
-  .localeLinkContainer {
-    display: none;
-    flex-direction: column;
-    padding-top: 0.25em;
-
-    ul {
-      margin: 0;
-      margin-top: 0.5em;
-      li {
-        transition: color 0.25s;
-
-        &:hover {
-          color: var(--fgBlue);
-        }
-      }
-    }
-  }
-</style>

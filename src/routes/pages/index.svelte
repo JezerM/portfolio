@@ -8,14 +8,14 @@
 </script>
 
 <div>
-  <div class="infoContainer">
+  <div class="mb-6 flex flex-col items-center justify-start gap-6 md:flex-row">
     <div
-      class="pictureContainer"
+      class="bg-purple-fg-light p-2 [mask-repeat:no-repeat] [mask-size:100%] dark:bg-purple-fg"
       style:mask-image="url('{CircleUrl}')"
       style:-webkit-mask-image="url('{CircleUrl}')"
     >
       <enhanced:img
-        class="picture"
+        class="block size-44 max-w-none [mask-size:100%]"
         style:mask-image="url('{CircleUrl}')"
         style:-webkit-mask-image="url('{CircleUrl}')"
         src="/static/JezerPicture.png"
@@ -23,8 +23,8 @@
       />
     </div>
     <div id="infoSubContainer">
-      <h2>Jezer Mejía</h2>
-      <p>
+      <h2 class="mb-5 text-2xl font-bold">Jezer Mejía</h2>
+      <p class="my-4">
         {$_("home.info_1")}<br />
         {$_("home.info_2")}<br />
         {$_("home.info_3")}
@@ -33,46 +33,16 @@
     </div>
   </div>
 
-  <div id="aboutMeContainer">
-    <h2>{$_("home.about_title")}</h2>
-    <p>
+  <div>
+    <h2 class="mb-5 text-2xl font-bold">{$_("home.about_title")}</h2>
+    <p class="my-4">
       {$_("home.about_1")}
     </p>
-    <p>
+    <p class="my-4">
       {$_("home.about_2")}
     </p>
-    <p>
+    <p class="my-4">
       {$_("home.about_3")}
     </p>
   </div>
 </div>
-
-<style lang="less">
-  @import (reference) "../../app.less";
-  .infoContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    gap: 1.5em;
-    margin-bottom: 1.5em;
-    @media (min-width: @md) {
-      flex-direction: row;
-    }
-  }
-  .picture {
-    display: block;
-    width: 11.25em;
-    height: 11.25em;
-    mask-size: 100%;
-    -webkit-mask-size: 100%;
-  }
-  .pictureContainer {
-    background-color: var(--fgPurple);
-    padding: 0.4em;
-    mask-size: 100%;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-  }
-</style>
