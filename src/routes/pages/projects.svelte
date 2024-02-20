@@ -1,14 +1,15 @@
 <script lang="ts">
   import { writable, derived } from "svelte/store";
   import Card from "$lib/Card.svelte";
-  import data from "$lib/projects.json";
+  import projects from "$lib/projects.json";
   import FilterButton from "$lib/FilterButton.svelte";
-  import { thumbnails } from "$lib/images";
   import { locale, _ } from "svelte-i18n";
+  import type { PageData } from "../[[language=lang]]/projects/$types";
 
-  type Data = (typeof data)[0];
+  export let data: PageData;
+  type Data = (typeof projects)[0];
 
-  const flat = data.flatMap((v) => v.categories);
+  const flat = projects.flatMap((v) => v.categories);
   const categories = Array.from(new Set(flat));
 
   const selectedCategories = new Set<string>();
@@ -18,7 +19,7 @@
   let term = writable("");
 
   const filtered = derived(
-    [term, selectedTerms, writable(data)],
+    [term, selectedTerms, writable(projects)],
     ([$term, $selectedTerms, $items]) => {
       let f: Data[] = $items.filter((x) => x.name.toLowerCase().includes($term.toLowerCase()));
       if ($selectedTerms.size > 0) {
@@ -58,14 +59,6 @@
       default:
     }
     return "";
-  }
-
-  async function getThumbnail(project: Data): Promise<string | undefined> {
-    const value = thumbnails[`/static${project.image}`];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const result = (await value()) as any;
-    if (!result) return undefined;
-    return result.default;
   }
 
   function toggleCategory(category: string) {
@@ -118,14 +111,12 @@
         imageClass={colorVariants[project.color]}
       >
         <div class="h-[fill-available] w-full" slot="image">
-          {#await getThumbnail(project) then image}
-            <enhanced:img
-              class="flex h-[fill-available]"
-              src={image}
-              alt={project.name}
-              sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
-            />
-          {/await}
+          <enhanced:img
+            class="flex h-[fill-available]"
+            src={data.thumbnails[project.image]}
+            alt={project.name}
+            sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
+          />
         </div>
 
         <h4 class="font-bold group-hover:text-light-0">{project.name}</h4>
