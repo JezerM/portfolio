@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { locale, _ } from "svelte-i18n";
+  import { _ } from "svelte-i18n";
   import { socialLinks } from "$lib/store";
-
-  console.log("\tInside contact", $locale);
 </script>
 
 <div class="contact">

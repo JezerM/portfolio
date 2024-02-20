@@ -1,23 +1,15 @@
 <script lang="ts">
   import LanguageIcons from "$lib/LanguageIcons.svelte";
-
-  const CircleUrl = `/Circle.png`;
-
-  import { _, locale } from "svelte-i18n";
-  console.log("\tInside Home", $locale);
+  import { _ } from "svelte-i18n";
 </script>
 
 <div>
   <div class="mb-6 flex flex-col items-center justify-start gap-6 md:flex-row">
     <div
-      class="bg-purple-fg-light p-2 [mask-repeat:no-repeat] [mask-size:100%] dark:bg-purple-fg"
-      style:mask-image="url('{CircleUrl}')"
-      style:-webkit-mask-image="url('{CircleUrl}')"
+      class="bg-purple-fg-light p-2 [mask-image:url('/Circle.png')] [mask-repeat:no-repeat] [mask-size:100%] dark:bg-purple-fg"
     >
       <enhanced:img
-        class="block size-44 max-w-none [mask-size:100%]"
-        style:mask-image="url('{CircleUrl}')"
-        style:-webkit-mask-image="url('{CircleUrl}')"
+        class="block size-44 max-w-none [mask-image:url('/Circle.png')] [mask-size:100%]"
         src="/static/JezerPicture.png"
         alt="JezerM anime"
       />

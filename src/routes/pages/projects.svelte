@@ -5,7 +5,6 @@
   import FilterButton from "$lib/FilterButton.svelte";
   import { thumbnails } from "$lib/images";
   import { locale, _ } from "svelte-i18n";
-  console.log("\tInside projects", $locale);
 
   type Data = (typeof data)[0];
 
