@@ -63,7 +63,7 @@
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
         <ImgIcon src="{base}/icons/Home.png" class="bg-blue-fg-light dark:bg-blue-fg" />
-        <span>{$_("navigation.home")}</span>
+        <span class="hidden min-[974px]:block">{$_("navigation.home")}</span>
       </a>
     </li>
     <li class="text-purple-fg-light dark:text-purple-fg">
@@ -72,7 +72,7 @@
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
         <ImgIcon src="{base}/icons/Folder.png" class="bg-purple-fg-light dark:bg-purple-fg" />
-        <span>{$_("navigation.projects")}</span>
+        <span class="hidden min-[974px]:block">{$_("navigation.projects")}</span>
       </a>
     </li>
     <li class="text-aqua-fg-light dark:text-aqua-fg">
@@ -81,7 +81,7 @@
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
         <ImgIcon src="{base}/icons/Contact.png" class="bg-aqua-fg-light dark:bg-aqua-fg" />
-        <span>{$_("navigation.contact")}</span>
+        <span class="hidden min-[974px]:block">{$_("navigation.contact")}</span>
       </a>
     </li>
   </ul>
