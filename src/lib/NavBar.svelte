@@ -1,57 +1,12 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
-  import { base } from "$app/paths";
   import { _ } from "svelte-i18n";
   import ImgIcon from "$lib/ImgIcon.svelte";
   import { baseLocale } from "./i18n";
-
-  let darkMode = false;
-  let forced = false;
-
-  function setAppearance(isDark: boolean) {
-    darkMode = isDark;
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }
-  function setForcedAppearance() {
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const prefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-
-    if ((prefersDark && darkMode) || (prefersLight && !darkMode)) {
-      forced = false;
-    } else {
-      forced = true;
-    }
-  }
-
-  if (browser) {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      setAppearance(true);
-    } else {
-      setAppearance(false);
-    }
-    setForcedAppearance();
-
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (ev) => {
-      if (forced) return;
-      if (ev.matches) {
-        setAppearance(true);
-      } else {
-        setAppearance(false);
-      }
-    });
-  }
+  import { darkMode, setAppearance } from "./dark-mode";
+  import { get } from "svelte/store";
 
   function toggleDarkMode() {
-    setAppearance(!darkMode);
-    setForcedAppearance();
+    setAppearance(!get(darkMode));
   }
 </script>
 
@@ -62,7 +17,7 @@
         href="{$baseLocale}/"
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/Home.png" class="bg-blue-fg-light dark:bg-blue-fg" />
+        <ImgIcon src="/icons/Home.png" class="bg-blue-fg-light dark:bg-blue-fg" />
         <span class="hidden min-[974px]:block">{$_("navigation.home")}</span>
       </a>
     </li>
@@ -71,7 +26,7 @@
         href="{$baseLocale}/projects"
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/Folder.png" class="bg-purple-fg-light dark:bg-purple-fg" />
+        <ImgIcon src="/icons/Folder.png" class="bg-purple-fg-light dark:bg-purple-fg" />
         <span class="hidden min-[974px]:block">{$_("navigation.projects")}</span>
       </a>
     </li>
@@ -80,7 +35,7 @@
         href="{$baseLocale}/contact"
         class="flex items-center gap-2 px-5 py-4 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/Contact.png" class="bg-aqua-fg-light dark:bg-aqua-fg" />
+        <ImgIcon src="/icons/Contact.png" class="bg-aqua-fg-light dark:bg-aqua-fg" />
         <span class="hidden min-[974px]:block">{$_("navigation.contact")}</span>
       </a>
     </li>
@@ -93,10 +48,8 @@
         on:click={() => toggleDarkMode()}
         title={$_("navigation.toggle_dark_mode")}
       >
-        <ImgIcon
-          src={darkMode ? `${base}/icons/Moon.png` : `${base}/icons/Sun.png`}
-          class="bg-blue-bg-light dark:bg-blue-fg"
-        />
+        <ImgIcon src="/icons/Sun.png" class="bg-blue-bg-light dark:hidden" />
+        <ImgIcon src="/icons/Moon.png" class="hidden bg-blue-fg dark:block" />
       </button>
     </li>
     <li class="hidden min-[510px]:block">
@@ -106,7 +59,7 @@
         title={$_("navigation.discord_user")}
         class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/Discord.png" class="size-6 bg-discord sm:size-8" />
+        <ImgIcon src="/icons/Discord.png" class="size-6 bg-discord sm:size-8" />
       </a>
     </li>
     <li class="hidden min-[510px]:block">
@@ -116,7 +69,7 @@
         title={$_("navigation.github_profile")}
         class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/GitHub.png" class="size-6 bg-black dark:bg-white sm:size-8" />
+        <ImgIcon src="/icons/GitHub.png" class="size-6 bg-black dark:bg-white sm:size-8" />
       </a>
     </li>
     <li class="hidden min-[510px]:block">
@@ -126,7 +79,7 @@
         title={$_("navigation.linkedin_profile")}
         class="flex h-full items-center gap-2 px-3 transition-colors hover:bg-light-2 focus:bg-light-2 dark:hover:bg-dark-2 dark:focus:bg-dark-2"
       >
-        <ImgIcon src="{base}/icons/LinkedIn.png" class="size-6 bg-linkedin sm:size-8" />
+        <ImgIcon src="/icons/LinkedIn.png" class="size-6 bg-linkedin sm:size-8" />
       </a>
     </li>
   </ul>
