@@ -10,7 +10,7 @@
   type Data = (typeof projects)[0];
 
   const flat = projects.flatMap((v) => v.categories);
-  const categories = Array.from(new Set(flat));
+  const categories = Array.from(new Set(flat)).sort();
 
   const selectedCategories = new Set<string>();
   const selectedTerms = writable(selectedCategories);
