@@ -33,6 +33,17 @@
     "image": "/thumbnails/sea-greeter.png"
   },
   {
+    "name": "Florece la memoria",
+    "description": {
+      "en": "Web application to build Day of the Dead commemorative altars.",
+      "es": "Aplicacióbn web para construir altares conmemorativos del día de muertos."
+    },
+    "link": "https://ladignarabia.com/florece-la-memoria/",
+    "categories": ["Web", "Svelte"],
+    "color": "orange",
+    "image": "/thumbnails/florece-la-memoria.png"
+  },
+  {
     "name": "Web Greeter page",
     "description": {
       "en": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
