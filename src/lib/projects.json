@@ -44,28 +44,6 @@
     "image": "/thumbnails/florece-la-memoria.png"
   },
   {
-    "name": "Web Greeter page",
-    "description": {
-      "en": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
-      "es": "Página web que tiene por objetivo presentar mis 3 greeters para LightDM, así como contener los temas por defecto y de la comunidad."
-    },
-    "link": "https://jezerm.github.io/web-greeter-page/",
-    "categories": ["Web", "Vue"],
-    "color": "blue",
-    "image": "/thumbnails/web-greeter-page.png"
-  },
-  {
-    "name": "Dotfiles",
-    "description": {
-      "en": "My awesome and incredible dotfiles.",
-      "es": "Mis increíbles, awesome!, dotfiles."
-    },
-    "link": "https://github.com/JezerM/dotfiles",
-    "categories": ["Linux", "Config"],
-    "color": "purple",
-    "image": "/thumbnails/dotfiles.png"
-  },
-  {
     "name": "HealthZone App",
     "description": {
       "en": "Android application to manage medical appointments.",
@@ -86,6 +64,28 @@
     "categories": ["Android", "Kotlin"],
     "color": "blue",
     "image": "/thumbnails/liberlu.png"
+  },
+  {
+    "name": "Web Greeter page",
+    "description": {
+      "en": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
+      "es": "Página web que tiene por objetivo presentar mis 3 greeters para LightDM, así como contener los temas por defecto y de la comunidad."
+    },
+    "link": "https://jezerm.github.io/web-greeter-page/",
+    "categories": ["Web", "Vue"],
+    "color": "blue",
+    "image": "/thumbnails/web-greeter-page.png"
+  },
+  {
+    "name": "Dotfiles",
+    "description": {
+      "en": "My awesome and incredible dotfiles.",
+      "es": "Mis increíbles, awesome!, dotfiles."
+    },
+    "link": "https://github.com/JezerM/dotfiles",
+    "categories": ["Linux", "Config"],
+    "color": "purple",
+    "image": "/thumbnails/dotfiles.png"
   },
   {
     "name": "Sistema de Entrada y Salida",
