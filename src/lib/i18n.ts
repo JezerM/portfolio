@@ -1,6 +1,5 @@
 import { init, addMessages, locale } from "svelte-i18n";
 import { derived } from "svelte/store";
-import { base } from "$app/paths";
 
 import en from "../locales/en.json";
 import es from "../locales/es.json";
@@ -21,11 +20,11 @@ init({
 /**
  * Base path with current locale included
  * Ex:
- * `"/es" | "/base/fr"`
+ * `"/es" | "/fr"`
  */
 export const baseLocale = derived(locale, ($locale) => {
-  let endRoute = `${base}/${$locale}`;
-  if ($locale == "en") endRoute = `${base}`;
+  let endRoute = `/${$locale}`;
+  if ($locale == "en") endRoute = ``;
 
   return endRoute.replace(/([^:]\/)\/+/g, "$1");
 });

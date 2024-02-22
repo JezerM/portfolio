@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { base } from "$app/paths";
-
   const imageNames = [
     "C",
     "Rust",
@@ -20,7 +18,7 @@
 <div class="flex flex-row flex-wrap gap-3">
   {#each imageNames as name}
     <img
-      src="{base}/icons/{name}.png"
+      src="/icons/{name}.png"
       alt={name}
       title={name}
       class="size-8 [image-rendering:pixelated]"

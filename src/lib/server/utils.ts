@@ -1,5 +1,3 @@
-import { base } from "$app/paths";
-
 export interface IMarkdown {
   title: string;
   date: Date;
@@ -14,7 +12,7 @@ export const fetchMarkdownPosts = async () => {
     iterablePostFiles.map(async ([path, resolver]) => {
       const { metadata } = (await resolver()) as { metadata: IMarkdown };
       const postName = path.replace(/\/src\/posts\/(.*)\.md/, "$1");
-      const postPath = `${base}/blog/${postName}`;
+      const postPath = `/blog/${postName}`;
 
       return {
         meta: metadata,
