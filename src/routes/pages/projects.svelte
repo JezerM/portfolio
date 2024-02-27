@@ -79,7 +79,7 @@
   class="relative mb-4 w-full pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 dark:before:bg-light-1"
 >
   <input
-    class="m-[0.3rem] box-border w-[fill-available] bg-light-1 px-4 py-3 text-sm text-dark-1 placeholder-dark-3 pixel-border dark:bg-dark-1 dark:text-light-1 dark:placeholder-light-3"
+    class="m-[0.3rem] box-border w-[stretch] bg-light-1 px-4 py-3 text-sm text-dark-1 placeholder-dark-3 pixel-border dark:bg-dark-1 dark:text-light-1 dark:placeholder-light-3"
     type="text"
     bind:value={search}
     placeholder="Search..."
@@ -110,9 +110,9 @@
         "
         imageClass={colorVariants[project.color]}
       >
-        <div class="h-[fill-available] w-full" slot="image">
+        <div class="h-[stretch] w-full" slot="image">
           <enhanced:img
-            class="flex h-[fill-available] transition-opacity duration-300 group-hover:opacity-70"
+            class="flex h-[stretch] transition-opacity duration-300 group-hover:opacity-70"
             src={data.thumbnails[project.image]}
             alt={project.name}
             sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
