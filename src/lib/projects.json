@@ -36,7 +36,7 @@
     "name": "Florece la memoria",
     "description": {
       "en": "Web application to build Day of the Dead commemorative altars.",
-      "es": "Aplicacióbn web para construir altares conmemorativos del día de muertos."
+      "es": "Aplicación web para construir altares conmemorativos del día de muertos."
     },
     "link": "https://ladignarabia.com/florece-la-memoria/",
     "categories": ["Web", "Svelte"],
