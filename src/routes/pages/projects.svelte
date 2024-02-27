@@ -112,7 +112,7 @@
       >
         <div class="h-[fill-available] w-full" slot="image">
           <enhanced:img
-            class="flex h-[fill-available]"
+            class="flex h-[fill-available] transition-opacity duration-300 group-hover:opacity-70"
             src={data.thumbnails[project.image]}
             alt={project.name}
             sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
