@@ -76,6 +76,7 @@ export default {
       },
       white: "#FFFFFF",
       black: "#000000",
+      transparent: "#00000000",
       discord: "#5765f2",
       linkedin: "#0b66c2",
     },

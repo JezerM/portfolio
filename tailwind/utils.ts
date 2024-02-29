@@ -79,8 +79,18 @@ export default function (api: PluginAPI) {
     },
   });
   api.addUtilities({
+    ".pixel-border\\/0": {
+      "clip-path": generatePixelBorder(1, 0, "rem"),
+    },
+  });
+  api.addUtilities({
     ".pixel-border-2": {
       "clip-path": generatePixelBorder(2, 0.6, "rem"),
+    },
+  });
+  api.addUtilities({
+    ".pixel-border-2\\/0": {
+      "clip-path": generatePixelBorder(2, 0, "rem"),
     },
   });
   api.addUtilities({
