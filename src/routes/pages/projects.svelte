@@ -106,7 +106,7 @@
         class="
         bg-light-0 dark:bg-dark
         {hoverColorVariants[project.color]}
-        group h-full transition-all duration-300 hover:scale-[102%]
+        group h-full transition-all duration-300 pixel-border-2/0 hover:scale-[102%] hover:pixel-border-2
         "
         imageClass={colorVariants[project.color]}
       >
