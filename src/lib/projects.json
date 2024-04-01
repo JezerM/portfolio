@@ -44,13 +44,24 @@
     "image": "/thumbnails/florece-la-memoria.png"
   },
   {
+    "name": "Alajuela",
+    "description": {
+      "en": "React Native app to manage school notifications of San Rafael de Alajuela.",
+      "es": "Aplicación en React Native para manejar las notificaciones escolares de San Rafael de Alajuela."
+    },
+    "link": "https://apps.apple.com/us/app/alajuela/id6465571099",
+    "categories": ["React", "Mobile"],
+    "color": "blue",
+    "image": "/thumbnails/alajuela.png"
+  },
+  {
     "name": "HealthZone App",
     "description": {
       "en": "Android application to manage medical appointments.",
       "es": "Aplicación de Android para gestionar citas médicas."
     },
     "link": "https://github.com/JezerMejia/HealthZoneDAM",
-    "categories": ["Android", "Kotlin"],
+    "categories": ["Android", "Kotlin", "Mobile"],
     "color": "aqua",
     "image": "/thumbnails/healthzone.png"
   },
@@ -61,7 +72,7 @@
       "es": "Juego de Android para niños hecho en una noche. Aún me sorprende que haya sido capaz de hacer esto."
     },
     "link": "https://github.com/JezerMejia/HackatonProject",
-    "categories": ["Android", "Kotlin"],
+    "categories": ["Android", "Kotlin", "Mobile"],
     "color": "blue",
     "image": "/thumbnails/liberlu.png"
   },
