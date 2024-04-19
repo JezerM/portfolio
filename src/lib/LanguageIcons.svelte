@@ -8,6 +8,7 @@
     "Vue",
     "React",
     "MySQL",
+    "PostgreSQL",
     "Html",
     "Swift",
     "CSharp",
