@@ -6,6 +6,7 @@
     "NodeJS",
     "Svelte",
     "Vue",
+    "React",
     "MySQL",
     "Html",
     "Swift",
