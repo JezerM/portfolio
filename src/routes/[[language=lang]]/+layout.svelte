@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type TransitionConfig } from "svelte/transition";
+  import { fade, type TransitionConfig } from "svelte/transition";
   import NavBar from "$lib/NavBar.svelte";
   import ExtraData from "$lib/ExtraData.svelte";
   import { getUnlocalizedPath } from "$lib/utils";
@@ -24,8 +24,12 @@
   let fadeOut: TransitionParams = durFadeOut;
 
   let pixelCanvas: PixelsCanvas;
+  let validCanvas = false;
 
   function hideUntilStart(node: HTMLElement, params: TransitionParams): TransitionConfig {
+    if (!validCanvas) {
+      return fade(node, params);
+    }
     if (params.duration == 0) {
       return params;
     }
@@ -50,7 +54,10 @@
     };
   }
 
-  function pixelTransition(_node: HTMLElement, params: TransitionParams): TransitionConfig {
+  function pixelTransition(node: HTMLElement, params: TransitionParams): TransitionConfig {
+    if (!validCanvas) {
+      return fade(node, params);
+    }
     if (params.duration == 0) {
       return params;
     }
@@ -63,7 +70,6 @@
         if (t < 1 && !ran) {
           pixelCanvas.showPixels();
           ran = true;
-        } else if (t == 0) {
         }
       },
     };
@@ -97,7 +103,12 @@
     <main
       class="relative col-span-1 grid h-fit bg-light-1 p-6 pixel-border-2 dark:bg-dark-1 sm:p-8 lg:col-span-2 xl:col-span-3"
     >
-      <PixelsCanvas bind:this={pixelCanvas} />
+      <PixelsCanvas
+        bind:this={pixelCanvas}
+        on:init={(v) => {
+          validCanvas = v.detail;
+        }}
+      />
       {#key previous}
         <div in:hideUntilStart={fadeIn} out:pixelTransition={fadeOut}>
           <slot />

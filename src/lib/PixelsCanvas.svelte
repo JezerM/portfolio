@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
+  import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import { Application, Container, Graphics, GraphicsContext, Rectangle } from "pixi.js";
   import { browser } from "$app/environment";
 
@@ -84,6 +84,7 @@
   }
 
   export function showPixels() {
+    if (!app.renderer) return;
     if (interval) clearInterval(interval);
 
     const quantity = getPixelsQuantity(app.screen);
@@ -97,6 +98,7 @@
   }
 
   export function hidePixels() {
+    if (!app.renderer) return;
     if (interval) clearInterval(interval);
 
     const quantity = getPixelsQuantity(app.screen);
@@ -110,19 +112,24 @@
   }
 
   onMount(async () => {
-    await app.init({
-      canvas: canvas,
-      backgroundAlpha: 0,
-      resizeTo: divElement,
-      resolution: 1,
-      premultipliedAlpha: false,
-      antialias: false,
-      autoStart: false,
-      clearBeforeRender: false,
-      eventMode: "none",
-    });
-    app.stage.interactive = false;
-    app.stage.interactiveChildren = false;
+    try {
+      await app.init({
+        canvas: canvas,
+        backgroundAlpha: 0,
+        resizeTo: divElement,
+        antialias: false,
+        autoStart: false,
+        clearBeforeRender: false,
+        eventMode: "none",
+      });
+      app.stage.interactive = false;
+      app.stage.interactiveChildren = false;
+    } catch (err) {
+      console.error(err);
+      dispatch("init", false);
+
+      return;
+    }
 
     const resizeObserver = new ResizeObserver((entries) => {
       entries.forEach(() => {
@@ -131,6 +138,8 @@
     });
 
     resizeObserver.observe(divElement);
+
+    dispatch("init", true);
   });
 
   onDestroy(() => {
