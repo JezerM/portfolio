@@ -1,8 +1,8 @@
 <script lang="ts">
   import { writable, derived } from "svelte/store";
-  import Card from "$lib/Card.svelte";
+  import Card from "$lib/components/Card.svelte";
   import projects from "$lib/projects.json";
-  import FilterButton from "$lib/FilterButton.svelte";
+  import FilterButton from "$lib/components/FilterButton.svelte";
   import { locale, _ } from "svelte-i18n";
   import type { PageData } from "../[[language=lang]]/projects/$types";
 

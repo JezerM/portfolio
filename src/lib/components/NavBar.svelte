@@ -1,8 +1,8 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
-  import ImgIcon from "$lib/ImgIcon.svelte";
-  import { baseLocale } from "./i18n";
-  import { darkMode, setAppearance } from "./dark-mode";
+  import ImgIcon from "$lib/components/ImgIcon.svelte";
+  import { baseLocale } from "$lib/i18n";
+  import { darkMode, setAppearance } from "$lib/dark-mode";
   import { get } from "svelte/store";
 
   function toggleDarkMode() {

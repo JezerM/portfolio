@@ -2,7 +2,7 @@
   import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import { Application, Container, Graphics, GraphicsContext, Rectangle } from "pixi.js";
   import { browser } from "$app/environment";
-  import { darkMode } from "./dark-mode";
+  import { darkMode } from "$lib/dark-mode";
 
   let divElement: HTMLDivElement;
   let canvas: HTMLCanvasElement;

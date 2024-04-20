@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { locale, _ } from "svelte-i18n";
-  import { localizePath } from "./utils";
+  import { localizePath } from "$lib/utils";
   import ImgIcon from "./ImgIcon.svelte";
 
   let cvLang: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LanguageIcons from "$lib/LanguageIcons.svelte";
+  import LanguageIcons from "$lib/components/LanguageIcons.svelte";
   import { _ } from "svelte-i18n";
 </script>
 

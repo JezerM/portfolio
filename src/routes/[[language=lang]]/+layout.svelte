@@ -1,11 +1,11 @@
 <script lang="ts">
   import { fade, type TransitionConfig } from "svelte/transition";
-  import NavBar from "$lib/NavBar.svelte";
-  import ExtraData from "$lib/ExtraData.svelte";
+  import NavBar from "$lib/components/NavBar.svelte";
+  import ExtraData from "$lib/components/ExtraData.svelte";
   import { getUnlocalizedPath } from "$lib/utils";
   import { _ } from "svelte-i18n";
   import type { LayoutData } from "./$types";
-  import PixelsCanvas from "$lib/PixelsCanvas.svelte";
+  import PixelsCanvas from "$lib/components/PixelsCanvas.svelte";
 
   interface TransitionParams {
     duration: number;
