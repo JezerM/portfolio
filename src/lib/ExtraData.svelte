@@ -57,7 +57,7 @@
     >
       <a
         class="m-[0.3rem] flex items-center gap-2 bg-light-1 p-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
-        href="/cv/{cvLang}.pdf"
+        href="/{$locale ?? 'en'}/curriculum-vitae.pdf"
         target="_blank"
         title={$_("extra_data.cv_title")}
       >
