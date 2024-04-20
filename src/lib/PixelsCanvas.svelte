@@ -2,15 +2,28 @@
   import { createEventDispatcher, onDestroy, onMount } from "svelte";
   import { Application, Container, Graphics, GraphicsContext, Rectangle } from "pixi.js";
   import { browser } from "$app/environment";
+  import { darkMode } from "./dark-mode";
 
   let divElement: HTMLDivElement;
   let canvas: HTMLCanvasElement;
   const app = new Application();
 
+  const container = new Container({
+    isRenderGroup: true, // this containers transform is now handled on the GPU!
+  });
+
   const pixelSize = 24;
 
-  const pixelBlank = new GraphicsContext().rect(0, 0, pixelSize, pixelSize).fill("transparent");
-  const pixelFilled = new GraphicsContext().rect(0, 0, pixelSize, pixelSize).fill("#3c3836");
+  function drawSingleColorPixel(context: GraphicsContext, color: string) {
+    context.clear().rect(0, 0, pixelSize, pixelSize).fill(color);
+  }
+
+  const pixelBlank = new GraphicsContext();
+  const pixelFilled = new GraphicsContext();
+  drawSingleColorPixel(pixelBlank, "transparent");
+  drawSingleColorPixel(pixelFilled, "#3c3836");
+
+  const dispatch = createEventDispatcher();
 
   function getPixelsQuantity(screen: Rectangle) {
     const w = Math.floor(screen.width / pixelSize);
@@ -37,7 +50,7 @@
       let pixel = createGraphic(context);
       pixel.x = x;
       pixel.y = y;
-      app.stage.addChild(pixel);
+      container.addChild(pixel);
 
       x += pixelSize;
       if (x >= screen.width - pixelSize) {
@@ -62,7 +75,7 @@
     let sets = 0;
     interval = window.setInterval(() => {
       let count = 0;
-      for (const c of app.stage.children) {
+      for (const c of container.children) {
         const child = c as Graphics;
         const random = Math.random() < 0.5 + sets / 10;
 
@@ -78,7 +91,7 @@
       app.render();
       if (count == quantity) {
         clearInterval(interval);
-        clearChildren(app.stage);
+        clearChildren(container);
       }
     }, 50);
   }
@@ -89,7 +102,7 @@
 
     const quantity = getPixelsQuantity(app.screen);
 
-    clearChildren(app.stage);
+    clearChildren(container);
     createPixelsGrid(quantity, app.screen, pixelBlank);
 
     app.render();
@@ -103,7 +116,7 @@
 
     const quantity = getPixelsQuantity(app.screen);
 
-    clearChildren(app.stage);
+    clearChildren(container);
     createPixelsGrid(quantity, app.screen, pixelFilled);
 
     app.render();
@@ -128,8 +141,11 @@
       console.error(err);
       dispatch("init", false);
 
+      container.destroy();
       return;
     }
+
+    app.stage.addChild(container);
 
     const resizeObserver = new ResizeObserver((entries) => {
       entries.forEach(() => {
@@ -138,6 +154,11 @@
     });
 
     resizeObserver.observe(divElement);
+
+    darkMode.subscribe((dark) => {
+      if (!dark) drawSingleColorPixel(pixelFilled, "#ebdbb2");
+      else drawSingleColorPixel(pixelFilled, "#3c3836");
+    });
 
     dispatch("init", true);
   });
