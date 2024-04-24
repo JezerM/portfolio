@@ -96,7 +96,7 @@
   <meta name="twitter:description" content={$_("head.description")} />
 </svelte:head>
 
-<div class="m-5 md:mx-12 md:my-8 lg:mx-20 lg:my-12">
+<div class="container mx-auto p-5 md:py-8 lg:py-12">
   <NavBar />
 
   <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3 xl:grid-cols-4">
