@@ -14,6 +14,11 @@
 
   const pixelSize = 24;
 
+  /**
+   * Draws a single pixel with the specified color
+   * @param context Context to draw on
+   * @param color Color to set on context
+   */
   function drawSingleColorPixel(context: GraphicsContext, color: string) {
     context.clear().rect(0, 0, pixelSize, pixelSize).fill(color);
   }
@@ -25,6 +30,9 @@
 
   const dispatch = createEventDispatcher();
 
+  /**
+   * Gets pixels quantity to fit in screen
+   */
   function getPixelsQuantity(screen: Rectangle) {
     const w = Math.floor(screen.width / pixelSize);
     const h = Math.floor(screen.height / pixelSize);
@@ -34,6 +42,10 @@
 
   const pool: Graphics[] = [];
 
+  /**
+   * Creates a new Graphic ore returns an existing one from a pool
+   * @param context GraphicsContext to apply to Graphic
+   */
   function createGraphic(context: GraphicsContext) {
     let graphic = pool.pop();
     if (!graphic) {
@@ -43,6 +55,12 @@
     return graphic;
   }
 
+  /**
+   * Creates a Grid of pixels with the specified quantity
+   * @param quantity Quantity of pixels to draw
+   * @param screen The canvas rectangle
+   * @param context GraphicsContext to use for each pixel
+   */
   function createPixelsGrid(quantity: number, screen: Rectangle, context: GraphicsContext) {
     let x = 0;
     let y = 0;
@@ -62,6 +80,9 @@
 
   let interval = 0;
 
+  /**
+   * Clear all children on the specified container
+   */
   function clearChildren(container: Container) {
     const children = container.removeChildren() as Graphics[];
     for (let child of children) {
@@ -71,6 +92,11 @@
     children.length = 0;
   }
 
+  /**
+   * Executes a interval that will update the Canvas each 50ms until completed
+   * @param quantity Quantity of pixels to render
+   * @param context GraphicsContext to use for each pixel
+   */
   function executeInterval(quantity: number, context: GraphicsContext) {
     let sets = 0;
     interval = window.setInterval(() => {
