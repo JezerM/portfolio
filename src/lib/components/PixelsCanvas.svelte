@@ -3,6 +3,8 @@
   import { Application, Container, Graphics, GraphicsContext, Rectangle } from "pixi.js";
   import { browser } from "$app/environment";
   import { darkMode } from "$lib/dark-mode";
+  import { prefersReducedMotion } from "$lib/reduced-motion";
+  import { get } from "svelte/store";
 
   let divElement: HTMLDivElement;
   let canvas: HTMLCanvasElement;
@@ -151,6 +153,10 @@
   }
 
   onMount(async () => {
+    if (get(prefersReducedMotion)) {
+      return;
+    }
+
     try {
       await app.init({
         canvas: canvas,
@@ -190,7 +196,7 @@
   });
 
   onDestroy(() => {
-    if (browser) {
+    if (browser && app) {
       app.destroy(true, { children: true });
       for (const graphic of pool) {
         graphic.destroy();
