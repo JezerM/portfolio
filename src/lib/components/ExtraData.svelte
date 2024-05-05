@@ -51,11 +51,12 @@
   {/each}
 
   <div class="flex w-full flex-row items-center justify-between gap-2">
-    <label for="cvLink">Currículum Vitae</label>
+    <label for="cv-link">Currículum Vitae</label>
     <div
       class="group relative flex pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 before:transition-colors dark:before:bg-light-1 [&:is(:hover,:focus-within)]:before:bg-orange-bg"
     >
       <a
+        id="cv-link"
         class="m-[0.3rem] flex items-center gap-2 bg-light-1 p-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
         href="/{$locale ?? 'en'}/curriculum-vitae.pdf"
         target="_blank"
@@ -72,20 +73,25 @@
 
   <span class="text-blue-fg-light dark:text-blue-fg">#SOSNicaragua</span>
 
-  <div
-    class="hideNotJavascript group relative flex w-full pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 before:transition-colors dark:before:bg-light-1 [&:is(:hover,:focus-within)]:before:bg-orange-bg"
-  >
-    <select
-      class="relative m-[0.3rem] box-border flex w-full appearance-none gap-2 rounded-none bg-light-1 px-4 py-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
-      on:change={handleLocaleChange}
+  <div class="flex w-full flex-col gap-2 pt-1">
+    <label for="language-select">{$_("extra_data.language")}</label>
+
+    <div
+      class="hideNotJavascript group relative flex w-full pixel-border before:absolute before:z-[-1] before:block before:size-full before:bg-dark-1 before:transition-colors dark:before:bg-light-1 [&:is(:hover,:focus-within)]:before:bg-orange-bg"
     >
-      <option value="en" selected={$locale == "en"}>English</option>
-      <option value="es" selected={$locale == "es"}>Español</option>
-    </select>
-    <ImgIcon
-      src="/icons/CaretDown.png"
-      class="pointer-events-none absolute bottom-1/2 right-3 top-1/2 mb-auto mt-auto bg-dark-1 group-[&:is(:hover,:focus-within)]:bg-light-1 dark:bg-light-1"
-    />
+      <select
+        id="language-select"
+        class="relative m-[0.3rem] box-border flex w-full appearance-none gap-2 rounded-none bg-light-1 px-4 py-2 text-sm transition-colors pixel-border group-[&:is(:hover,:focus-within)]:bg-orange-bg group-[&:is(:hover,:focus-within)]:text-light-1 dark:bg-dark-1"
+        on:change={handleLocaleChange}
+      >
+        <option value="en" selected={$locale == "en"}>English</option>
+        <option value="es" selected={$locale == "es"}>Español</option>
+      </select>
+      <ImgIcon
+        src="/icons/CaretDown.png"
+        class="pointer-events-none absolute bottom-1/2 right-3 top-1/2 mb-auto mt-auto bg-dark-1 group-[&:is(:hover,:focus-within)]:bg-light-1 dark:bg-light-1"
+      />
+    </div>
   </div>
 
   <div class="flexNotJavascript hidden flex-col pt-1">
