@@ -119,7 +119,7 @@
           />
         </div>
 
-        <h4 class="font-bold group-hover:text-light-0">{project.name}</h4>
+        <h4 class="mb-1 font-bold group-hover:text-light-0">{project.name}</h4>
         <p class="text-sm group-hover:text-light-0">
           {getProjectDescription(project)}
         </p>

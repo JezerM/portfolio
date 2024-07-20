@@ -55,6 +55,17 @@
     "image": "/thumbnails/alajuela.png"
   },
   {
+    "name": "Pasadita",
+    "description": {
+      "en": "Residential entry system with automatic access via QR keys and micro-controllers.",
+      "es": "Sistema de Entradas a un residencial con acceso automático mediante llaves QR y micro-controladores."
+    },
+    "link": "https://github.com/FactorizacionPlus/Pasadita",
+    "categories": ["Vue", "Web", "Java", "Python", "Micro-controller"],
+    "color": "blue",
+    "image": "/thumbnails/pasadita.png"
+  },
+  {
     "name": "HealthZone App",
     "description": {
       "en": "Android application to manage medical appointments.",
