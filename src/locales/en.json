@@ -24,6 +24,7 @@
     "gender": "Gender",
     "gender_value": "Male",
     "cv_open": "Open",
+    "cv_title": "Open CV",
     "language": "Language"
   },
   "home": {
