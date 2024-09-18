@@ -93,7 +93,7 @@
       "en": "Webpage that aims to present my three web-based greeters, as well as to contain the default and community themes.",
       "es": "Página web que tiene por objetivo presentar mis 3 greeters para LightDM, así como contener los temas por defecto y de la comunidad."
     },
-    "link": "https://jezerm.github.io/web-greeter-page/",
+    "link": "https://web-greeter-page.vercel.app",
     "categories": ["Web", "Vue"],
     "color": "blue",
     "image": "/thumbnails/web-greeter-page.png"
