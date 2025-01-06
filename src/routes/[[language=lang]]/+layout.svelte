@@ -41,6 +41,8 @@
     }
     previous = data.pathname;
   });
+
+  let transitioning = $state(false);
 </script>
 
 <svelte:head>
@@ -49,9 +51,14 @@
   <meta name="twitter:description" content={$_("head.description")} />
 </svelte:head>
 
-<div class="container mx-auto mb-20 p-3 sm:mb-16 md:py-8 lg:py-12">
+<div class="container mx-auto mb-20 p-3 sm:mb-16 md:py-8 lg:py-12" class:no-blur={transitioning}>
   {#key previous}
-    <div in:fade={fadeIn} out:fade={fadeOut}>
+    <div
+      in:fade={fadeIn}
+      out:fade={fadeOut}
+      onintrostart={() => (transitioning = true)}
+      onintroend={() => (transitioning = false)}
+    >
       {@render children?.()}
     </div>
   {/key}
@@ -89,3 +96,10 @@
   alt=""
   class="absolute left-0 right-[150px] top-[2000px] -z-10 mx-auto w-72 sm:hidden"
 />
+
+<style>
+  /* Fix for Safari backdrop blur during transitions */
+  .no-blur :global(*) {
+    --tw-backdrop-blur: blur(0px) !important;
+  }
+</style>
