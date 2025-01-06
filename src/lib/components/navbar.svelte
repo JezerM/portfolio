@@ -41,46 +41,42 @@
 
 {#snippet navLink(path: string, label: string, Icon?: typeof IconType)}
   {@const isActive = active(path)}
-  <li>
-    <a
-      href={path}
-      class={[
-        "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:min-w-32 sm:px-3",
-        isActive && "min-w-20 border-2 border-orange",
-      ]}
-    >
-      {#if Icon}
-        <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
-      {/if}
-      <span class={["hidden sm:block", isActive && "!block"]}>
-        {label}
-      </span>
-    </a>
-  </li>
+  <a
+    href={path}
+    class={[
+      "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:min-w-32 sm:px-3",
+      isActive && "min-w-20 border-2 border-orange",
+    ]}
+  >
+    {#if Icon}
+      <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
+    {/if}
+    <span class={["sr-only sm:not-sr-only", isActive && "!not-sr-only"]}>
+      {label}
+    </span>
+  </a>
 {/snippet}
 
 {#snippet navButton(action: () => void, label: string, Icon?: typeof IconType)}
-  <li>
-    <button
-      class={[
-        "flex items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:px-4",
-      ]}
-      onclick={action}
-    >
-      {#if Icon}
-        <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
-      {/if}
-      <span class={["hidden sm:block"]}>
-        {label}
-      </span>
-    </button>
-  </li>
+  <button
+    class={[
+      "flex items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:px-4",
+    ]}
+    onclick={action}
+  >
+    {#if Icon}
+      <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
+    {/if}
+    <span class={["sr-only sm:not-sr-only"]}>
+      {label}
+    </span>
+  </button>
 {/snippet}
 
 <nav
   class="fixed bottom-3 left-0 right-0 mx-auto w-fit rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-noise px-4 py-2 backdrop-blur-md sm:bottom-6 sm:px-6 sm:py-3"
 >
-  <ul class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
+  <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
     {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
     {@render navLink($baseLocale + "/projects", $_("navigation.projects"), FolderOpen)}
     {@render navLink("/blog", $_("navigation.blog"), NotebookText)}
@@ -94,5 +90,5 @@
         Earth
       )}
     </div>
-  </ul>
+  </div>
 </nav>
