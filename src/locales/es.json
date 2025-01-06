@@ -1,8 +1,7 @@
 {
   "navigation": {
     "home": "Inicio",
-    "projects": "Mis proyectos",
-    "contact": "Contáctame",
+    "projects": "Proyectos",
     "blog": "Blog",
     "toggle_dark_mode": "Alternar modo oscuro",
     "discord_user": "Usuario de Discord",
@@ -28,13 +27,17 @@
     "language": "Idioma"
   },
   "home": {
-    "info_1": "Me encanta Linux, el café, la Física y el Open Source.",
-    "info_2": "Entusiasta de la programación de bajo nivel.",
-    "info_3": "Estudiante de la UCA Nicaragua. #SomosUCA",
-    "about_title": "Sobre mí",
-    "about_1": "Soy Jezer Josué Mejía Otero, un desarrollador sólo por diversión. Me encanta crear cosas de las que cualquiera pueda beneficiarse, invirtiendo mi tiempo en el desarrollo open source de lo cual podemos encontrar algunas aplicaciones de Linux, páginas webs, programas de terminal y mucho más.",
-    "about_2": "Mi verdadera pasión es la Física, pero eso tendrá que esperar hasta que me mueva a un país que ofrezca esta carrera~",
-    "about_3": "Como se mencionó antes, ¡Me encanta Linux! Por ende, también me encantan las terminales. Siempre me ha gustado TypeScript y C, pero Rust recientemente se ha ganado un lugar en mi corazón."
+    "greeting": "¡Hola! Soy Jezer Mejía",
+    "about_1": "Soy Jezer Mejía, un desarrollador de software especializado en <span class=\"text-aqua\">desarrollo web</span> y <span class=\"text-red\">programación de sistemas</span>. Me encanta crear cosas de las que cualquiera pueda beneficiarse, invirtiendo mi tiempo en proyectos open source.",
+    "about_2": "También me encanta la física, la ciencia ficción y cosas relacionadas a la ciencia en general. Y, por si no se ha notado, me encanta el <span class=\"text-orange\">café</span>.",
+    "work": "Actualmente trabajando en <a href=\"https://ooqia.com\" target=\"_blank\">OOQIA</a> como Consultor de Software",
+    "skills_title": "Habilidades",
+    "extra": {
+      "title": "Datos extras",
+      "nationality": "Nicaragüense",
+      "age_desc": "años de edad",
+      "gender": "Masculino"
+    }
   },
   "projects": {
     "clear": "Limpiar"

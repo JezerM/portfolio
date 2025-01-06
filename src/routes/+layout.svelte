@@ -1,25 +1,20 @@
 <script lang="ts">
   import "../app.css";
   import type { LayoutData } from "./$types";
-  export let data: LayoutData;
+  import type { Snippet } from "svelte";
 
-  let fadeIn = zoomOut;
-  let fadeOut = zoomIn;
-
-  let previous = data.pathname as string;
-  let isInBlog = 0;
-  $: {
-    let pathname = data.pathname as string;
-    if (pathname.startsWith("/blog") !== previous.startsWith("/blog")) {
-      fadeIn = zoomOut;
-      fadeOut = zoomIn;
-      isInBlog++;
-    } else {
-      fadeIn = zoomNull;
-      fadeOut = zoomNull;
-    }
-    previous = pathname;
+  interface Props {
+    data: LayoutData;
+    children?: Snippet;
   }
+
+  let { data, children }: Props = $props();
+
+  let fadeIn = $state(zoomOut);
+  let fadeOut = $state(zoomIn);
+
+  let previous = $state(data.pathname as string);
+  let isInBlog = $state(0);
   function zoomNull(node: HTMLElement) {
     node.classList.remove("zoomIn");
     node.classList.remove("zoomOut");
@@ -51,21 +46,34 @@
       target.className = "";
     }
   }
+  $effect(() => {
+    let pathname = data.pathname as string;
+    if (pathname.startsWith("/blog") !== previous.startsWith("/blog")) {
+      fadeIn = zoomOut;
+      fadeOut = zoomIn;
+      isInBlog++;
+    } else {
+      fadeIn = zoomNull;
+      fadeOut = zoomNull;
+    }
+    previous = pathname;
+  });
 </script>
 
 {#key isInBlog}
   <div
-    on:animationend={endAnimation}
+    class="relative min-h-[100vh] overflow-hidden"
+    onanimationend={endAnimation}
     in:fadeIn
     out:fadeOut
-    on:introstart={(ev) => {
+    onintrostart={(ev) => {
       if (previous.startsWith("/blog")) {
         ev.currentTarget.className = "bottomZoom show";
       } else {
         ev.currentTarget.className = "topZoom show";
       }
     }}
-    on:outrostart={(ev) => {
+    onoutrostart={(ev) => {
       if (previous.startsWith("/blog")) {
         ev.currentTarget.className = "topZoom hide";
       } else {
@@ -73,6 +81,6 @@
       }
     }}
   >
-    <slot />
+    {@render children?.()}
   </div>
 {/key}

@@ -1,13 +1,18 @@
 <script lang="ts">
-  import Projects from "../../pages/projects.svelte";
   import { _ } from "svelte-i18n";
   import type { PageData } from "./$types";
 
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>
   <title>{$_("head.projects_title")}</title>
 </svelte:head>
 
-<Projects {data} />
+<h1 class="drop-shadow-glow mt-4 text-center font-raster text-4xl text-red">
+  {$_("projects.title_1")}
+</h1>

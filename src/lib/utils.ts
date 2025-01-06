@@ -1,5 +1,5 @@
 import { locales } from "svelte-i18n";
-import { page } from "$app/stores";
+import { page } from "$app/state";
 import { get } from "svelte/store";
 
 export function getUnlocalizedPath(path: string): string {
@@ -10,14 +10,14 @@ export function getUnlocalizedPath(path: string): string {
     splitted?.shift();
     route = splitted?.join("/") ?? null;
   }
-  return route;
+  return "/" + route;
 }
 
 /**
  * Returns current path with the specified locale
  */
 export function localizePath(lang: string): string {
-  let route = get(page).route.id ?? "";
+  let route = page.route.id ?? "";
   route = route?.replace("[[language=lang]]", "");
 
   let endRoute = `/${lang}/${route}`;

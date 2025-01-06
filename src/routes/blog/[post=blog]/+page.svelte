@@ -1,6 +1,10 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  export let data: PageData;
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <svelte:head>
@@ -10,5 +14,5 @@
 <article>
   <h1>{data.title}</h1>
   <p>Published: {data.date}</p>
-  <svelte:component this={data.content} />
+  <data.content />
 </article>

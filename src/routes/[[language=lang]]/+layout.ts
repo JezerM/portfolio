@@ -1,7 +1,8 @@
+import "$lib/i18n";
 import type { LayoutLoad } from "./$types";
-import { locale } from "svelte-i18n";
+import { locale, waitLocale } from "svelte-i18n";
 
-export const load = (({ params }) => {
+export const load = (async ({ params }) => {
   const { language } = params;
   switch (language) {
     case "es":
@@ -12,5 +13,7 @@ export const load = (({ params }) => {
       locale.set("en");
       break;
   }
+
+  await waitLocale();
   return { language };
 }) satisfies LayoutLoad;

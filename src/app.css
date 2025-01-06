@@ -1,17 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: "Monocraft";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/Monocraft.otf");
-  font-display: swap;
-}
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
+  @font-face {
+    font-family: "MatrixSans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSans-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Print";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansPrint-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Raster";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansRaster-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Screen";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansScreen-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Video";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansVideo-Regular.woff2") format("woff2");
+  }
+
   html {
-    font-family: Monocraft, Menlo, system-ui;
+    font-family: "MatrixSans", Menlo, monospace, system-ui, sans-serif;
   }
 }

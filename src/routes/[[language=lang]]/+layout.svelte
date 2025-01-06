@@ -1,84 +1,37 @@
 <script lang="ts">
-  import { fade, type TransitionConfig } from "svelte/transition";
-  import NavBar from "$lib/components/NavBar.svelte";
-  import ExtraData from "$lib/components/ExtraData.svelte";
-  import { getUnlocalizedPath } from "$lib/utils";
-  import { _ } from "svelte-i18n";
+  import { _, locale } from "svelte-i18n";
   import type { LayoutData } from "./$types";
-  import PixelsCanvas from "$lib/components/PixelsCanvas.svelte";
+  import Navbar from "$lib/components/navbar.svelte";
+  import { fade } from "svelte/transition";
+  import { navigating } from "$app/state";
+  import { getUnlocalizedPath } from "$lib/utils";
 
   interface TransitionParams {
     duration: number;
     delay?: number;
   }
 
-  export let data: LayoutData;
+  interface Props {
+    data: LayoutData;
+    children?: import("svelte").Snippet;
+  }
+
+  let { data, children }: Props = $props();
 
   let instaFadeIn = { duration: 0, delay: 0 };
   let instaFadeOut = { duration: 0 };
 
-  let durFadeIn = { duration: 250, delay: 250 };
-  let durFadeOut = { duration: 250 };
+  let durFadeIn = { duration: 150, delay: 200 };
+  let durFadeOut = { duration: 150 };
 
-  let fadeIn: TransitionParams = durFadeIn;
-  let fadeOut: TransitionParams = durFadeOut;
+  let fadeIn: TransitionParams = $state(durFadeIn);
+  let fadeOut: TransitionParams = $state(durFadeOut);
 
-  let pixelCanvas: PixelsCanvas;
-  let validCanvas = false;
-
-  function hideUntilStart(node: HTMLElement, params: TransitionParams): TransitionConfig {
-    if (!validCanvas) {
-      return fade(node, params);
-    }
-    if (params.duration == 0) {
-      return params;
-    }
-
-    let ran = false;
-    return {
-      duration: params.duration,
-      delay: params.delay,
-      tick(t) {
-        if (t == 0) {
-          node.style.display = "none";
-        } else {
-          node.style.display = "";
-        }
-        if (t > 0 && !ran) {
-          requestAnimationFrame(() => {
-            pixelCanvas.hidePixels();
-          });
-          ran = true;
-        }
-      },
-    };
-  }
-
-  function pixelTransition(node: HTMLElement, params: TransitionParams): TransitionConfig {
-    if (!validCanvas) {
-      return fade(node, params);
-    }
-    if (params.duration == 0) {
-      return params;
-    }
-
-    let ran = false;
-    return {
-      delay: params.delay,
-      duration: params.duration,
-      tick(t) {
-        if (t < 1 && !ran) {
-          pixelCanvas.showPixels();
-          ran = true;
-        }
-      },
-    };
-  }
-
-  let previous = data.pathname as string;
-  $: {
+  let previous = $state(data.pathname as string);
+  $effect.pre(() => {
+    let pathname = data.pathname as string;
     let absPrev = getUnlocalizedPath(previous);
-    let absCurr = getUnlocalizedPath(data.pathname);
+    let absCurr = getUnlocalizedPath(pathname);
     if (absPrev == absCurr) {
       fadeIn = instaFadeIn;
       fadeOut = instaFadeOut;
@@ -87,7 +40,7 @@
       fadeOut = durFadeOut;
     }
     previous = data.pathname;
-  }
+  });
 </script>
 
 <svelte:head>
@@ -96,27 +49,43 @@
   <meta name="twitter:description" content={$_("head.description")} />
 </svelte:head>
 
-<div class="container mx-auto p-5 md:py-8 lg:py-12">
-  <NavBar />
-
-  <div class="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-3 xl:grid-cols-4">
-    <main
-      class="relative col-span-1 grid h-fit bg-light-1 p-6 pixel-border-2 dark:bg-dark-1 sm:p-8 lg:col-span-2 xl:col-span-3"
-    >
-      <PixelsCanvas
-        bind:this={pixelCanvas}
-        on:init={(v) => {
-          validCanvas = v.detail;
-        }}
-      />
-      {#key previous}
-        <div in:hideUntilStart={fadeIn} out:pixelTransition={fadeOut}>
-          <slot />
-        </div>
-      {/key}
-    </main>
-    <aside class="col-span-1 w-full">
-      <ExtraData />
-    </aside>
-  </div>
+<div class="container mx-auto mb-20 p-3 sm:mb-16 md:py-8 lg:py-12">
+  {#key previous}
+    <div in:fade={fadeIn} out:fade={fadeOut}>
+      {@render children?.()}
+    </div>
+  {/key}
 </div>
+
+<Navbar />
+
+<enhanced:img
+  src="/static/deco/02.png?w=300;400"
+  sizes="300px, (min-width:640px) 400px"
+  alt=""
+  class="absolute left-0 right-[900px] top-[540px] -z-10 mx-auto w-48"
+/>
+<enhanced:img
+  src="/static/deco/06.png?w=300;400"
+  sizes="300px, (min-width:640px) 400px"
+  alt=""
+  class="absolute left-[180px] right-0 top-[640px] -z-10 mx-auto w-48 lg:left-[850px]"
+/>
+<enhanced:img
+  src="/static/deco/44.png?w=300;540"
+  sizes="300px, (min-width:640px) 540px"
+  alt=""
+  class="absolute left-0 right-[110px] top-[80px] -z-10 mx-auto w-72 lg:top-[100px]"
+/>
+<enhanced:img
+  src="/static/deco/84.png?w=300;540"
+  sizes="300px, (min-width:640px) 540px"
+  alt=""
+  class="absolute left-[200px] right-0 top-[1000px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
+/>
+<enhanced:img
+  src="/static/deco/84.png?w=300;540"
+  sizes="300px, (min-width:640px) 540px"
+  alt=""
+  class="absolute left-0 right-[150px] top-[2000px] -z-10 mx-auto w-72 sm:hidden"
+/>

@@ -1,8 +1,7 @@
 {
   "navigation": {
     "home": "Home",
-    "projects": "My projects",
-    "contact": "Contact me",
+    "projects": "Projects",
     "blog": "Blog",
     "toggle_dark_mode": "Toggle dark mode",
     "discord_user": "Discord user",
@@ -28,13 +27,17 @@
     "language": "Language"
   },
   "home": {
-    "info_1": "I love Linux, coffee, Physics and Open Source.",
-    "info_2": "Low level programming enthusiast.",
-    "info_3": "UCA Nicaragua student. #SomosUCA",
-    "about_title": "About me",
-    "about_1": "I'm Jezer Josué Mejía Otero and I'm a developer just for fun. I love to create things that everyone could benefit of, investing my time in open source development, from which we can find some Linux applications, web pages, terminal based programs and so much more.",
-    "about_2": "My true passion is Physics, but that will have to wait until I move to a country that offer this career~",
-    "about_3": "As stated above, I love Linux! Hence, I also love the terminal. I've always liked TypeScript and C, but Rust has recently taken a part in my heart."
+    "greeting": "Hi! I'm Jezer Mejía",
+    "about_1": "I'm Jezer Mejía, a software developer specialized in <span class=\"text-aqua\">web development</span> and <span class=\"text-red\">systems programming</span>. I love to create things that everyone could benefit of, investing my time in open source development.",
+    "about_2": "I also love physics, science fiction and science related stuff in general. And, if not noticed already, I love <span class=\"text-orange\">coffee</span>.",
+    "work": "Currently working at <a href=\"https://ooqia.com\" target=\"_blank\">OOQIA</a> as a Software Consultant",
+    "skills_title": "Skills",
+    "extra": {
+      "title": "Extra data",
+      "nationality": "Nicaraguan",
+      "age_desc": "years old",
+      "gender": "Male"
+    }
   },
   "projects": {
     "clear": "Clear"

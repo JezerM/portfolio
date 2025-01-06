@@ -1,86 +1,59 @@
+import typography from "@tailwindcss/typography";
 import plugin from "./tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: ["./src/**/*.{html,js,svelte,ts,json}"],
   darkMode: "class",
   theme: {
     colors: {
-      dark: {
-        DEFAULT: "#282828",
-        "0h": "#1d2021",
-        "0s": "#32302f",
+      bg: {
+        dim: "#1B1B1B",
         0: "#282828",
-        1: "#3c3836",
-        2: "#504945",
-        3: "#665c54",
-        4: "#7c6f64",
+        1: "#32302F",
+        3: "#45403D",
+        5: "#5A524C",
+        "status-line": {
+          2: "#3A3735",
+          3: "#504945",
+        },
       },
-      light: {
-        DEFAULT: "#ebdbb2",
-        "0h": "#f9f5d7",
-        "0s": "#f2e5bc",
-        0: "#fbf1c7",
-        1: "#ebdbb2",
-        2: "#d5c4a1",
-        3: "#bdae93",
-        4: "#a89984",
+      fg: {
+        0: "#D4BE98",
+        1: "#DDC7A1",
       },
-      red: {
-        fg: "#fb4934",
-        bg: "#cc2410",
-        "bg-light": "#cc241d",
-        "fg-light": "#9d0006",
+      grey: {
+        0: "#7C6F64",
+        1: "#928374",
+        2: "#A89984",
       },
-      green: {
-        bg: "#98971a",
-        fg: "#b8bb26",
-        "bg-light": "#98971a",
-        "fg-light": "#79740e",
-      },
-      yellow: {
-        bg: "#d79921",
-        fg: "#fabd2f",
-        "bg-light": "#d79921",
-        "fg-light": "#b57614",
-      },
-      blue: {
-        bg: "#458588",
-        fg: "#83a598",
-        "bg-light": "#458588",
-        "fg-light": "#076678",
-      },
-      purple: {
-        bg: "#b16286",
-        fg: "#d3869b",
-        "bg-light": "#b16286",
-        "fg-light": "#8f3f71",
-      },
-      aqua: {
-        bg: "#689d6a",
-        fg: "#8ec07c",
-        "bg-light": "#689d6a",
-        "fg-light": "#427b58",
-      },
-      orange: {
-        bg: "#d65d0e",
-        fg: "#fe9019",
-        "bg-light": "#d65d0e",
-        "fg-light": "#af3a03",
-      },
-      gray: {
-        bg: "#a89984",
-        fg: "#928374",
-        "bg-light": "#7c6f64",
-        "fg-light": "#928374",
-      },
+      red: "#EA6962",
+      orange: "#E78A4E",
+      yellow: "#D8A657",
+      green: "#A9B665",
+      aqua: "#89B482",
+      blue: "#7DAEA3",
+      purple: "#D3869B",
+
       white: "#FFFFFF",
       black: "#000000",
       transparent: "#00000000",
-      discord: "#5765f2",
-      linkedin: "#0b66c2",
     },
-    extend: {},
+    fontFamily: {
+      regular: ["MatrixSans", "Menlo", "monospace", "system-ui"],
+      print: ["MatrixSans Print", "Menlo", "monospace", "system-ui"],
+      raster: ["MatrixSans Raster", "Menlo", "monospace", "system-ui"],
+      screen: ["MatrixSans Screen", "Menlo", "monospace", "system-ui"],
+      video: ["MatrixSans Video", "Menlo", "monospace", "system-ui"],
+    },
+    extend: {
+      backgroundImage: {
+        noise: "url('/deco/noise.png')",
+      },
+      dropShadow: {
+        glow: "0 0 25px currentcolor",
+      },
+    },
   },
-  plugins: [plugin],
+  plugins: [typography, plugin],
 };

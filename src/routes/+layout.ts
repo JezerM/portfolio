@@ -6,9 +6,8 @@ import type { LayoutLoad } from "./$types";
 
 export const prerender = true;
 
-export const load = (({ url, params }) => {
+export const load = (({ url }) => {
   const { pathname } = url;
-  console.log(pathname, params);
   return { pathname };
 }) satisfies LayoutLoad;
 
