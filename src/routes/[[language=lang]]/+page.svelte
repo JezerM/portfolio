@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ContactIcons from "$lib/components/contact-icons.svelte";
   import { _ } from "svelte-i18n";
 
   const bornDate = new Date(2003, 11, 5);
@@ -17,19 +18,14 @@
   <title>{$_("head.home_title")}</title>
 </svelte:head>
 
-<div class="mx-auto mb-8 flex w-fit flex-col items-center gap-8">
+<div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4">
   <div class="aspect-square size-56 overflow-hidden rounded-full border-4 border-bg-5 bg-purple">
     <enhanced:img class="block size-full" src="/static/JezerPicture.png" alt="JezerM anime" />
   </div>
-  <h1 class="drop-shadow-glow text-center font-raster text-4xl text-aqua">
+  <h1 class="mt-4 text-center font-raster text-4xl text-aqua drop-shadow-glow">
     {@html $_("home.greeting")}
   </h1>
-  <ul class="flex flex-row gap-2">
-    <li>G</li>
-    <li>L</li>
-    <li>D</li>
-    <li>P</li>
-  </ul>
+  <ContactIcons />
 </div>
 
 <div class="mx-auto max-w-[840px] space-y-8">
@@ -70,7 +66,7 @@
     </div>
   </div>
 
-  <h2 class="drop-shadow-glow text-center font-raster text-2xl text-blue">
+  <h2 class="text-center font-raster text-2xl text-blue drop-shadow-glow">
     {@html $_("home.skills_title")}
   </h2>
 

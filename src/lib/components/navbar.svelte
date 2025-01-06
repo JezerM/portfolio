@@ -49,7 +49,7 @@
     ]}
   >
     {#if Icon}
-      <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
+      <Icon class="relative h-5 w-5" />
     {/if}
     <span class={["sr-only sm:not-sr-only", isActive && "!not-sr-only"]}>
       {label}
@@ -65,7 +65,7 @@
     onclick={action}
   >
     {#if Icon}
-      <Icon class="relative h-5 w-5 transition-transform group-hover:scale-110" />
+      <Icon class="relative h-5 w-5" />
     {/if}
     <span class={["sr-only sm:not-sr-only"]}>
       {label}
