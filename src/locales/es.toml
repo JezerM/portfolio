@@ -10,6 +10,7 @@ projects_title = "Portfolio - Proyectos"
 
 [home]
 greeting = "¡Hola! Soy Jezer Mejía"
+about_title = "Sobre mí"
 about_1 = "Soy Jezer Mejía, un desarrollador de software especializado en <span class=\"text-aqua\">desarrollo web</span> y <span class=\"text-red\">programación de sistemas</span>. Me encanta crear cosas de las que cualquiera pueda beneficiarse, invirtiendo mi tiempo en proyectos open source."
 about_2 = "También me encanta la física, la ciencia ficción y cosas relacionadas a la ciencia en general. Y, por si no se ha notado, me encanta el <span class=\"text-orange\">café</span>."
 work = "Actualmente trabajando en <a href=\"https://ooqia.com\" target=\"_blank\">OOQIA</a> como Consultor de Software"

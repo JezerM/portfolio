@@ -40,6 +40,10 @@
     </p>
   </div>
 
+  <h2 class="sr-only">
+    {@html $_("home.about_title")}
+  </h2>
+
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
     <div
       class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
