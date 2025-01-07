@@ -49,6 +49,9 @@
         class="prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-yellow focus:prose-a:text-yellow"
       >
         {@html $_("home.work")}
+        <a href="{$locale}/curriculum-vitae.pdf" target="_blank" class="mt-3 block">
+          Currículum Vitae
+        </a>
       </p>
     </div>
 
