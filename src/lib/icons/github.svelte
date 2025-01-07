@@ -1,8 +1,10 @@
-<script>
-  import { Icon } from "lucide-svelte";
+<script lang="ts">
+  import { Icon, type IconProps } from "lucide-svelte";
+
+  const props: IconProps = $props();
 </script>
 
-<Icon viewBox="0 0 128 128" fill="currentColor" strokeWidth="0">
+<Icon viewBox="0 0 128 128" fill="currentColor" strokeWidth="0" {...props}>
   <path
     fill-rule="evenodd"
     clip-rule="evenodd"

@@ -24,3 +24,25 @@ gender = "Male"
 [projects]
 title_1 = "Services"
 title_2 = "Projects"
+open = "Open"
+
+[projects.web-greeter]
+description = "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter."
+
+[projects.nody-greeter]
+description = "LightDM greeter that allows to create wonderful themes with web technologies. Made in Node.js"
+
+[projects.sea-greeter]
+description = "LightDM greeter made with WebKit2GTK. This allows to create themes with web technologies... Yeah, the same but in another language."
+
+[projects.florece-la-memoria]
+description = "Web application to build Day of the Dead commemorative altars."
+
+[projects.alajuela]
+description = "React Native app to manage school notifications of San Rafael de Alajuela. Currently unavailable."
+
+[projects.pasadita]
+description = "Residential entry system with automatic access via QR keys and micro-controllers."
+
+[projects.liberlu]
+description = "Android game for kids made in one night. I'm still surprised I was able to do this."

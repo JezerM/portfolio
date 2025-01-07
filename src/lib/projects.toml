@@ -1,0 +1,35 @@
+[web-greeter]
+name = "Web Greeter"
+github = "https://github.com/JezerM/web-greeter"
+image = "/thumbnails/web-greeter.png"
+link = "https://web-greeter-page.vercel.app"
+
+[nody-greeter]
+name = "Nody Greeter"
+github = "https://github.com/JezerM/nody-greeter"
+image = "/thumbnails/nody-greeter.png"
+
+[sea-greeter]
+name = "Sea Greeter"
+github = "https://github.com/JezerM/sea-greeter"
+image = "/thumbnails/sea-greeter.png"
+
+[florece-la-memoria]
+name = "Florece la memoria"
+link = "https://ladignarabia.com/florece-la-memoria/"
+image = "/thumbnails/florece-la-memoria.png"
+
+[alajuela]
+name = "Alajuela"
+link = "https://appshunter.io/ios/app/6465571099"
+image = "/thumbnails/alajuela.png"
+
+[pasadita]
+name = "Pasadita"
+github = "https://github.com/FactorizacionPlus/Pasadita"
+image = "/thumbnails/pasadita.png"
+
+[liberlu]
+name = "Liberlú (Hackaton)"
+github = "https://github.com/JezerMejia/HackatonProject"
+image = "/thumbnails/liberlu.png"

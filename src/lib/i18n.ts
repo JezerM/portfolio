@@ -9,6 +9,12 @@ addMessages("es", es);
 
 const defaultLocale = "en";
 
+export const locales = ["en", "es"] as const;
+export const localesLabels: { [key in (typeof locales)[number]]: string } = {
+  en: "English",
+  es: "Español",
+};
+
 init({
   fallbackLocale: defaultLocale,
   initialLocale: defaultLocale,

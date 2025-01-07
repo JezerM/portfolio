@@ -1,6 +1,6 @@
 <script lang="ts">
   import ContactIcons from "$lib/components/contact-icons.svelte";
-  import { _ } from "svelte-i18n";
+  import { _, locale } from "svelte-i18n";
 
   const bornDate = new Date(2003, 11, 5);
   const now = Date.now();
