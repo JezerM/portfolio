@@ -51,7 +51,10 @@
   <meta name="twitter:description" content={$_("head.description")} />
 </svelte:head>
 
-<div class="container mx-auto mb-20 p-3 sm:mb-16 md:py-8 lg:py-12" class:no-blur={transitioning}>
+<div
+  class="container mx-auto mb-20 p-3 sm:mb-16 md:py-8 lg:py-12 2xl:max-w-7xl"
+  class:no-blur={transitioning}
+>
   {#key previous}
     <div
       in:fade={fadeIn}

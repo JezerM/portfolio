@@ -26,3 +26,13 @@
     <ProjectCard {project} />
   {/each}
 </div>
+
+<h1 class="mt-8 text-center font-raster text-4xl text-red drop-shadow-glow">
+  {$_("projects.title_2")}
+</h1>
+
+<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+  {#each data.projects as project}
+    <ProjectCard {project} />
+  {/each}
+</div>
