@@ -1,21 +1,19 @@
 # Portfolio
 
-Hi! This is my portfolio. Made with SvelteKit. Layout inspired in
-[Sammwy.com](https://sammwy.com).
+Hi! This is my portfolio. Made with SvelteKit.
 
-All the pixel icons were made from scratch by me and inspired by FontAwesome
-icons as well as [NES.css](https://github.com/nostalgic-css/NES.css),
-you can find the sources in [icons/](./icons/) (made with Krita).
+Almost all icons are from [Lucide](https://lucide.dev/) icons, some are from [devicon](https://devicon.dev/)
+and some others were obtained from their respective official sites.
 
-The used font is [Monocraft](https://github.com/IdreesInc/Monocraft),
+The used font is [Matrix Sans](https://github.com/FriedOrange/MatrixSans),
 a beautiful font!
 
 ## Building
 
-After cloning the project, build it with `npm run build`.
+After cloning the project, build it with `bun run build`.
 
 ```sh
 cd portfolio/
-npm install
-npm run build
+bun install
+bun run build
 ```
