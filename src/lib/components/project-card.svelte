@@ -1,9 +1,10 @@
 <script lang="ts">
   import type Project from "$lib/types/project";
   import { _ } from "svelte-i18n";
-  import { Globe, ImageOff, LoaderCircle } from "lucide-svelte";
+  import { Globe } from "lucide-svelte";
   import { getContext } from "svelte";
   import Github from "$lib/icons/github.svelte";
+  import CardImage from "./card-image.svelte";
 
   interface Props {
     project: Project;
@@ -13,37 +14,13 @@
 
   const thumbnails: { [k: string]: any } = getContext("projects:thumbnails");
   const thumbnail = thumbnails[project.image];
-
-  let imageState: "loaded" | "error" | "loading" = $state("loading");
-
-  if (!thumbnail) {
-    imageState = "error";
-  }
 </script>
 
 <div
-  class="flex flex-col overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 backdrop-blur-md"
+  class="relative flex flex-col overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 backdrop-blur-md"
 >
   <div class="relative aspect-[16/10] w-full bg-bg-dim">
-    {#if imageState != "error"}
-      <enhanced:img
-        class="flex h-full w-full"
-        src={thumbnail}
-        alt={project.name}
-        sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
-        onerror={() => {
-          imageState = "error";
-        }}
-        onload={() => {
-          imageState = "loaded";
-        }}
-      />
-    {/if}
-    {#if imageState == "loading"}
-      <LoaderCircle class="text-muted-foreground absolute inset-0 m-auto h-5 w-5 animate-spin" />
-    {:else if imageState == "error"}
-      <ImageOff class="text-muted-foreground absolute inset-0 m-auto h-5 w-5" />
-    {/if}
+    <CardImage src={thumbnail} alt={project.name} />
   </div>
   <div class="flex h-full flex-col items-start gap-1.5 bg-noise px-4 py-4">
     <h2 class="font-video text-xl text-fg-1">{project.name}</h2>
