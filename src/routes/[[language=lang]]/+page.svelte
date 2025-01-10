@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContactIcons from "$lib/components/contact-icons.svelte";
+  import { FileUser } from "lucide-svelte";
   import { _, locale } from "svelte-i18n";
 
   const bornDate = new Date(2003, 11, 5);
@@ -53,7 +54,16 @@
         class="prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-yellow focus:prose-a:text-yellow"
       >
         {@html $_("home.work")}
-        <a href="{$locale}/curriculum-vitae.pdf" target="_blank" class="mt-3 block">
+        <a
+          href="{$locale}/curriculum-vitae.pdf"
+          target="_blank"
+          class="group mt-3 flex flex-row items-center gap-2"
+        >
+          <FileUser
+            stroke-dasharray="3 5"
+            stroke-linecap="square"
+            class="transition-all group-hover:[stroke-dasharray:0] "
+          />
           Currículum Vitae
         </a>
       </p>
