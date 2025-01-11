@@ -1,26 +1,34 @@
 import type { PageServerLoad } from "./$types";
+import services from "$lib/services.toml";
 import projects from "$lib/projects.toml";
 import { thumbnails } from "$lib/images";
 import type Project from "$lib/types/project";
+import type Service from "$lib/types/service";
 
 export const load: PageServerLoad = async () => {
-  const projectObjects = Object.entries(projects).map(([key, value]) => {
+  const servicesValues: Service[] = Object.entries(services).map(([key, value]) => {
     return {
       key,
-      name: value.name,
-      image: value.image,
-      github: value.github,
-      link: value.link,
-    } satisfies Project;
+      ...value,
+    };
   });
 
-  const imageKeys = projectObjects.map((v) => v.image);
+  const projectValues: Project[] = Object.entries(projects).map(([key, value]) => {
+    return {
+      key,
+      ...value,
+    };
+  });
+
+  const serviceImageKeys = servicesValues.map((v) => v.image);
+  const projectImageKeys = projectValues.map((v) => v.image);
+
   const entries = Object.entries(thumbnails)
     .map(([k, v]) => {
       k = k.replace("/static", "");
       return [k, v] as [typeof k, typeof v];
     })
-    .filter(([k]) => imageKeys.includes(k));
+    .filter(([k]) => projectImageKeys.includes(k) || serviceImageKeys.includes(k));
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const values: { [k: string]: any } = {};
@@ -29,5 +37,5 @@ export const load: PageServerLoad = async () => {
     values[k] = ((await v()) as any).default;
   }
 
-  return { projects: projectObjects, thumbnails: values };
+  return { services: servicesValues, projects: projectValues, thumbnails: values };
 };

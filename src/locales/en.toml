@@ -1,12 +1,12 @@
 [navigation]
 home = "Home"
-projects = "Projects"
+services = "Services"
 blog = "Blog"
 
 [head]
 description = "My portfolio. It includes my information, the projects I have made and my contact info."
 home_title = "JezerM's portfolio"
-projects_title = "Portfolio - Projects"
+services_title = "Portfolio - Services"
 
 [home]
 greeting = "Hi! I'm Jezer Mejía"
@@ -18,13 +18,16 @@ skills_title = "Skills"
 
 [home.extra]
 title = "Extra data"
-nationality = "Nicaraguan"
-age_desc = "years old"
+nationality = " Nicaraguan 🇳🇮"
+age_desc = "{age} years old"
 gender = "Male"
 
+[services]
+title = "Services"
+email_me = "Email me"
+
 [projects]
-title_1 = "Services"
-title_2 = "Projects"
+title = "Projects"
 open = "Open"
 
 [projects.web-greeter]
@@ -47,3 +50,29 @@ description = "Residential entry system with automatic access via QR keys and mi
 
 [projects.liberlu]
 description = "Android game for kids made in one night. I'm still surprised I was able to do this."
+
+[services.tablo-pos]
+name = "Tablo POS"
+description = [
+  "Full-featured, flexible and modern <span class=\"text-aqua\">Point of Sale (POS)</span> system software for restaurants.",
+  "Request a personalized POS system with our base features or even more! You decide your preferences.",
+]
+
+[services.custom-website]
+name = "Custom Website"
+description = [
+  "Tired of boring, slow and outdated websites? Request a custom website that perfectly aligns with your business needs, goals and preferences.",
+]
+
+[services.optimize-website]
+name = "Optimize your website"
+description = [
+  "You have a slow and outdated website, with a unoptimized CMS, various inneficient processes and bad SEO, don’t ya?",
+  "If you have any of these problems and don’t want a new website, request a website optimization and it will be done for you.",
+]
+
+[services.extra]
+title = "Have any other request?"
+description = [
+  "If you have a problem with Web Development, Software maintenance, Systems Programming, or any software-related consultation, don’t hesitate to contact me so we can discuss your request.",
+]

@@ -19,7 +19,7 @@
   <title>{$_("head.home_title")}</title>
 </svelte:head>
 
-<div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4">
+<div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4 sm:mt-16">
   <div class="aspect-square size-56 overflow-hidden rounded-full border-4 border-bg-5 bg-purple">
     <enhanced:img class="block size-full" src="/static/JezerPicture.png" alt="JezerM anime" />
   </div>
@@ -77,7 +77,7 @@
       </h3>
       <ul class="list-[square] pl-8">
         <li>{$_("home.extra.nationality")}</li>
-        <li>{age} {$_("home.extra.age_desc")}</li>
+        <li>{$_("home.extra.age_desc", { values: { age } })}</li>
         <li>{$_("home.extra.gender")}</li>
       </ul>
     </div>

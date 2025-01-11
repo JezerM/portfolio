@@ -43,7 +43,7 @@
 >
   <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
     {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
-    {@render navLink($baseLocale + "/projects", $_("navigation.projects"), FolderOpen)}
+    {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
     {@render navLink("/blog", $_("navigation.blog"), NotebookText)}
     <hr class="h-auto border-[0.5px] border-fg-0" />
     <div class="flex flex-row gap-3">

@@ -1,12 +1,12 @@
 [navigation]
 home = "Inicio"
-projects = "Proyectos"
+services = "Servicios"
 blog = "Blog"
 
 [head]
 description = "Mi portfolio. Incluye mi información, los proyectos que he realizado y mi información de contacto."
 home_title = "JezerM's portfolio"
-projects_title = "Portfolio - Proyectos"
+services_title = "Portfolio - Servicios"
 
 [home]
 greeting = "¡Hola! Soy Jezer Mejía"
@@ -18,13 +18,16 @@ skills_title = "Habilidades"
 
 [home.extra]
 title = "Datos extras"
-nationality = "Nicaragüense"
-age_desc = "años de edad"
+nationality = "Nicaragüense 🇳🇮"
+age_desc = "{age} años de edad"
 gender = "Masculino"
 
+[services]
+title = "Servicios"
+email_me = "Escríbeme"
+
 [projects]
-title_1 = "Servicios"
-title_2 = "Proyectos"
+title = "Proyectos"
 open = "Abrir"
 
 [projects.web-greeter]
@@ -47,3 +50,29 @@ description = "Sistema de Entradas a un residencial con acceso automático media
 
 [projects.liberlu]
 description = "Juego de Android para niños hecho en una noche. Aún me sorprende que haya sido capaz de hacer esto."
+
+[services.tablo-pos]
+name = "Tablo POS"
+description = [
+  "Software flexible, moderno y con todas las funciones de un sistema de <span class=\"text-aqua\">Punto de Ventas (POS)</span> para restaurantes.",
+  "Solicita un sistema POS personalizado, ¡con todas las funciones y más! Tú decides tus preferencias.",
+]
+
+[services.custom-website]
+name = "Sitio web personalizado"
+description = [
+  "¿Cansado/a de sitios web aburridos, lentos y desactualizados? Solicita un sitio web personalizado que se ajusta perfectamente a tus necesidades de negocio, objetivos y preferencias.",
+]
+
+[services.optimize-website]
+name = "Optimiza tu sitio web"
+description = [
+  "Seguramente tienes un sitio web lento y desactualizado, con un CMS poco optimizado, varios procesos ineficientes y mal SEO, ¿no?",
+  "Si tienes alguno de estos problemas y no quieres un nuevo sitio web, solicita la optimización de tu sitio web y estará listo para ti.",
+]
+
+[services.extra]
+title = "¿Quieres algo más?"
+description = [
+  "Si tienes problemas con Desarrollo Web, Mantenimiento de Software, Programación de Sistemas o cualquier consulta de software, no dudes en contactarme para discutir tu solicitud.",
+]

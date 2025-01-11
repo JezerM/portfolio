@@ -1,0 +1,11 @@
+[tablo-pos]
+name = "Tablo POS"
+image = "/thumbnails/web-greeter.png"
+
+[custom-website]
+name = "Custom website"
+image = "/thumbnails/web-greeter.png"
+
+[optimize-website]
+name = "Optimize website"
+image = "/thumbnails/web-greeter.png"
