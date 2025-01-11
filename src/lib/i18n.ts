@@ -1,9 +1,10 @@
-import { init, addMessages, locale } from "svelte-i18n";
+import { init, addMessages, locale, dictionary } from "svelte-i18n";
 import { derived } from "svelte/store";
 
 import en from "../locales/en.toml";
 import es from "../locales/es.toml";
 
+dictionary.set({});
 addMessages("en", en);
 addMessages("es", es);
 
