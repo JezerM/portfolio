@@ -15,11 +15,13 @@
   const descriptionLines = $json(`services.${service.key}.description`) as string[];
 </script>
 
-<section class="group grid grid-cols-1 md:grid-cols-2">
+<section class="group mt-4 grid grid-cols-1 md:mt-0 md:grid-cols-2">
   <div></div>
 
   <div class="flex flex-col gap-6 md:group-odd:text-right md:group-even:order-first">
-    <h2 class="font-video text-3xl text-fg-1 drop-shadow-glow">
+    <h2
+      class="z-10 text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
+    >
       {$_(`services.${service.key}.name`)}
     </h2>
     <div

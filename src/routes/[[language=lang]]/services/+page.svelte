@@ -31,7 +31,7 @@
   {/each}
 
   <div class="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-    <h2 class="text-3xl drop-shadow-glow">{$_("services.extra.title")}</h2>
+    <h2 class="z-10 text-3xl drop-shadow-glow">{$_("services.extra.title")}</h2>
     <div
       class="flex flex-col items-center gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-4 backdrop-blur-md"
     >
