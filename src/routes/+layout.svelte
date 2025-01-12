@@ -1,7 +1,9 @@
 <script lang="ts">
+  import Navbar from "$lib/components/navbar.svelte";
+  import { getUnlocalizedPath, slidePage, type SlidePageParams } from "$lib/utils";
   import "../app.css";
   import type { LayoutData } from "./$types";
-  import type { Snippet } from "svelte";
+  import { onMount, type Snippet } from "svelte";
 
   interface Props {
     data: LayoutData;
@@ -10,77 +12,111 @@
 
   let { data, children }: Props = $props();
 
-  let fadeIn = $state(zoomOut);
-  let fadeOut = $state(zoomIn);
+  let instaFadeIn = { duration: 0, delay: 0 };
+  let instaFadeOut = { duration: 0 };
+
+  let durFadeIn = { duration: 350, delay: 350 };
+  let durFadeOut = { duration: 350 };
+
+  let fadeIn: SlidePageParams = $state(durFadeIn);
+  let fadeOut: SlidePageParams = $state(durFadeOut);
+
+  const targetMap: { [key: string]: number } = {
+    "/": 0,
+    "/services": 1,
+    "/blog": 2,
+  };
+
+  function setBackgroundPosition(prev: number, curr: number, animate: boolean) {
+    const body = document.querySelector("body");
+    if (!body) return;
+
+    const half = prev + (curr - prev) / 2;
+    body?.style.setProperty("--background-position", `${-curr * 100}vw`);
+    body?.style.setProperty("--background-position-half", `${-half * 100}vw`);
+
+    if (animate) {
+      body?.classList.add("bg-body");
+    } else {
+      body.style.backgroundPositionX = `${-curr * 100}vw`;
+    }
+  }
 
   let previous = $state(data.pathname as string);
-  let isInBlog = $state(0);
-  function zoomNull(node: HTMLElement) {
-    node.classList.remove("zoomIn");
-    node.classList.remove("zoomOut");
-    return {
-      delay: 0,
-      duration: 0,
-    };
-  }
-
-  function zoomIn(_node: HTMLElement) {
-    return {
-      delay: 0,
-      duration: 1500,
-    };
-  }
-  function zoomOut(_node: HTMLElement) {
-    return {
-      delay: 250,
-      duration: 1500,
-    };
-  }
-  function endAnimation(ev: AnimationEvent) {
-    if (
-      ev.animationName == "topZoomShow" ||
-      ev.animationName == "bottomZoomShow" ||
-      ev.animationName == "noAnimation"
-    ) {
-      const target = ev.currentTarget as HTMLDivElement;
-      target.className = "";
-    }
-  }
-  $effect(() => {
+  $effect.pre(() => {
     let pathname = data.pathname as string;
-    if (pathname.startsWith("/blog") !== previous.startsWith("/blog")) {
-      fadeIn = zoomOut;
-      fadeOut = zoomIn;
-      isInBlog++;
+    let absPrev = getUnlocalizedPath(previous);
+    let absCurr = getUnlocalizedPath(pathname);
+
+    if (absPrev == absCurr) {
+      fadeIn = instaFadeIn;
+      fadeOut = instaFadeOut;
     } else {
-      fadeIn = zoomNull;
-      fadeOut = zoomNull;
+      const curr = targetMap[absCurr];
+      const prev = targetMap[absPrev];
+      fadeIn = { ...durFadeIn, target: prev, current: curr };
+      fadeOut = { ...durFadeOut, target: curr, current: prev };
+
+      setBackgroundPosition(prev, curr, true);
     }
-    previous = pathname;
+    previous = data.pathname;
   });
+
+  const initialPath = getUnlocalizedPath(data.pathname);
 </script>
 
-{#key isInBlog}
+<svelte:head>
+  {#if targetMap[initialPath] == 0}
+    <style>
+      body {
+        background-position-x: 0vw;
+      }
+    </style>
+  {:else if targetMap[initialPath] == 1}
+    <style>
+      body {
+        background-position-x: -100vw;
+      }
+    </style>
+  {:else if targetMap[initialPath] == 2}
+    <style>
+      body {
+        background-position-x: -200vw;
+      }
+    </style>
+  {/if}
+</svelte:head>
+
+{#key previous}
   <div
     class="relative min-h-[100vh] overflow-hidden"
-    onanimationend={endAnimation}
-    in:fadeIn
-    out:fadeOut
-    onintrostart={(ev) => {
-      if (previous.startsWith("/blog")) {
-        ev.currentTarget.className = "bottomZoom show";
-      } else {
-        ev.currentTarget.className = "topZoom show";
-      }
-    }}
-    onoutrostart={(ev) => {
-      if (previous.startsWith("/blog")) {
-        ev.currentTarget.className = "topZoom hide";
-      } else {
-        ev.currentTarget.className = "bottomZoom hide";
+    in:slidePage={fadeIn}
+    out:slidePage={fadeOut}
+    onintroend={() => {
+      const body = document.querySelector("body");
+      if (body) {
+        body.style.backgroundPositionX = body.style.getPropertyValue("--background-position");
+        body.classList.remove("bg-body");
       }
     }}
   >
     {@render children?.()}
   </div>
 {/key}
+
+<Navbar />
+
+<style>
+  :global(body.bg-body) {
+    animation: bg-body-animate 700ms cubic-bezier(0.33, 1, 0.68, 1) forwards;
+  }
+
+  @keyframes bg-body-animate {
+    50% {
+      background-position-x: calc(var(--background-position-half));
+    }
+    100% {
+      background-position-x: calc(var(--background-position));
+    }
+  }
+</style>

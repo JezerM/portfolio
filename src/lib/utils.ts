@@ -45,19 +45,19 @@ const scaleConversion = (valueA: number, scaleA: [number, number], scaleB: [numb
   return valueB;
 };
 
+const styleToString = (style: Record<string, number | string | undefined>): string => {
+  return Object.keys(style).reduce((str, key) => {
+    if (style[key] === undefined) return str;
+    return str + `${key}:${style[key]};`;
+  }, "");
+};
+
 export const flyAndScale = (
   node: Element,
   params: FlyAndScaleParams = { y: -8, x: 0, start: 0.95, duration: 150 }
 ): TransitionConfig => {
   const style = getComputedStyle(node);
   const transform = style.transform === "none" ? "" : style.transform;
-
-  const styleToString = (style: Record<string, number | string | undefined>): string => {
-    return Object.keys(style).reduce((str, key) => {
-      if (style[key] === undefined) return str;
-      return str + `${key}:${style[key]};`;
-    }, "");
-  };
 
   return {
     duration: params.duration ?? 200,
@@ -90,25 +90,17 @@ export const slidePage = (
   const style = getComputedStyle(node);
   const transform = style.transform === "none" ? "" : style.transform;
 
-  const styleToString = (style: Record<string, number | string | undefined>): string => {
-    return Object.keys(style).reduce((str, key) => {
-      if (style[key] === undefined) return str;
-      return str + `${key}:${style[key]};`;
-    }, "");
-  };
-
   return {
     duration: params.duration ?? 200,
-    delay: params.delay ?? 250,
+    delay: params.delay ?? 0,
     css: (t) => {
       const x = ((params.current ?? 0) - (params.target ?? 1)) * 100 * (1 - t);
 
-      const scale = scaleConversion(t, [0, 1], [0.95, 1]);
+      const scale = scaleConversion(t, [0, 1], [0.98, 1]);
 
       return styleToString({
         position: "static",
         transform: `${transform} translateX(${x}vw) scale(${scale})`,
-        opacity: 1,
       });
     },
     easing: cubicOut,
