@@ -56,12 +56,12 @@
 
   <div class="flex flex-col gap-6 md:group-odd:text-right md:group-even:order-first">
     <h2
-      class="z-10 text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
+      class="z-10 transform-gpu text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
     >
       {$_(`services.${service.key}.name`)}
     </h2>
     <div
-      class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-4 backdrop-blur-md"
+      class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md"
     >
       {#each descriptionLines as line}
         <p>
@@ -77,7 +77,7 @@
         {@const Icon = getIconByKey(benefit.icon)}
         <div
           class={[
-            "benefit-container flex w-40 flex-col items-center justify-between gap-2 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-4 text-center backdrop-blur-md sm:w-auto",
+            "benefit-container flex w-40 flex-col items-center justify-between gap-2 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 text-center backdrop-blur-md sm:w-auto",
             benefit.class,
           ]}
         >

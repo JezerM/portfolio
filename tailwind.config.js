@@ -49,6 +49,7 @@ export default {
     extend: {
       backgroundImage: {
         noise: "url('/deco/noise.png')",
+        kraft: "url('/deco/kraft.png')",
       },
       dropShadow: {
         glow: "0 0 25px currentcolor",

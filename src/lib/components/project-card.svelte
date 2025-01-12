@@ -22,7 +22,7 @@
   <div class="relative aspect-[16/10] w-full bg-bg-dim">
     <CardImage src={thumbnail} alt={project.name} />
   </div>
-  <div class="flex h-full flex-col items-start gap-1.5 bg-noise px-4 py-4">
+  <div class="flex h-full flex-col items-start gap-1.5 bg-kraft px-4 py-4">
     <h2 class="font-video text-xl text-fg-1">{project.name}</h2>
     <p class="text-sm text-grey-0">{$_(`projects.${project.key}.description`)}</p>
 

@@ -31,7 +31,7 @@
 
 <div class="mx-auto max-w-[840px] space-y-8">
   <div
-    class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
+    class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
   >
     <p>
       {@html $_("home.about_1")}
@@ -47,7 +47,7 @@
 
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
     <div
-      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
+      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
     >
       <h3 class="font-video text-xl text-fg-1">Work</h3>
       <p
@@ -70,7 +70,7 @@
     </div>
 
     <div
-      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
+      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
     >
       <h3 class="font-video text-xl text-fg-1">
         {$_("home.extra.title")}
@@ -89,7 +89,7 @@
 
   <div class="grid grid-cols-3 gap-8 sm:grid-cols-6">
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
+      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
     >
       <h3 class="font-video text-xl text-fg-1">Web Development</h3>
       <ul class="list-[square] pl-8">
@@ -103,7 +103,7 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md"
+      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
     >
       <h3 class="font-video text-xl text-fg-1">Systems</h3>
       <ul class="list-[square] pl-8">
@@ -117,7 +117,7 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md md:col-span-2"
+      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
     >
       <h3 class="font-video text-xl text-fg-1">Databases</h3>
       <ul class="list-[square] pl-8">
@@ -128,7 +128,7 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md md:col-span-2"
+      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
     >
       <h3 class="font-video text-xl text-fg-1">Mobile</h3>
       <ul class="list-[square] pl-8">
@@ -139,7 +139,7 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-noise p-8 backdrop-blur-md md:col-span-2"
+      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
     >
       <h3 class="font-video text-xl text-fg-1">Design</h3>
       <ul class="list-[square] pl-8">
