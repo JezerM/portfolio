@@ -24,3 +24,10 @@ benefits = [
 [optimize-website]
 name = "Optimize website"
 image = "/thumbnails/web-greeter.png"
+benefits = [
+  { key = "faster-load", icon = "chevrons-up" },
+  { key = "seo", icon = "chart-column-increasing" },
+  { key = "images", icon = "file-chart-pie" },
+  { key = "user-experience", icon = "user-check", class = "md:col-span-2 lg:col-span-1" },
+  { key = "support", icon = "life-buoy", class = "lg:col-span-2" },
+]

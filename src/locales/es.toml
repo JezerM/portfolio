@@ -86,6 +86,13 @@ description = [
   "Si tienes alguno de estos problemas y no quieres un nuevo sitio web, solicita la optimización de tu sitio web y estará listo para ti.",
 ]
 
+[services.optimize-website.benefits]
+faster-load = "Tiempos de carga más rápidos"
+seo = "Puntajes de SEO mejorados"
+images = "Imágenes optimizadas"
+user-experience = "Mejor experiencia de usuario"
+support = "Mantenimiento y soporte"
+
 [services.extra]
 title = "¿Deseas algo más?"
 description = [

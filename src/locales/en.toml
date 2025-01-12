@@ -86,6 +86,13 @@ description = [
   "If you have any of these problems and don’t want a new website, request a website optimization and it will be done for you.",
 ]
 
+[services.optimize-website.benefits]
+faster-load = "Faster load times"
+seo = "Improved SEO scores"
+images = "Optimized images"
+user-experience = "Improved user experience"
+support = "Maintenance and support"
+
 [services.extra]
 title = "Have any other request?"
 description = [

@@ -3,7 +3,10 @@
   import { getContext } from "svelte";
   import type Service from "$lib/types/service";
   import {
+    ChartColumnIncreasing,
     ChartLine,
+    ChevronsUp,
+    FileChartPie,
     KeyRound,
     LaptopMinimalCheck,
     LifeBuoy,
@@ -40,8 +43,14 @@
         return MonitorSmartphone;
       case "chart-line":
         return ChartLine;
+      case "chart-column-increasing":
+        return ChartColumnIncreasing;
+      case "file-chart-pie":
+        return FileChartPie;
       case "user-check":
         return UserCheck;
+      case "chevrons-up":
+        return ChevronsUp;
       case "rust":
         return Rust;
       case "linux":
