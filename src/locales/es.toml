@@ -70,6 +70,7 @@ access = "Acceso local o global"
 name = "Sitio web personalizado"
 description = [
   "¿Cansado/a de sitios web aburridos, lentos y desactualizados? Solicita un sitio web personalizado que se ajusta perfectamente a tus necesidades de negocio, objetivos y preferencias.",
+  "Desde <span class=\"text-green\">sitios sencillos y estáticos</span>, hasta gestionados por <span class=\"text-blue\">WordPress</span>, <span class=\"text-red\">dinámicos</span>, con servicios específicos, ya sea con las tecnologías de tu elección y/o las <span class=\"text-yellow\">más óptimas.</span>",
 ]
 
 [services.custom-website.benefits]

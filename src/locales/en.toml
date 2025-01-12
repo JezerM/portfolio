@@ -70,6 +70,7 @@ access = "Local or global access"
 name = "Custom Website"
 description = [
   "Tired of boring, slow and outdated websites? Request a custom website that perfectly aligns with your business needs, goals and preferences.",
+  "From <span class=\"text-green\">simple and static sites</span>, to <span class=\"text-blue\">WordPress</span> managed, <span class=\"text-red\">dynamic</span>, with specific services, either with the thecnologies of your choice and/or the <span class=\"text-yellow\">most optimal</span> ones.",
 ]
 
 [services.custom-website.benefits]
