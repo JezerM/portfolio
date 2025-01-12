@@ -23,7 +23,7 @@
   <div class="aspect-square size-56 overflow-hidden rounded-full border-4 border-bg-5 bg-purple">
     <enhanced:img class="block size-full" src="/static/JezerPicture.png" alt="JezerM anime" />
   </div>
-  <h1 class="mt-4 text-center font-raster text-4xl text-aqua drop-shadow-glow">
+  <h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-aqua drop-shadow-glow">
     {@html $_("home.greeting")}
   </h1>
   <ContactIcons />
@@ -83,7 +83,7 @@
     </div>
   </div>
 
-  <h2 class="text-center font-raster text-2xl text-blue drop-shadow-glow">
+  <h2 class="transform-gpu text-center font-raster text-2xl text-blue drop-shadow-glow">
     {@html $_("home.skills_title")}
   </h2>
 
@@ -151,3 +151,13 @@
     </div>
   </div>
 </div>
+
+<style>
+  @keyframes -global-intro-animation {
+    from {
+      zoom: 2;
+      transform: scale(1.25);
+      filter: blur(4px);
+    }
+  }
+</style>

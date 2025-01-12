@@ -1,15 +1,8 @@
 <script lang="ts">
-  import { _, locale } from "svelte-i18n";
+  import { _ } from "svelte-i18n";
   import type { LayoutData } from "./$types";
   import Navbar from "$lib/components/navbar.svelte";
-  import { fade } from "svelte/transition";
-  import { navigating } from "$app/state";
-  import { getUnlocalizedPath } from "$lib/utils";
-
-  interface TransitionParams {
-    duration: number;
-    delay?: number;
-  }
+  import { getUnlocalizedPath, slidePage, type SlidePageParams } from "$lib/utils";
 
   interface Props {
     data: LayoutData;
@@ -21,11 +14,16 @@
   let instaFadeIn = { duration: 0, delay: 0 };
   let instaFadeOut = { duration: 0 };
 
-  let durFadeIn = { duration: 150, delay: 200 };
-  let durFadeOut = { duration: 150 };
+  let durFadeIn = { duration: 350, delay: 500 };
+  let durFadeOut = { duration: 350 };
 
-  let fadeIn: TransitionParams = $state(durFadeIn);
-  let fadeOut: TransitionParams = $state(durFadeOut);
+  let fadeIn: SlidePageParams = $state(durFadeIn);
+  let fadeOut: SlidePageParams = $state(durFadeOut);
+
+  const targetMap: { [key: string]: number } = {
+    "/": 0,
+    "/services": 1,
+  };
 
   let previous = $state(data.pathname as string);
   $effect.pre(() => {
@@ -36,8 +34,10 @@
       fadeIn = instaFadeIn;
       fadeOut = instaFadeOut;
     } else {
-      fadeIn = durFadeIn;
-      fadeOut = durFadeOut;
+      const curr = targetMap[absCurr];
+      const prev = targetMap[absPrev];
+      fadeIn = { ...durFadeIn, target: prev, current: curr };
+      fadeOut = { ...durFadeOut, target: curr, current: prev };
     }
     previous = data.pathname;
   });
@@ -57,8 +57,8 @@
 >
   {#key previous}
     <div
-      in:fade={fadeIn}
-      out:fade={fadeOut}
+      in:slidePage={fadeIn}
+      out:slidePage={fadeOut}
       onintrostart={() => (transitioning = true)}
       onintroend={() => (transitioning = false)}
     >
@@ -103,6 +103,6 @@
 <style>
   /* Fix for Safari backdrop blur during transitions */
   .no-blur :global(*) {
-    --tw-backdrop-blur: blur(0px) !important;
+    /* --tw-backdrop-blur: blur(0px) !important; */
   }
 </style>
