@@ -1,10 +1,25 @@
 [tablo-pos]
 name = "Tablo POS"
 image = "/thumbnails/web-greeter.png"
+benefits = [
+  { key = "blazingly-fast", icon = "rust" },
+  { key = "secure-auth", icon = "key-round" },
+  { key = "attractive", icon = "paintbrush" },
+  { key = "linux-macos", icon = "linux" },
+  { key = "support", icon = "life-buoy", class = "md:col-span-2" },
+  { key = "access", icon = "laptop-minimal-check", class = "sm:col-span-2" },
+]
 
 [custom-website]
 name = "Custom website"
 image = "/thumbnails/web-greeter.png"
+benefits = [
+  { key = "custom-design", icon = "paintbrush" },
+  { key = "responsive", icon = "monitor-smartphone" },
+  { key = "analytics", icon = "chart-line" },
+  { key = "user-experience", icon = "user-check", class = "md:col-span-2 lg:col-span-1" },
+  { key = "support", icon = "life-buoy", class = "lg:col-span-2" },
+]
 
 [optimize-website]
 name = "Optimize website"

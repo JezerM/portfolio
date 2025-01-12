@@ -55,14 +55,29 @@ description = "Juego de Android para niños hecho en una noche. Aún me sorprend
 name = "Tablo POS"
 description = [
   "Software flexible, moderno y con todas las funciones de un sistema de <span class=\"text-aqua\">Punto de Ventas (POS)</span> para restaurantes.",
-  "Solicita un sistema POS personalizado, ¡con todas las funciones y más! Tú decides tus preferencias.",
+  "Solicita un <span class=\"text-orange\">sistema POS personalizado</span>, ¡con todas las funciones y más! Tú decides tus preferencias.",
 ]
+
+[services.tablo-pos.benefits]
+blazingly-fast = "¡Súper rápido!"
+secure-auth = "Autenticación segura"
+attractive = "Diseño atractivo"
+linux-macos = "Linux y macOS"
+support = "Mantenimiento y soporte"
+access = "Acceso local o global"
 
 [services.custom-website]
 name = "Sitio web personalizado"
 description = [
   "¿Cansado/a de sitios web aburridos, lentos y desactualizados? Solicita un sitio web personalizado que se ajusta perfectamente a tus necesidades de negocio, objetivos y preferencias.",
 ]
+
+[services.custom-website.benefits]
+custom-design = "Diseño personalizado"
+responsive = "Diseño responsivo"
+analytics = "Análisis integrado"
+user-experience = "Mejor experiencia de usuario"
+support = "Mantenimiento y soporte"
 
 [services.optimize-website]
 name = "Optimiza tu sitio web"
@@ -72,7 +87,7 @@ description = [
 ]
 
 [services.extra]
-title = "¿Quieres algo más?"
+title = "¿Deseas algo más?"
 description = [
-  "Si tienes problemas con Desarrollo Web, Mantenimiento de Software, Programación de Sistemas o cualquier consulta de software, no dudes en contactarme para discutir tu solicitud.",
+  "Si tienes problemas con algo de Desarrollo Web, Mantenimiento de Software, Programación de Sistemas o cualquier consulta de software, no dudes en contactarme para discutir tu solicitud.",
 ]

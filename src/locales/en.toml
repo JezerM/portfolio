@@ -55,14 +55,29 @@ description = "Android game for kids made in one night. I'm still surprised I wa
 name = "Tablo POS"
 description = [
   "Full-featured, flexible and modern <span class=\"text-aqua\">Point of Sale (POS)</span> system software for restaurants.",
-  "Request a personalized POS system with our base features or even more! You decide your preferences.",
+  "Request a <span class=\"text-orange\">personalized POS system</span> with our base features or even more! You decide your preferences.",
 ]
+
+[services.tablo-pos.benefits]
+blazingly-fast = "Blazingly Fast!"
+secure-auth = "Secure Auth"
+attractive = "Attractive design"
+linux-macos = "Linux and macOS"
+support = "Maintenance and support"
+access = "Local or global access"
 
 [services.custom-website]
 name = "Custom Website"
 description = [
   "Tired of boring, slow and outdated websites? Request a custom website that perfectly aligns with your business needs, goals and preferences.",
 ]
+
+[services.custom-website.benefits]
+custom-design = "Custom design"
+responsive = "Responsive design"
+analytics = "Integrated analytics"
+user-experience = "Improved user experience"
+support = "Maintenance and support"
 
 [services.optimize-website]
 name = "Optimize your website"
