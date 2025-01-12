@@ -82,20 +82,20 @@
   class="absolute left-[180px] right-0 top-[640px] -z-10 mx-auto w-48 lg:left-[850px]"
 />
 <enhanced:img
-  src="/static/deco/44.png?w=300;540"
-  sizes="300px, (min-width:640px) 540px"
+  src="/static/deco/44.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
   alt=""
   class="absolute left-0 right-[110px] top-[80px] -z-10 mx-auto w-72 lg:top-[100px]"
 />
 <enhanced:img
-  src="/static/deco/84.png?w=300;540"
-  sizes="300px, (min-width:640px) 540px"
+  src="/static/deco/84.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
   alt=""
   class="absolute left-[200px] right-0 top-[1000px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
 />
 <enhanced:img
-  src="/static/deco/84.png?w=300;540"
-  sizes="300px, (min-width:640px) 540px"
+  src="/static/deco/84.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
   alt=""
   class="absolute left-0 right-[150px] top-[2000px] -z-10 mx-auto w-72 sm:hidden"
 />
