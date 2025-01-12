@@ -50,7 +50,9 @@ export default {
       backgroundImage: {
         noise: "url('/deco/noise.png')",
         kraft:
-          "image-set(url('/deco/kraft.webp') type('image/webp'), url('/deco/kraft.png') type('image/png'));",
+          "image-set(url('/deco/kraft.avif') type('image/avif'), " +
+          "url('/deco/kraft.webp') type('image/webp'), " +
+          "url('/deco/kraft.png') type('image/png'));",
       },
       dropShadow: {
         glow: "0 0 25px currentcolor",
