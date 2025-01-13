@@ -96,7 +96,7 @@ export const slidePage = (
     css: (t) => {
       const x = ((params.current ?? 0) - (params.target ?? 1)) * 100 * (1 - t);
 
-      const scale = scaleConversion(t, [0, 1], [0.98, 1]);
+      const scale = scaleConversion(t, [0, 1], [0.96, 1]);
 
       return styleToString({
         position: "static",
