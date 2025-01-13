@@ -2,7 +2,7 @@ import type { MarkdownMeta } from "$lib/types/markdown-meta";
 import type { Post } from "$lib/types/post";
 
 export const fetchMarkdownPosts = async () => {
-  const allPostFiles = import.meta.glob("/src/posts/*.md");
+  const allPostFiles = import.meta.glob("$posts/*.md");
   const iterablePostFiles = Object.entries(allPostFiles);
 
   const allPosts: Post[] = await Promise.all(

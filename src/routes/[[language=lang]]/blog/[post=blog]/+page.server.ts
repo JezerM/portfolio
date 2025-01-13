@@ -1,16 +1,12 @@
-import * as fs from "fs";
 import type { EntryGenerator, RouteParams } from "./$types";
+import { fetchMarkdownPosts } from "$lib/server/utils";
 
-export const entries = (() => {
-  const dir = fs.readdirSync("src/posts/", { withFileTypes: true, recursive: false });
+export const entries = (async () => {
+  const posts = await fetchMarkdownPosts();
 
-  const posts = dir.reduce((filtered, value) => {
-    if (value.isFile() && value.name.endsWith(".md")) {
-      filtered.push({ post: value.name.replace(/(.*)(\.md)/, "$1") });
-    }
-    return filtered;
-  }, [] as RouteParams[]);
-  return posts;
+  return posts.map((v) => {
+    return { post: v.name } as RouteParams;
+  });
 }) satisfies EntryGenerator;
 
 export const prerender = true;

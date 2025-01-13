@@ -1,15 +1,16 @@
-import type { MarkdownMeta } from "$lib/server/utils";
-import type { PageLoad } from "$types";
+import type { MarkdownMeta } from "$lib/types/markdown-meta";
+import type { PageLoad } from "./$types";
 
 export const load = (async ({ params }) => {
   const post = await import(`$posts/${params.post}.md`);
-  const { title, date, image } = post.metadata as MarkdownMeta;
+  const { title, date, description, toc } = post.metadata as MarkdownMeta;
   const content = post.default;
 
   return {
     content,
     title,
-    date,
-    image,
+    date: new Date(date),
+    description,
+    toc,
   };
 }) satisfies PageLoad;
