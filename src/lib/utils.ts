@@ -21,6 +21,7 @@ export function getUnlocalizedPath(path: string): string {
 export function localizePath(lang: string): string {
   let route = page.route.id ?? "";
   route = route?.replace("[[language=lang]]", "");
+  route = route?.replace("(main)", "");
 
   let endRoute = `/${lang}/${route}`;
   if (lang == "en") endRoute = `/${route}`;
