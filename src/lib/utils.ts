@@ -19,12 +19,10 @@ export function getUnlocalizedPath(path: string): string {
  * Returns current path with the specified locale
  */
 export function localizePath(lang: string): string {
-  let route = page.route.id ?? "";
-  route = route?.replace("[[language=lang]]", "");
-  route = route?.replace("(main)", "");
+  const pathname = getUnlocalizedPath(page.url.pathname);
 
-  let endRoute = `/${lang}/${route}`;
-  if (lang == "en") endRoute = `/${route}`;
+  let endRoute = `/${lang}/${pathname}`;
+  if (lang == "en") endRoute = `/${pathname}`;
 
   return endRoute.replace(/\/+/g, "/");
 }
