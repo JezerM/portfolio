@@ -1,13 +1,11 @@
 <script lang="ts">
   import type { Icon as IconType } from "lucide-svelte";
-  import { Check, Earth, FolderOpen, House, NotebookText } from "lucide-svelte";
-  import { Select } from "bits-ui";
+  import { FolderOpen, House, NotebookText } from "lucide-svelte";
   import { _ } from "svelte-i18n";
 
   import { page } from "$app/state";
-  import { flyAndScale, getUnlocalizedPath } from "$lib/utils";
+  import { getUnlocalizedPath } from "$lib/utils";
   import { baseLocale } from "$lib/i18n";
-  import { scale } from "svelte/transition";
   import LanguageSelector from "./language-selector.svelte";
 
   function active(path: string) {
@@ -44,7 +42,7 @@
   <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
     {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
     {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
-    {@render navLink("/blog", $_("navigation.blog"), NotebookText)}
+    {@render navLink($baseLocale + "/blog", $_("navigation.blog"), NotebookText)}
     <hr class="h-auto border-[0.5px] border-fg-0" />
     <div class="flex flex-row gap-3">
       <LanguageSelector />

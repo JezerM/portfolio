@@ -3,7 +3,7 @@
   import { getUnlocalizedPath, slidePage, type SlidePageParams } from "$lib/utils";
   import "../app.css";
   import type { LayoutData } from "./$types";
-  import { onMount, type Snippet } from "svelte";
+  import { type Snippet } from "svelte";
 
   interface Props {
     data: LayoutData;

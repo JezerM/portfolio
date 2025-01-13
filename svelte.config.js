@@ -23,6 +23,9 @@ const config = {
     paths: {
       base: "",
     },
+    alias: {
+      $posts: "./src/posts/",
+    },
   },
 };
 

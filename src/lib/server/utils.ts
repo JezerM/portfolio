@@ -1,25 +1,29 @@
-export interface IMarkdown {
-  title: string;
-  date: Date;
-  image: string;
-}
+import type { MarkdownMeta } from "$lib/types/markdown-meta";
+import type { Post } from "$lib/types/post";
 
 export const fetchMarkdownPosts = async () => {
   const allPostFiles = import.meta.glob("/src/posts/*.md");
   const iterablePostFiles = Object.entries(allPostFiles);
 
-  const allPosts = await Promise.all(
+  const allPosts: Post[] = await Promise.all(
     iterablePostFiles.map(async ([path, resolver]) => {
-      const { metadata } = (await resolver()) as { metadata: IMarkdown };
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const data = (await resolver()) as { metadata: any };
+      const metadata: MarkdownMeta = {
+        date: new Date(data.metadata.date),
+        title: data.metadata.title,
+        description: data.metadata.description,
+      };
       const postName = path.replace(/\/src\/posts\/(.*)\.md/, "$1");
-      const postPath = `/blog/${postName}`;
 
       return {
         meta: metadata,
-        path: postPath,
+        name: postName,
       };
     })
   );
+
+  allPosts.sort((a, b) => b.meta.date.getTime() - a.meta.date.getTime());
 
   return allPosts;
 };

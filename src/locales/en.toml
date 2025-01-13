@@ -7,6 +7,7 @@ blog = "Blog"
 description = "My portfolio. It includes my information, the projects I have made and my contact info."
 home_title = "JezerM's portfolio"
 services_title = "Portfolio - Services"
+blog_title = "Portfolio - Blog"
 
 [home]
 greeting = "Hi! I'm Jezer Mejía"
