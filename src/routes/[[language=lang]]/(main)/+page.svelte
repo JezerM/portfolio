@@ -17,6 +17,7 @@
 
 <svelte:head>
   <title>{$_("head.home_title")}</title>
+  <meta property="og:title" content={$_("head.home_title")} />
 </svelte:head>
 
 <div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4 sm:mt-16">

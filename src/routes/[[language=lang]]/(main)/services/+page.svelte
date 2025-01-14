@@ -19,6 +19,7 @@
 
 <svelte:head>
   <title>{$_("head.services_title")}</title>
+  <meta property="og:title" content={$_("head.services_title")} />
 </svelte:head>
 
 <h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">

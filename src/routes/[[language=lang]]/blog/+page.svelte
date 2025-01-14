@@ -12,6 +12,7 @@
 <svelte:head>
   <title>{$_("head.blog_title")}</title>
   <meta name="description" content={$_("head.blog_description")} />
+  <meta property="og:title" content={$_("head.blog_title")} />
   <meta property="og:description" content={$_("head.blog_description")} />
 </svelte:head>
 

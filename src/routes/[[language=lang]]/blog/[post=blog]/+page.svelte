@@ -43,6 +43,7 @@
 <svelte:head>
   <title>Blog - {post.title}</title>
   <meta name="description" content={post.description} />
+  <meta property="og:title" content="Blog - {post.title}" />
   <meta property="og:description" content={post.description} />
 </svelte:head>
 
