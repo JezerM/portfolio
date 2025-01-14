@@ -31,6 +31,11 @@ email_me = "Email me"
 title = "Projects"
 open = "Open"
 
+[blog]
+title = "Blog"
+posted_on = "Posted on:"
+toc = "Table of contents"
+
 [projects.web-greeter]
 description = "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter."
 

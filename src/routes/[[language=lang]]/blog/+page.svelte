@@ -17,7 +17,9 @@
   {$_("navigation.blog")}
 </h1>
 
-<div class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div
+  class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+>
   {#each data.posts as post}
     <PostCard {post} />
   {/each}
