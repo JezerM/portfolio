@@ -1,6 +1,8 @@
 import RemarkFlexibleToc from "remark-flexible-toc";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeSlug from "rehype-slug";
+import { enhancedImages } from "mdsvex-enhanced-images";
 import { h } from "hastscript";
 
 function flexibleToc() {
@@ -46,9 +48,18 @@ const autoLinkOptions = {
   },
 };
 
+/** @type {import('rehype-external-links').Options} */
+const externalLinksOptions = {
+  target: "_blank",
+};
+
 /** @type {import('mdsvex').MdsvexOptions} */
 export default {
   extensions: [".md"],
-  remarkPlugins: [flexibleToc],
-  rehypePlugins: [[rehypeSlug], [rehypeAutoLinkHeadings, autoLinkOptions]],
+  remarkPlugins: [flexibleToc, enhancedImages],
+  rehypePlugins: [
+    [rehypeSlug],
+    [rehypeAutoLinkHeadings, autoLinkOptions],
+    [rehypeExternalLinks, externalLinksOptions],
+  ],
 };

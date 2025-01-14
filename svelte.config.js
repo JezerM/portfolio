@@ -21,6 +21,7 @@ const config = {
     },
     alias: {
       $posts: "./src/posts/",
+      $static: "./static/",
     },
   },
 };
