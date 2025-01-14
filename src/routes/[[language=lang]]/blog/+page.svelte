@@ -11,6 +11,8 @@
 
 <svelte:head>
   <title>{$_("head.blog_title")}</title>
+  <meta name="description" content={$_("head.blog_description")} />
+  <meta property="og:description" content={$_("head.blog_description")} />
 </svelte:head>
 
 <h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">
