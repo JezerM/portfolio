@@ -2,12 +2,14 @@
 home = "Inicio"
 services = "Servicios"
 blog = "Blog"
+loading = "Cargando..."
 
 [head]
 description = "Mi portfolio. Incluye mi información, los proyectos que he realizado y mi información de contacto."
 home_title = "JezerM's portfolio"
 services_title = "Portfolio - Servicios"
 blog_title = "Portfolio - Blog"
+blog_description = "Publicaciones sobre contenido relacionado a la tecnología y otras cosas"
 
 [home]
 greeting = "¡Hola! Soy Jezer Mejía"

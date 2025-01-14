@@ -2,8 +2,12 @@
   import Navbar from "$lib/components/navbar.svelte";
   import { getUnlocalizedPath, slidePage, type SlidePageParams } from "$lib/utils";
   import "../app.css";
+  import { navigating } from "$app/state";
   import type { LayoutData } from "./$types";
   import { type Snippet } from "svelte";
+  import { Loader } from "lucide-svelte";
+  import { fade } from "svelte/transition";
+  import { _ } from "svelte-i18n";
 
   interface Props {
     data: LayoutData;
@@ -59,6 +63,22 @@
   });
 
   const initialPosition = getPathnamePosition(data.pathname);
+
+  let loading = $state(false);
+
+  $effect(() => {
+    if (navigating.complete == null) {
+      loading = false;
+      return;
+    }
+    const timeout = setTimeout(() => {
+      loading = navigating.complete != null;
+    }, 150);
+
+    return () => {
+      clearTimeout(timeout);
+    };
+  });
 </script>
 
 <svelte:head>
@@ -82,6 +102,18 @@
     </style>
   {/if}
 </svelte:head>
+
+{#if loading}
+  <div
+    class="fixed z-20 flex size-full items-center justify-center bg-bg-dim/50 bg-kraft backdrop-blur-md"
+    transition:fade
+  >
+    <div class="pointer-events-none flex select-none flex-col items-center gap-4">
+      <Loader class="h-10 w-10 animate-spin" />
+      <span class="text-center text-xl">{$_("navigation.loading")}</span>
+    </div>
+  </div>
+{/if}
 
 <div class="grid grid-cols-1 grid-rows-1">
   {#key previous}
