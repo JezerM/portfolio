@@ -15,10 +15,10 @@
 
 <a
   href="{$baseLocale}/blog/{post.name}"
-  class="bg-kraft relative flex flex-col gap-1.5 overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 p-4 backdrop-blur-md transition-colors hover:border-orange focus:border-orange"
+  class="relative flex flex-col gap-1.5 overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md transition-colors hover:border-orange focus:border-orange"
 >
   <time
-    datetime={post.meta.date.toUTCString()}
+    datetime={post.meta.date.toISOString()}
     class="flex justify-between gap-4 font-print text-grey-0"
   >
     <span>{formattedDate}</span>

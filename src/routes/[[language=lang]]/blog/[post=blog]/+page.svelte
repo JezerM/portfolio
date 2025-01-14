@@ -4,6 +4,7 @@
   import { createRawSnippet } from "svelte";
   import type { TocItem } from "remark-flexible-toc";
   import { TableOfContents } from "lucide-svelte";
+  import { headDescription, headTitle } from "$lib/snippets/head.svelte";
   interface Props {
     data: PageData;
   }
@@ -41,10 +42,13 @@
 </script>
 
 <svelte:head>
-  <title>Blog - {post.title}</title>
-  <meta name="description" content={post.description} />
-  <meta property="og:title" content="Blog - {post.title}" />
-  <meta property="og:description" content={post.description} />
+  {@render headTitle(`Blog - ${post.title}`)}
+  {@render headDescription(post.description)}
+
+  <meta property="og:type" content="article" />
+
+  <meta property="article:published_time" content={post.date.toISOString()} />
+  <meta property="article:author" content="Jezer Mejía" />
 </svelte:head>
 
 <article>
@@ -54,7 +58,7 @@
     <h1 class="mb-4 transform-gpu text-left font-raster text-4xl text-aqua drop-shadow-glow">
       {post.title}
     </h1>
-    <time datetime={post.date.toUTCString()} class="block">
+    <time datetime={post.date.toISOString()} class="block">
       {$_("blog.posted_on")}
       {$date(post.date, { dateStyle: "medium", timeStyle: "short" })}
     </time>

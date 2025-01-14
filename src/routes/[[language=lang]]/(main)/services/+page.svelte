@@ -5,6 +5,7 @@
   import { setContext } from "svelte";
   import ServiceSection from "$lib/components/service-section.svelte";
   import { Mail } from "lucide-svelte";
+  import { headTitle } from "$lib/snippets/head.svelte";
 
   interface Props {
     data: PageData;
@@ -18,8 +19,7 @@
 </script>
 
 <svelte:head>
-  <title>{$_("head.services_title")}</title>
-  <meta property="og:title" content={$_("head.services_title")} />
+  {@render headTitle($_("head.services_title"))}
 </svelte:head>
 
 <h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">

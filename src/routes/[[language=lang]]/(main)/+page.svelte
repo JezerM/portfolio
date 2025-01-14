@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContactIcons from "$lib/components/contact-icons.svelte";
+  import { headTitle } from "$lib/snippets/head.svelte";
   import { FileUser } from "lucide-svelte";
   import { _, locale } from "svelte-i18n";
 
@@ -16,8 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>{$_("head.home_title")}</title>
-  <meta property="og:title" content={$_("head.home_title")} />
+  {@render headTitle($_("head.home_title"))}
 </svelte:head>
 
 <div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4 sm:mt-16">

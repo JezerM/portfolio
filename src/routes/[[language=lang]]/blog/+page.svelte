@@ -2,6 +2,7 @@
   import PostCard from "$lib/components/post-card.svelte";
   import { _ } from "svelte-i18n";
   import type { PageServerData } from "./$types";
+  import { headTitle } from "$lib/snippets/head.svelte";
   interface Props {
     data: PageServerData;
   }
@@ -10,10 +11,9 @@
 </script>
 
 <svelte:head>
-  <title>{$_("head.blog_title")}</title>
-  <meta name="description" content={$_("head.blog_description")} />
-  <meta property="og:title" content={$_("head.blog_title")} />
-  <meta property="og:description" content={$_("head.blog_description")} />
+  {@render headTitle($_("head.blog_title"))}
+
+  <meta property="og:type" content="website" />
 </svelte:head>
 
 <h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">
