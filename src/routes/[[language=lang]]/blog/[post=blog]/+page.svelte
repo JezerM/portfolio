@@ -16,7 +16,7 @@
       render: () => {
         let result = "";
 
-        const minDepth = toc.map((v) => v.depth).reduce((a, b) => (a < b ? a : b));
+        const minDepth = toc.map((v) => v.depth).reduce((a, b) => (a < b ? a : b), 6);
         let depth = -1;
         for (const item of toc) {
           const itemDepth = item.depth - minDepth;
