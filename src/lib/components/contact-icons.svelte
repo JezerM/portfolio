@@ -3,6 +3,7 @@
   import Github from "$lib/icons/github.svelte";
   import KoFi from "$lib/icons/ko-fi.svelte";
   import Linkedin from "$lib/icons/linkedin.svelte";
+  import Paypal from "$lib/icons/paypal.svelte";
   import { Mail, type Icon as IconType } from "lucide-svelte";
 </script>
 
@@ -28,4 +29,5 @@
   {@render contactIcon("http://discordapp.com/users/530819150969438208", "Discord", Discord)}
   {@render contactIcon("mailto:jezer.mejia@icloud.com", "Email", Mail)}
   {@render contactIcon("https://ko-fi.com/jezerm", "Ko-fi", KoFi)}
+  {@render contactIcon("https://paypal.me/JezerM09", "Paypal", Paypal)}
 </div>
