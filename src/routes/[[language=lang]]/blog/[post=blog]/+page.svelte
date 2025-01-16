@@ -67,6 +67,7 @@
           "prose-figure:mx-auto prose-figure:my-6 prose-figure:flex prose-figure:w-full prose-figure:max-w-4xl prose-figure:flex-col prose-figure:gap-2",
           "prose-img:prose-figure:w-full",
           "prose-figcaption:text-center prose-figcaption:font-video prose-figcaption:text-grey-0",
+          "prose-code:bg-bg-1 prose-code:px-2 prose-code:py-1 prose-code:font-raster",
         ]}
       >
         <post.content />
