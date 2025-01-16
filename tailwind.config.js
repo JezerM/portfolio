@@ -3,7 +3,7 @@ import plugin from "./tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./src/**/*.{html,js,svelte,ts,toml}"],
+  content: ["./src/**/*.{html,js,svelte,ts,toml,md}"],
   darkMode: "class",
   theme: {
     colors: {
