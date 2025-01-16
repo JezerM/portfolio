@@ -23,7 +23,7 @@
 
 <article>
   <div
-    class="bg-kraft mt-8 flex w-fit flex-col rounded-md border border-bg-5 bg-bg-dim/50 p-3 backdrop-blur-md"
+    class="mt-8 flex w-fit flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-3 backdrop-blur-md"
   >
     <h1 class="mb-4 transform-gpu text-left font-raster text-4xl text-aqua drop-shadow-glow">
       {post.title}
@@ -39,7 +39,7 @@
 
   <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-9">
     <aside
-      class="bg-kraft top-4 col-span-1 flex h-fit w-full flex-col rounded-md border border-bg-5 bg-bg-dim/50 p-4 backdrop-blur-md lg:sticky lg:col-span-3 xl:col-span-2"
+      class="top-4 col-span-1 flex h-fit w-full flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md lg:sticky lg:col-span-3 xl:col-span-2"
     >
       <h2 class="mb-3 flex flex-row items-center gap-2 font-video text-xl text-fg-1">
         <TableOfContents class="h-5 w-5" />
@@ -53,7 +53,7 @@
     </aside>
 
     <div
-      class="bg-kraft col-span-1 mx-auto w-full bg-bg-dim p-4 !py-10 sm:p-6 lg:col-span-6 xl:col-span-7"
+      class="col-span-1 mx-auto w-full bg-bg-dim bg-kraft p-4 !py-10 sm:p-6 lg:col-span-6 xl:col-span-7"
     >
       <div
         class={[
@@ -64,6 +64,9 @@
           "prose-h4:text-lg prose-h4:text-blue",
           "prose-p:mb-3 prose-p:leading-relaxed prose-a:font-raster",
           "prose-a:text-orange prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-yellow focus:prose-a:text-yellow",
+          "prose-figure:mx-auto prose-figure:my-6 prose-figure:flex prose-figure:w-full prose-figure:max-w-4xl prose-figure:flex-col prose-figure:gap-2",
+          "prose-img:prose-figure:w-full",
+          "prose-figcaption:text-center prose-figcaption:font-video prose-figcaption:text-grey-0",
         ]}
       >
         <post.content />

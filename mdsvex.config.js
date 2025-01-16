@@ -48,6 +48,39 @@ const autoLinkOptions = {
   },
 };
 
+import { visit } from "unist-util-visit";
+
+function rehypeFigure(option) {
+  const className = (option && option.className) || "rehype-figure";
+
+  function buildFigure(img) {
+    const match = img.value.match(/alt="(.*)"/);
+    const alt = match ? match[1] : null;
+    const figure = h("figure", { class: className }, [
+      img,
+      alt && alt.trim().length > 0 ? h("figcaption", alt) : "",
+    ]);
+    return figure;
+  }
+
+  return function (tree) {
+    visit(tree, { tagName: "p" }, (node, index) => {
+      const images = node.children
+        .filter((n) => {
+          return n.type === "raw" && n.value.startsWith("<enhanced:img");
+        })
+        .map((img) => buildFigure(img));
+
+      if (images.length === 0) return;
+
+      tree.children[index] =
+        images.length === 1
+          ? images[0]
+          : (tree.children[index] = h("div", { class: `${className}-container` }, images));
+    });
+  };
+}
+
 /** @type {import('rehype-external-links').Options} */
 const externalLinksOptions = {
   target: "_blank",
@@ -61,5 +94,6 @@ export default {
     [rehypeSlug],
     [rehypeAutoLinkHeadings, autoLinkOptions],
     [rehypeExternalLinks, externalLinksOptions],
+    [rehypeFigure],
   ],
 };
