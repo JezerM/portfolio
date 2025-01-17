@@ -17,6 +17,7 @@
   } from "lucide-svelte";
   import Rust from "$lib/icons/rust.svelte";
   import Linux from "$lib/icons/linux.svelte";
+  import CardImage from "./card-image.svelte";
 
   interface Props {
     service: Service;
@@ -60,8 +61,20 @@
   }
 </script>
 
-<section class="group mt-4 grid grid-cols-1 md:mt-0 md:grid-cols-2">
-  <div></div>
+<section class="group mt-4 grid grid-cols-1 items-center gap-6 md:mt-0 lg:grid-cols-2">
+  {#if service.image != ""}
+    <div class="relative mt-8 h-fit w-full">
+      <enhanced:img
+        src="/static/deco/15.png?w=300;400"
+        sizes="300px, (min-width:640px) 400px"
+        alt=""
+        class="absolute inset-x-0 -top-5 z-10 mx-auto w-32 lg:-top-7 lg:w-48"
+      />
+      <CardImage src={thumbnail} alt="Awa" class="border-[16px] border-white bg-white shadow-xl" />
+    </div>
+  {:else}
+    <div class=""></div>
+  {/if}
 
   <div class="flex flex-col gap-6 md:group-odd:text-right md:group-even:order-first">
     <h2
@@ -80,7 +93,7 @@
     </div>
 
     <div
-      class="flex flex-row flex-wrap justify-center gap-4 sm:grid sm:grid-cols-4 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4"
+      class="flex flex-row flex-wrap justify-center gap-4 sm:grid sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4"
     >
       {#each service.benefits as benefit}
         {@const Icon = getIconByKey(benefit.icon)}

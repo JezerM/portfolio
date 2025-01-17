@@ -1,6 +1,6 @@
 [tablo-pos]
 name = "Tablo POS"
-image = "/thumbnails/web-greeter.png"
+image = "/thumbnails/tablo-pos-tablet.png"
 benefits = [
   { key = "blazingly-fast", icon = "rust" },
   { key = "secure-auth", icon = "key-round" },
@@ -12,22 +12,22 @@ benefits = [
 
 [custom-website]
 name = "Custom website"
-image = "/thumbnails/web-greeter.png"
+image = ""
 benefits = [
   { key = "custom-design", icon = "paintbrush" },
   { key = "responsive", icon = "monitor-smartphone" },
   { key = "analytics", icon = "chart-line" },
-  { key = "user-experience", icon = "user-check", class = "md:col-span-2 lg:col-span-1" },
-  { key = "support", icon = "life-buoy", class = "lg:col-span-2" },
+  { key = "user-experience", icon = "user-check" },
+  { key = "support", icon = "life-buoy", class = "md:col-span-2" },
 ]
 
 [optimize-website]
 name = "Optimize website"
-image = "/thumbnails/web-greeter.png"
+image = ""
 benefits = [
   { key = "faster-load", icon = "chevrons-up" },
   { key = "seo", icon = "chart-column-increasing" },
   { key = "images", icon = "file-chart-pie" },
-  { key = "user-experience", icon = "user-check", class = "md:col-span-2 lg:col-span-1" },
-  { key = "support", icon = "life-buoy", class = "lg:col-span-2" },
+  { key = "user-experience", icon = "user-check" },
+  { key = "support", icon = "life-buoy", class = "md:col-span-2" },
 ]

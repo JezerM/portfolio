@@ -5,10 +5,11 @@
 
   interface Props {
     src?: EnhancedImgAttributes["src"];
+    class?: EnhancedImgAttributes["class"];
     alt: string;
   }
 
-  const { src, alt }: Props = $props();
+  const { src, alt, class: className }: Props = $props();
 
   let imageState: "loaded" | "error" | "loading" = $state("loading");
 
@@ -19,7 +20,7 @@
 
 {#if imageState != "error" && src}
   <enhanced:img
-    class="flex h-full w-full"
+    class={["flex h-full w-full", className]}
     {src}
     {alt}
     sizes="(min-width:1920px) 1280px, (min-width:1080px) 640px, (min-width:768px) 400px"
