@@ -70,7 +70,11 @@
         alt=""
         class="absolute inset-x-0 -top-5 z-10 mx-auto w-32 lg:-top-7 lg:w-48"
       />
-      <CardImage src={thumbnail} alt="Awa" class="border-[16px] border-white bg-white shadow-xl" />
+      <CardImage
+        src={thumbnail}
+        alt={$_(`services.${service.key}.name`)}
+        class="border-[16px] border-white bg-white shadow-xl"
+      />
     </div>
   {:else}
     <div class=""></div>
