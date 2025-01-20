@@ -19,12 +19,16 @@
 
   <meta property="article:published_time" content={post.date.toISOString()} />
   <meta property="article:author" content="Jezer Mejía" />
+
+  <style>
+    body {
+      @apply !bg-bg-dim;
+    }
+  </style>
 </svelte:head>
 
-<article>
-  <div
-    class="mt-8 flex w-fit flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-3 backdrop-blur-md"
-  >
+<article class="container mx-auto 2xl:max-w-screen-lg">
+  <div class="mt-8 flex w-fit flex-col">
     <h1 class="mb-4 transform-gpu text-left font-raster text-4xl text-aqua drop-shadow-glow">
       {post.title}
     </h1>
@@ -37,24 +41,22 @@
     </blockquote>
   </div>
 
-  <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-9">
-    <aside
-      class="top-4 col-span-1 flex h-fit w-full flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md lg:sticky lg:col-span-3 xl:col-span-2"
-    >
-      <h2 class="mb-3 flex flex-row items-center gap-2 font-video text-xl text-fg-1">
-        <TableOfContents class="h-5 w-5" />
-        {$_("blog.toc")}
-      </h2>
-      <div
-        class="custom-toc max-h-[calc(100svh_-_112px)] overflow-scroll hover:prose-a:text-yellow focus:prose-a:text-yellow prose-ol:border-l-2 prose-ol:border-l-bg-5 prose-ol:pl-5"
-      >
-        {@render tocSection(post.toc)}
-      </div>
-    </aside>
+  <div class="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-1">
+    <!-- <aside -->
+    <!--   class="top-4 col-span-1 flex h-fit w-full flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md lg:sticky lg:col-span-3 xl:col-span-2" -->
+    <!-- > -->
+    <!--   <h2 class="mb-3 flex flex-row items-center gap-2 font-video text-xl text-fg-1"> -->
+    <!--     <TableOfContents class="h-5 w-5" /> -->
+    <!--     {$_("blog.toc")} -->
+    <!--   </h2> -->
+    <!--   <div -->
+    <!--     class="custom-toc max-h-[calc(100svh_-_112px)] overflow-scroll hover:prose-a:text-yellow focus:prose-a:text-yellow prose-ol:border-l-2 prose-ol:border-l-bg-5 prose-ol:pl-5" -->
+    <!--   > -->
+    <!--     {@render tocSection(post.toc)} -->
+    <!--   </div> -->
+    <!-- </aside> -->
 
-    <div
-      class="col-span-1 mx-auto w-full bg-bg-dim bg-kraft p-4 !py-10 sm:p-6 lg:col-span-6 xl:col-span-7"
-    >
+    <div class="col-span-1 mx-auto w-full bg-bg-dim bg-kraft !py-10 lg:col-span-6 xl:col-span-7">
       <div
         class={[
           "custom-prose font-print",

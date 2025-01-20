@@ -37,7 +37,7 @@
 {/snippet}
 
 <nav
-  class="fixed bottom-3 left-0 right-0 z-50 mx-auto w-fit rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-2 backdrop-blur-md sm:bottom-6 sm:px-6 sm:py-3"
+  class="fixed bottom-3 left-0 right-0 z-50 mx-auto w-fit rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-1.5 backdrop-blur-md sm:bottom-6 sm:px-6 sm:py-3"
 >
   <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
     {@render navLink($baseLocale + "/", $_("navigation.home"), House)}

@@ -6,7 +6,7 @@
   import type { LayoutData } from "./$types";
   import { type Snippet } from "svelte";
   import { Loader } from "lucide-svelte";
-  import { fade } from "svelte/transition";
+  import { blur, fade, type TransitionConfig } from "svelte/transition";
   import { _ } from "svelte-i18n";
 
   interface Props {
@@ -16,6 +16,8 @@
 
   let { data, children }: Props = $props();
 
+  let animationType: "slide" | "zoom" = $state("slide");
+
   let instaFadeIn = { duration: 0, delay: 0 };
   let instaFadeOut = { duration: 0 };
 
@@ -24,6 +26,21 @@
 
   let fadeIn: SlidePageParams = $state(durFadeIn);
   let fadeOut: SlidePageParams = $state(durFadeOut);
+
+  function transitionIn(node: HTMLElement, params: any): TransitionConfig {
+    if (animationType == "slide") {
+      return slidePage(node, params);
+    } else {
+      return blur(node, params);
+    }
+  }
+  function transitionOut(node: HTMLElement, params: any): TransitionConfig {
+    if (animationType == "slide") {
+      return slidePage(node, params);
+    } else {
+      return blur(node, params);
+    }
+  }
 
   function getPathnamePosition(pathname: string) {
     const unlocalized = getUnlocalizedPath(pathname);
@@ -46,7 +63,12 @@
   }
 
   let previous = $state(data.pathname as string);
-  $effect.pre(() => {
+  let unlocPrevious = $derived(getUnlocalizedPath(previous));
+  let unlocCurrent = $derived(getUnlocalizedPath(data.pathname));
+
+  function makeAnimationSlide() {
+    animationType = "slide";
+
     const prevPosition = getPathnamePosition(previous);
     const currPosition = getPathnamePosition(data.pathname);
 
@@ -59,7 +81,30 @@
 
       setBackgroundPosition(prevPosition, currPosition);
     }
+
     previous = data.pathname;
+  }
+  function makeAnimationZoom() {
+    animationType = "zoom";
+
+    if (unlocPrevious == unlocCurrent) {
+      fadeIn = instaFadeIn;
+      fadeOut = instaFadeOut;
+    } else {
+      fadeIn = { ...durFadeIn };
+      fadeOut = { ...durFadeOut };
+    }
+
+    previous = data.pathname;
+  }
+
+  $effect.pre(() => {
+    console.log({ previous, current: data.pathname });
+    if (unlocPrevious.startsWith("/blog") && unlocCurrent.startsWith("/blog")) {
+      makeAnimationZoom();
+    } else {
+      makeAnimationSlide();
+    }
   });
 
   const initialPosition = getPathnamePosition(data.pathname);
@@ -115,12 +160,12 @@
   </div>
 {/if}
 
-<div class="grid grid-cols-1 grid-rows-1">
+<div class="grid grid-cols-1 grid-rows-1 overflow-clip">
   {#key previous}
     <div
       class="relative col-start-1 col-end-1 row-start-1 row-end-1 min-h-[100vh] overflow-clip"
-      in:slidePage={fadeIn}
-      out:slidePage={fadeOut}
+      in:transitionIn={fadeIn}
+      out:transitionOut={fadeOut}
       onintroend={() => {
         const body = document.querySelector("body");
         if (body) {
