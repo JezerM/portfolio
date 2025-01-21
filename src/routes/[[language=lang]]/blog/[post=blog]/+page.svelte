@@ -9,6 +9,13 @@
   }
 
   let { data: post }: Props = $props();
+
+  const language = $derived.by(() => {
+    if (post.language == "es") {
+      return "Español";
+    }
+    return "English";
+  });
 </script>
 
 <svelte:head>
@@ -36,6 +43,10 @@
       {$_("blog.posted_on")}
       {$date(post.date, { dateStyle: "medium", timeStyle: "short" })}
     </time>
+    <span>
+      {$_("blog.language")}
+      {language}
+    </span>
     <blockquote class="mt-1 text-grey-0">
       {post.description}
     </blockquote>
@@ -56,7 +67,10 @@
     <!--   </div> -->
     <!-- </aside> -->
 
-    <div class="col-span-1 mx-auto w-full bg-bg-dim bg-kraft !py-10 lg:col-span-6 xl:col-span-7">
+    <div
+      class="col-span-1 mx-auto w-full bg-bg-dim bg-kraft !py-10 lg:col-span-6 xl:col-span-7"
+      lang={post.language}
+    >
       <div
         class={[
           "custom-prose font-print",

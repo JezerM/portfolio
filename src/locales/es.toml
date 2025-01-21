@@ -36,6 +36,7 @@ open = "Abrir"
 [blog]
 title = "Blog"
 posted_on = "Publicado el:"
+language = "Idioma:"
 toc = "Tabla de contenidos"
 
 [projects.web-greeter]

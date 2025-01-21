@@ -13,6 +13,8 @@ export const fetchMarkdownPosts = async () => {
         date: new Date(data.metadata.date),
         title: data.metadata.title,
         description: data.metadata.description,
+        toc: [],
+        language: data.metadata.language ?? "en",
       };
       const postName = path.replace(/\/src\/posts\/(.*)\.md/, "$1");
 
