@@ -82,7 +82,7 @@
 
   <div class="flex flex-col gap-6 md:group-odd:text-right md:group-even:order-first">
     <h2
-      class="z-10 transform-gpu text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
+      class="z-10 transform-gpu select-none text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
     >
       {$_(`services.${service.key}.name`)}
     </h2>

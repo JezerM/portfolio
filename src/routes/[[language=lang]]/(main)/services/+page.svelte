@@ -22,7 +22,9 @@
   {@render headTitle($_("head.services_title"))}
 </svelte:head>
 
-<h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">
+<h1
+  class="mt-4 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+>
   {$_("services.title")}
 </h1>
 
@@ -32,7 +34,7 @@
   {/each}
 
   <div class="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-    <h2 class="z-10 transform-gpu font-video text-3xl drop-shadow-glow">
+    <h2 class="z-10 transform-gpu select-none font-video text-3xl drop-shadow-glow">
       {$_("services.extra.title")}
     </h2>
     <div
@@ -55,7 +57,9 @@
   </div>
 </div>
 
-<h1 class="mt-24 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">
+<h1
+  class="mt-24 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+>
   {$_("projects.title")}
 </h1>
 

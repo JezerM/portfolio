@@ -16,7 +16,9 @@
   <meta property="og:type" content="website" />
 </svelte:head>
 
-<h1 class="mt-4 transform-gpu text-center font-raster text-4xl text-red drop-shadow-glow">
+<h1
+  class="mt-4 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+>
   {$_("navigation.blog")}
 </h1>
 

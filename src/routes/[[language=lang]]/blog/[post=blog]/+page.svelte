@@ -36,7 +36,9 @@
 
 <article class="container mx-auto 2xl:max-w-screen-lg">
   <div class="mt-8 flex w-fit flex-col">
-    <h1 class="mb-4 transform-gpu text-left font-raster text-4xl text-aqua drop-shadow-glow">
+    <h1
+      class="mb-4 transform-gpu select-none text-left font-raster text-4xl text-aqua drop-shadow-glow"
+    >
       {post.title}
     </h1>
     <time datetime={post.date.toISOString()} class="block">

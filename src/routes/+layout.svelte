@@ -8,6 +8,7 @@
   import { Loader } from "lucide-svelte";
   import { blur, fade, type TransitionConfig } from "svelte/transition";
   import { _ } from "svelte-i18n";
+  import { prefersReducedMotion } from "svelte/motion";
 
   interface Props {
     data: LayoutData;
@@ -28,6 +29,10 @@
   let fadeOut: SlidePageParams = $state(durFadeOut);
 
   function transitionIn(node: HTMLElement, params: any): TransitionConfig {
+    if (prefersReducedMotion.current) {
+      return slidePage(node, { ...params, duration: 0, delay: 0 });
+    }
+
     if (animationType == "slide") {
       return slidePage(node, params);
     } else {
@@ -35,6 +40,10 @@
     }
   }
   function transitionOut(node: HTMLElement, params: any): TransitionConfig {
+    if (prefersReducedMotion.current) {
+      return slidePage(node, { ...params, duration: 0, delay: 0 });
+    }
+
     if (animationType == "slide") {
       return slidePage(node, params);
     } else {
@@ -99,7 +108,6 @@
   }
 
   $effect.pre(() => {
-    console.log({ previous, current: data.pathname });
     if (unlocPrevious.startsWith("/blog") && unlocCurrent.startsWith("/blog")) {
       makeAnimationZoom();
     } else {
