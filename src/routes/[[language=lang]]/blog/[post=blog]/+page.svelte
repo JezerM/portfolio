@@ -4,6 +4,7 @@
   import { TableOfContents } from "lucide-svelte";
   import { headDescription, headTitle } from "$lib/snippets/head.svelte";
   import { tocSection } from "$lib/snippets/toc.svelte";
+  import PostShareLinks from "$lib/components/post-share-links.svelte";
   interface Props {
     data: PageData;
   }
@@ -35,7 +36,7 @@
 </svelte:head>
 
 <article class="container mx-auto 2xl:max-w-screen-lg">
-  <div class="mt-8 flex w-fit flex-col">
+  <div class="mb-4 mt-8 flex w-full flex-col border-b border-b-bg-5 pb-4">
     <h1
       class="mb-4 transform-gpu select-none text-left font-raster text-4xl text-aqua drop-shadow-glow"
     >
@@ -54,7 +55,9 @@
     </blockquote>
   </div>
 
-  <div class="mt-6 flex flex-col gap-4">
+  <PostShareLinks />
+
+  <div class="mt-12 flex flex-col gap-4">
     <!-- <aside -->
     <!--   class="top-4 col-span-1 flex h-fit w-full flex-col rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md lg:sticky lg:col-span-3 xl:col-span-2" -->
     <!-- > -->
@@ -69,7 +72,7 @@
     <!--   </div> -->
     <!-- </aside> -->
 
-    <div class="mx-auto w-full !py-10" lang={post.language}>
+    <div class="mx-auto w-full" lang={post.language}>
       <div
         class={[
           "custom-prose font-print",
