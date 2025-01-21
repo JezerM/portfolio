@@ -98,9 +98,9 @@
       <ul class="list-[square] pl-8">
         <li>Svelte/SvelteKit</li>
         <li>Vue/Nuxt</li>
-        <li>React</li>
+        <li>React/Next.js</li>
         <li>ExpressJS</li>
-        <li>Java SprintBoot</li>
+        <li>Java SpringBoot</li>
         <li>Rust Actix web</li>
       </ul>
     </div>
