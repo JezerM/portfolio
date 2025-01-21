@@ -12,7 +12,7 @@ benefits = [
 
 [custom-website]
 name = "Custom website"
-image = ""
+image = "/thumbnails/custom-website.png"
 benefits = [
   { key = "custom-design", icon = "paintbrush" },
   { key = "responsive", icon = "monitor-smartphone" },
@@ -23,7 +23,7 @@ benefits = [
 
 [optimize-website]
 name = "Optimize website"
-image = ""
+image = "/thumbnails/optimize-your-website.png"
 benefits = [
   { key = "faster-load", icon = "chevrons-up" },
   { key = "seo", icon = "chart-column-increasing" },

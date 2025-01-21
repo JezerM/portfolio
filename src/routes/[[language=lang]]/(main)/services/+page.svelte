@@ -32,7 +32,9 @@
   {/each}
 
   <div class="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-    <h2 class="z-10 transform-gpu text-3xl drop-shadow-glow">{$_("services.extra.title")}</h2>
+    <h2 class="z-10 transform-gpu font-video text-3xl drop-shadow-glow">
+      {$_("services.extra.title")}
+    </h2>
     <div
       class="flex flex-col items-center gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md"
     >
@@ -43,7 +45,7 @@
       {/each}
 
       <a
-        href="mailto:jezer.mejia@icloud.com?subject=Extra services"
+        href="mailto:jezer.mejia@icloud.com?subject=Request services"
         class="flex flex-row items-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-sm transition-colors hover:text-orange focus:text-orange sm:text-base"
       >
         <Mail class="h-5 w-5" />

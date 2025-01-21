@@ -68,12 +68,12 @@
         src="/static/deco/15.png?w=300;400"
         sizes="300px, (min-width:640px) 400px"
         alt=""
-        class="absolute inset-x-0 -top-5 z-10 mx-auto w-32 lg:-top-7 lg:w-48"
+        class="absolute inset-x-0 -top-5 z-10 mx-auto w-32 md:-top-7 md:w-48"
       />
       <CardImage
         src={thumbnail}
         alt={$_(`services.${service.key}.name`)}
-        class="border-[16px] border-white bg-white shadow-xl"
+        class="border-[12px] border-white bg-white shadow-xl sm:border-[16px]"
       />
     </div>
   {:else}
