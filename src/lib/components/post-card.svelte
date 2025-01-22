@@ -2,6 +2,7 @@
   import { _, date } from "svelte-i18n";
   import type { Post } from "$lib/types/post";
   import { baseLocale } from "$lib/i18n";
+  import { pushOnClick } from "$lib/actions.svelte";
 
   interface Props {
     post: Post;
@@ -15,7 +16,8 @@
 
 <a
   href="{$baseLocale}/blog/{post.name}"
-  class="relative flex flex-col gap-1.5 overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md transition-colors hover:border-orange focus:border-orange"
+  class="relative flex flex-col gap-1.5 overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md transition-all [perspective:500px] hover:border-orange focus:border-orange"
+  use:pushOnClick={10}
 >
   <time
     datetime={post.meta.date.toISOString()}

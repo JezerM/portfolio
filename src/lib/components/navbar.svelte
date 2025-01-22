@@ -7,6 +7,7 @@
   import { getUnlocalizedPath } from "$lib/utils";
   import { baseLocale } from "$lib/i18n";
   import LanguageSelector from "./language-selector.svelte";
+  import { pushOnClick } from "$lib/actions.svelte";
 
   function active(path: string) {
     path = getUnlocalizedPath(path);
@@ -23,7 +24,10 @@
   <a
     href={path}
     class={[
-      "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:min-w-32 sm:px-3",
+      "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-all",
+      "sm:min-w-32 sm:px-3",
+      "hover:text-orange",
+      "active:scale-95",
       isActive && "min-w-20 border-2 border-orange",
     ]}
   >
@@ -36,16 +40,20 @@
   </a>
 {/snippet}
 
-<nav
-  class="fixed bottom-3 left-0 right-0 z-50 mx-auto w-fit rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-1.5 backdrop-blur-md sm:bottom-6 sm:px-6 sm:py-3"
->
-  <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
-    {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
-    {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
-    {@render navLink($baseLocale + "/blog", $_("navigation.blog"), NotebookText)}
-    <hr class="h-auto border-[0.5px] border-fg-0" />
-    <div class="flex flex-row gap-3">
-      <LanguageSelector />
+<div class="fixed bottom-3 left-0 right-0 z-50 mx-auto w-fit [perspective:500px] sm:bottom-6">
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <nav
+    class="rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-1.5 backdrop-blur-md transition-transform sm:px-6 sm:py-3"
+    use:pushOnClick
+  >
+    <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
+      {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
+      {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
+      {@render navLink($baseLocale + "/blog", $_("navigation.blog"), NotebookText)}
+      <hr class="h-auto border-[0.5px] border-fg-0" />
+      <div class="flex flex-row gap-3">
+        <LanguageSelector />
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</div>
