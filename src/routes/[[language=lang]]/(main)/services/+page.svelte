@@ -68,3 +68,34 @@
     <ProjectCard {project} />
   {/each}
 </div>
+
+<enhanced:img
+  src="/static/deco/44.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
+  alt=""
+  class="absolute left-[600px] right-0 top-[150px] -z-10 mx-auto w-72 lg:top-[150px]"
+/>
+<enhanced:img
+  src="/static/deco/02.png?w=300;400"
+  sizes="300px, (min-width:640px) 400px"
+  alt=""
+  class="absolute left-0 right-[500px] top-[540px] -z-10 mx-auto w-48"
+/>
+<enhanced:img
+  src="/static/deco/06.png?w=300;400"
+  sizes="300px, (min-width:640px) 400px"
+  alt=""
+  class="absolute left-[180px] right-0 top-[740px] -z-10 mx-auto w-48 lg:left-[850px]"
+/>
+<enhanced:img
+  src="/static/deco/84.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
+  alt=""
+  class="absolute left-0 right-[700px] top-[1000px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
+/>
+<enhanced:img
+  src="/static/deco/84.png?w=300;500"
+  sizes="300px, (min-width:640px) 500px"
+  alt=""
+  class="absolute left-0 right-0 top-[1950px] -z-10 mx-auto w-72 sm:left-[350px]"
+/>
