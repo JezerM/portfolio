@@ -1,8 +1,9 @@
-<script>
-  import { Icon } from "lucide-svelte";
+<script lang="ts">
+  import { Icon, type IconProps } from "lucide-svelte";
+  const props: IconProps = $props();
 </script>
 
-<Icon viewBox="0 0 128 128" color="none">
+<Icon viewBox="0 0 128 128" color="none" {...props}>
   <linearGradient
     id="xcode-original-a"
     gradientUnits="userSpaceOnUse"

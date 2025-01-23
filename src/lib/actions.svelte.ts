@@ -1,6 +1,6 @@
 import type { Action } from "svelte/action";
 
-export const pushOnClick: Action<HTMLElement, number> = (node, ratio: number = 2) => {
+export const pushOnClick: Action<HTMLElement, number | undefined> = (node, ratio: number = 2) => {
   let rotate = $state({ x: 0, y: 0 });
   let touching = $state(false);
 
