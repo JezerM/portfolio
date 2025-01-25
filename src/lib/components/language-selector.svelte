@@ -27,7 +27,7 @@
 <Select.Root items={languageItems} bind:selected={selectedLanguage}>
   <Select.Trigger
     class="border-bg-5 bg-bg-dim hover:text-orange flex items-center justify-center gap-2 rounded-md border px-2 py-1.5 text-center transition-colors sm:px-4"
-    aria-label="Select a theme"
+    aria-label={$_("navigation.language-select")}
   >
     <Earth class="relative h-5 w-5" />
     <Select.Value class="sr-only sm:not-sr-only" />
@@ -56,5 +56,5 @@
       </Select.Item>
     {/each}
   </Select.Content>
-  <Select.Input name="favoriteFruit" />
+  <Select.Input />
 </Select.Root>

@@ -3,6 +3,7 @@ home = "Home"
 services = "Services"
 blog = "Blog"
 loading = "Loading..."
+language-select = "Select a language"
 reduce-transparency = "Reduce transparency"
 
 [head]
