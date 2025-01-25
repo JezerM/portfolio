@@ -1,17 +1,122 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@font-face {
-  font-family: "Monocraft";
-  font-style: normal;
-  font-weight: 500;
-  src: url("/Monocraft.otf");
-  font-display: swap;
+@source "../src";
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-*: initial;
+  --color-bg-0: #282828;
+  --color-bg-1: #32302f;
+  --color-bg-3: #45403d;
+  --color-bg-5: #5a524c;
+  --color-bg-dim: #1b1b1b;
+
+  --color-bg-status-line-2: #3a3735;
+  --color-bg-status-line-3: #504945;
+
+  --color-fg-0: #d4be98;
+  --color-fg-1: #ddc7a1;
+
+  --color-grey-0: #7c6f64;
+  --color-grey-1: #928374;
+  --color-grey-2: #a89984;
+
+  --color-red: #ea6962;
+  --color-orange: #e78a4e;
+  --color-yellow: #d8a657;
+  --color-green: #a9b665;
+  --color-aqua: #89b482;
+  --color-blue: #7daea3;
+  --color-purple: #d3869b;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: #00000000;
+
+  --font-*: initial;
+  --font-regular: MatrixSans, Menlo, monospace, system-ui;
+  --font-print: MatrixSans Print, Menlo, monospace, system-ui;
+  --font-raster: MatrixSans Raster, Menlo, monospace, system-ui;
+  --font-screen: MatrixSans Screen, Menlo, monospace, system-ui;
+  --font-video: MatrixSans Video, Menlo, monospace, system-ui;
+
+  --drop-shadow-glow: 0 0 25px currentcolor;
+}
+
+@utility bg-kraft {
+  background-image: image-set(
+    url("/deco/kraft.avif") type("image/avif"),
+    url("/deco/kraft.webp") type("image/webp"),
+    url("/deco/kraft.png") type("image/png")
+  );
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
 @layer base {
-  html {
-    font-family: Monocraft, Menlo, system-ui;
+  @font-face {
+    font-family: "MatrixSans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSans-Regular.woff2") format("woff2");
   }
+  @font-face {
+    font-family: "MatrixSans Print";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansPrint-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Raster";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansRaster-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Screen";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansScreen-Regular.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "MatrixSans Video";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/MatrixSansVideo-Regular.woff2") format("woff2");
+  }
+
+  html {
+    font-family: "MatrixSans", Menlo, monospace, system-ui, sans-serif;
+  }
+}
+
+body.prefers-reduced-transparency [class*="backdrop-blur"] {
+  --tw-backdrop-blur: blur(0px) !important;
+}
+body.prefers-reduced-transparency [class*="bg-bg-dim/50"] {
+  @apply bg-bg-dim/100;
+}
+body.prefers-reduced-transparency [class*="bg-bg-status-line-2/50"] {
+  @apply bg-bg-status-line-2/95;
 }

@@ -1,16 +1,20 @@
-import { init, addMessages, locale } from "svelte-i18n";
+import { init, addMessages, locale, dictionary } from "svelte-i18n";
 import { derived } from "svelte/store";
 
-import en from "../locales/en.json";
-import es from "../locales/es.json";
+import en from "../locales/en.toml";
+import es from "../locales/es.toml";
 
+dictionary.set({});
 addMessages("en", en);
 addMessages("es", es);
 
-//console.log(es);
-//console.log(en);
-
 const defaultLocale = "en";
+
+export const locales = ["en", "es"] as const;
+export const localesLabels: { [key in (typeof locales)[number]]: string } = {
+  en: "English",
+  es: "Español",
+};
 
 init({
   fallbackLocale: defaultLocale,

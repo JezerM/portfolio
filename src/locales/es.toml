@@ -1,0 +1,112 @@
+[navigation]
+home = "Inicio"
+services = "Servicios"
+blog = "Blog"
+loading = "Cargando..."
+language-select = "Selecciona un idioma"
+reduce-transparency = "Reducir transparencia"
+
+[head]
+description = "Mi portfolio. Incluye mi información, los proyectos que he realizado y mi información de contacto."
+home_title = "JezerM's portfolio"
+services_title = "Portfolio - Servicios"
+blog_title = "Portfolio - Blog"
+blog_description = "Publicaciones sobre contenido relacionado a la tecnología y otras cosas"
+
+[home]
+greeting = "¡Hola! Soy Jezer Mejía"
+about_title = "Sobre mí"
+about_1 = "Soy Jezer Mejía, un desarrollador de software especializado en <span class=\"text-aqua\">desarrollo web</span> y <span class=\"text-red\">programación de sistemas</span>. Me encanta crear cosas de las que cualquiera pueda beneficiarse, invirtiendo mi tiempo en proyectos open source."
+about_2 = "También me encanta la física, la ciencia ficción y cosas relacionadas a la ciencia en general. Y, por si no se ha notado, me encanta el <span class=\"text-orange\">café</span>."
+work = "Actualmente trabajando en <a href=\"https://ooqia.com\" target=\"_blank\">OOQIA</a> como Consultor de Software"
+skills_title = "Habilidades"
+
+[home.extra]
+title = "Datos extras"
+nationality = "Nicaragüense 🇳🇮"
+age_desc = "{age} años de edad"
+gender = "Masculino"
+
+[services]
+title = "Servicios"
+email_me = "Escríbeme"
+
+[projects]
+title = "Proyectos"
+open = "Abrir"
+
+[blog]
+title = "Blog"
+posted_on = "Publicado el:"
+language = "Idioma:"
+toc = "Tabla de contenidos"
+
+[projects.web-greeter]
+description = "Un moderno y visualmente atractivo greeter para LightDM. Fork de lightdm-webkit2-greeter."
+
+[projects.nody-greeter]
+description = "Greeter de LightDM que permite crear hermosos temas con tecnologías web. Hecho con Node.js"
+
+[projects.sea-greeter]
+description = "Greeter de LightDM hecho con WebKit2GTK. Te permite crear temas con tecnologías web... Sí, lo mismo de antes pero en otro lenguaje."
+
+[projects.florece-la-memoria]
+description = "Aplicación web para construir altares conmemorativos del día de muertos."
+
+[projects.alajuela]
+description = "Aplicación en React Native para manejar las notificaciones escolares de San Rafael de Alajuela. Actualmente no disponible."
+
+[projects.pasadita]
+description = "Sistema de Entradas a un residencial con acceso automático mediante llaves QR y micro-controladores."
+
+[projects.liberlu]
+description = "Juego de Android para niños hecho en una noche. Aún me sorprende que haya sido capaz de hacer esto."
+
+[services.tablo-pos]
+name = "Tablo POS"
+description = [
+  "Software flexible, moderno y con todas las funciones de un sistema de <span class=\"text-aqua\">Punto de Ventas (POS)</span> para restaurantes.",
+  "Solicita un <span class=\"text-orange\">sistema POS personalizado</span>, ¡con todas las funciones y más! Tú decides tus preferencias.",
+]
+
+[services.tablo-pos.benefits]
+blazingly-fast = "¡Súper rápido!"
+secure-auth = "Autenticación segura"
+attractive = "Diseño atractivo"
+linux-macos = "Linux y macOS"
+support = "Mantenimiento y soporte"
+access = "Acceso local o global"
+
+[services.custom-website]
+name = "Sitio web personalizado"
+description = [
+  "¿Cansado/a de sitios web aburridos, lentos y desactualizados? Solicita un sitio web personalizado que se ajusta perfectamente a tus necesidades de negocio, objetivos y preferencias.",
+  "Desde <span class=\"text-green\">sitios sencillos y estáticos</span>, hasta gestionados por <span class=\"text-blue\">WordPress</span>, <span class=\"text-red\">dinámicos</span>, con servicios específicos, ya sea con las tecnologías de tu elección y/o las <span class=\"text-yellow\">más óptimas.</span>",
+]
+
+[services.custom-website.benefits]
+custom-design = "Diseño personalizado"
+responsive = "Diseño responsivo"
+analytics = "Análisis integrado"
+user-experience = "Mejor experiencia de usuario"
+support = "Mantenimiento y soporte"
+
+[services.optimize-website]
+name = "Optimiza tu sitio web"
+description = [
+  "Seguramente tienes un sitio web lento y desactualizado, con un CMS poco optimizado, varios procesos ineficientes y mal SEO, ¿no?",
+  "Si tienes alguno de estos problemas y no quieres un nuevo sitio web, solicita la optimización de tu sitio web y estará listo para ti.",
+]
+
+[services.optimize-website.benefits]
+faster-load = "Tiempos de carga más rápidos"
+seo = "Puntajes de SEO mejorados"
+images = "Imágenes optimizadas"
+user-experience = "Mejor experiencia de usuario"
+support = "Mantenimiento y soporte"
+
+[services.extra]
+title = "¿Deseas algo más?"
+description = [
+  "Si tienes problemas con algo de Desarrollo Web, Mantenimiento de Software, Programación de Sistemas o cualquier consulta de software, no dudes en contactarme para discutir tu solicitud.",
+]

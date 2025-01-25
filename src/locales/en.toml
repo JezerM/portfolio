@@ -1,0 +1,112 @@
+[navigation]
+home = "Home"
+services = "Services"
+blog = "Blog"
+loading = "Loading..."
+language-select = "Select a language"
+reduce-transparency = "Reduce transparency"
+
+[head]
+description = "My portfolio. It includes my information, the projects I have made and my contact info."
+home_title = "JezerM's portfolio"
+services_title = "Portfolio - Services"
+blog_title = "Portfolio - Blog"
+blog_description = "Blog posts on technology related content and more stuff"
+
+[home]
+greeting = "Hi! I'm Jezer Mejía"
+about_title = "About me"
+about_1 = "I'm Jezer Mejía, a software developer specialized in <span class=\"text-aqua\">web development</span> and <span class=\"text-red\">systems programming</span>. I love to create things that everyone could benefit of, investing my time in open source development."
+about_2 = "I also love physics, science fiction and science related stuff in general. And, if not noticed already, I love <span class=\"text-orange\">coffee</span>."
+work = "Currently working at <a href=\"https://ooqia.com\" target=\"_blank\">OOQIA</a> as a Software Consultant"
+skills_title = "Skills"
+
+[home.extra]
+title = "Extra data"
+nationality = " Nicaraguan 🇳🇮"
+age_desc = "{age} years old"
+gender = "Male"
+
+[services]
+title = "Services"
+email_me = "Email me"
+
+[projects]
+title = "Projects"
+open = "Open"
+
+[blog]
+title = "Blog"
+posted_on = "Posted on:"
+language = "Language:"
+toc = "Table of contents"
+
+[projects.web-greeter]
+description = "A modern, visually appealing greeter for LightDM. Fork of lightdm-webkit2-greeter."
+
+[projects.nody-greeter]
+description = "LightDM greeter that allows to create wonderful themes with web technologies. Made in Node.js"
+
+[projects.sea-greeter]
+description = "LightDM greeter made with WebKit2GTK. This allows to create themes with web technologies... Yeah, the same but in another language."
+
+[projects.florece-la-memoria]
+description = "Web application to build Day of the Dead commemorative altars."
+
+[projects.alajuela]
+description = "React Native app to manage school notifications of San Rafael de Alajuela. Currently unavailable."
+
+[projects.pasadita]
+description = "Residential entry system with automatic access via QR keys and micro-controllers."
+
+[projects.liberlu]
+description = "Android game for kids made in one night. I'm still surprised I was able to do this."
+
+[services.tablo-pos]
+name = "Tablo POS"
+description = [
+  "Full-featured, flexible and modern <span class=\"text-aqua\">Point of Sale (POS)</span> system software for restaurants.",
+  "Request a <span class=\"text-orange\">personalized POS system</span> with our base features or even more! You decide your preferences.",
+]
+
+[services.tablo-pos.benefits]
+blazingly-fast = "Blazingly Fast!"
+secure-auth = "Secure Auth"
+attractive = "Attractive design"
+linux-macos = "Linux and macOS"
+support = "Maintenance and support"
+access = "Local or global access"
+
+[services.custom-website]
+name = "Custom Website"
+description = [
+  "Tired of boring, slow and outdated websites? Request a custom website that perfectly aligns with your business needs, goals and preferences.",
+  "From <span class=\"text-green\">simple and static sites</span>, to <span class=\"text-blue\">WordPress</span> managed, <span class=\"text-red\">dynamic</span>, with specific services, either with the thecnologies of your choice and/or the <span class=\"text-yellow\">most optimal</span> ones.",
+]
+
+[services.custom-website.benefits]
+custom-design = "Custom design"
+responsive = "Responsive design"
+analytics = "Integrated analytics"
+user-experience = "Improved user experience"
+support = "Maintenance and support"
+
+[services.optimize-website]
+name = "Optimize your website"
+description = [
+  "You have a slow and outdated website, with a unoptimized CMS, various inneficient processes and bad SEO, don’t ya?",
+  "If you have any of these problems and don’t want a new website, request a website optimization and it will be done for you.",
+]
+
+[services.optimize-website.benefits]
+faster-load = "Faster load times"
+seo = "Improved SEO scores"
+images = "Optimized images"
+user-experience = "Improved user experience"
+support = "Maintenance and support"
+
+[services.extra]
+title = "Have any other request?"
+description = [
+  "If you have a problem with Web Development, Software maintenance, Systems Programming, or any software-related consultation, don’t hesitate to contact me so we can discuss your request.",
+]
