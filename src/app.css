@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "../src";
+
 @plugin '@tailwindcss/typography';
 
 @theme {
@@ -38,14 +40,15 @@
   --font-screen: MatrixSans Screen, Menlo, monospace, system-ui;
   --font-video: MatrixSans Video, Menlo, monospace, system-ui;
 
-  --background-image-noise: url("/deco/noise.png");
-  --background-image-kraft: image-set(
+  --drop-shadow-glow: 0 0 25px currentcolor;
+}
+
+@utility bg-kraft {
+  background-image: image-set(
     url("/deco/kraft.avif") type("image/avif"),
     url("/deco/kraft.webp") type("image/webp"),
     url("/deco/kraft.png") type("image/png")
   );
-
-  --drop-shadow-glow: 0 0 25px currentcolor;
 }
 
 /*
