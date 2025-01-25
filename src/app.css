@@ -43,3 +43,13 @@
     font-family: "MatrixSans", Menlo, monospace, system-ui, sans-serif;
   }
 }
+
+body.prefers-reduced-transparency [class*="backdrop-blur"] {
+  --tw-backdrop-blur: blur(0px) !important;
+}
+body.prefers-reduced-transparency [class*="bg-bg-dim/50"] {
+  @apply bg-bg-dim/100;
+}
+body.prefers-reduced-transparency [class*="bg-bg-status-line-2/50"] {
+  @apply bg-bg-status-line-2/95;
+}

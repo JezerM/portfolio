@@ -8,6 +8,7 @@
   import { baseLocale } from "$lib/i18n";
   import LanguageSelector from "./language-selector.svelte";
   import { pushOnClick } from "$lib/actions.svelte";
+  import ReduceTransparency from "./reduce-transparency.svelte";
 
   function active(path: string) {
     path = getUnlocalizedPath(path);
@@ -46,13 +47,14 @@
     class="rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-1.5 backdrop-blur-md transition-transform sm:px-6 sm:py-3"
     use:pushOnClick
   >
-    <div class="flex flex-row gap-3 text-sm sm:gap-6 sm:text-base">
+    <div class="flex flex-row gap-3 text-xs sm:gap-6 sm:text-base">
       {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
       {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
       {@render navLink($baseLocale + "/blog", $_("navigation.blog"), NotebookText)}
       <hr class="h-auto border-[0.5px] border-fg-0" />
-      <div class="flex flex-row gap-3">
+      <div class="flex flex-row gap-1.5 sm:gap-3">
         <LanguageSelector />
+        <ReduceTransparency />
       </div>
     </div>
   </nav>

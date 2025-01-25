@@ -3,6 +3,7 @@ home = "Inicio"
 services = "Servicios"
 blog = "Blog"
 loading = "Cargando..."
+reduce-transparency = "Reducir transparencia"
 
 [head]
 description = "Mi portfolio. Incluye mi información, los proyectos que he realizado y mi información de contacto."
