@@ -17,7 +17,7 @@
 </svelte:head>
 
 <h1
-  class="mt-4 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+  class="font-raster text-red drop-shadow-glow mt-4 transform-gpu text-center text-4xl select-none"
 >
   {$_("navigation.blog")}
 </h1>

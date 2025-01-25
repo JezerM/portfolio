@@ -1,7 +1,7 @@
 <script lang="ts">
+  import "../app.css";
   import Navbar from "$lib/components/navbar.svelte";
   import { getUnlocalizedPath, slidePage, type SlidePageParams } from "$lib/utils";
-  import "../app.css";
   import { navigating } from "$app/state";
   import type { LayoutData } from "./$types";
   import { type Snippet } from "svelte";
@@ -158,10 +158,10 @@
 
 {#if loading}
   <div
-    class="fixed z-20 flex size-full items-center justify-center bg-bg-dim/50 bg-kraft backdrop-blur-md"
+    class="bg-bg-dim/50 bg-kraft fixed z-20 flex size-full items-center justify-center backdrop-blur-md"
     transition:fade
   >
-    <div class="pointer-events-none flex select-none flex-col items-center gap-4">
+    <div class="pointer-events-none flex flex-col items-center gap-4 select-none">
       <Loader class="h-10 w-10 animate-spin" />
       <span class="text-center text-xl">{$_("navigation.loading")}</span>
     </div>

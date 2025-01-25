@@ -82,12 +82,12 @@
 
   <div class="flex flex-col gap-6 md:group-odd:text-right md:group-even:order-first">
     <h2
-      class="z-10 transform-gpu select-none text-center font-video text-3xl text-fg-1 drop-shadow-glow md:[text-align:inherit]"
+      class="font-video text-fg-1 drop-shadow-glow z-10 transform-gpu text-center text-3xl select-none md:[text-align:inherit]"
     >
       {$_(`services.${service.key}.name`)}
     </h2>
     <div
-      class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft flex flex-col gap-4 rounded-md border p-4 backdrop-blur-md"
     >
       {#each descriptionLines as line}
         <p>
@@ -103,7 +103,7 @@
         {@const Icon = getIconByKey(benefit.icon)}
         <div
           class={[
-            "benefit-container flex w-40 flex-col items-center justify-between gap-2 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 text-center backdrop-blur-md sm:w-auto",
+            "benefit-container border-bg-5 bg-bg-dim/50 bg-kraft flex w-40 flex-col items-center justify-between gap-2 rounded-md border p-4 text-center backdrop-blur-md sm:w-auto",
             benefit.class,
           ]}
         >
@@ -111,7 +111,7 @@
             <Icon class="h-10 w-10" />
           {/if}
           <span
-            class="mt-auto max-w-full font-video text-base md:text-[clamp(0.75rem,10cqw,1rem)] lg:text-[clamp(1rem,10cqw,1.25rem)]"
+            class="font-video mt-auto max-w-full text-base md:text-[clamp(0.75rem,10cqw,1rem)] lg:text-[clamp(1rem,10cqw,1.25rem)]/[1.5rem]"
           >
             {$_(`services.${service.key}.benefits.${benefit.key}`)}
           </span>

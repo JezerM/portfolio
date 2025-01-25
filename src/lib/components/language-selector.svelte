@@ -26,14 +26,14 @@
 
 <Select.Root items={languageItems} bind:selected={selectedLanguage}>
   <Select.Trigger
-    class="flex items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-colors hover:text-orange sm:px-4"
+    class="border-bg-5 bg-bg-dim hover:text-orange flex items-center justify-center gap-2 rounded-md border px-2 py-1.5 text-center transition-colors sm:px-4"
     aria-label="Select a theme"
   >
     <Earth class="relative h-5 w-5" />
     <Select.Value class="sr-only sm:not-sr-only" />
   </Select.Trigger>
   <Select.Content
-    class="z-50 !w-fit min-w-[8rem] rounded-md border border-bg-5 bg-bg-dim px-3 py-3"
+    class="border-bg-5 bg-bg-dim z-50 w-fit! min-w-[8rem] rounded-md border px-3 py-3"
     side="top"
     sideOffset={4}
     inTransition={flyAndScale}
@@ -43,7 +43,7 @@
   >
     {#each languageItems as item}
       <Select.Item
-        class="flex flex-row items-center justify-between rounded-md py-2 pl-5 pr-3 text-sm data-[highlighted]:bg-bg-1"
+        class="data-highlighted:bg-bg-1 flex flex-row items-center justify-between rounded-md py-2 pr-3 pl-5 text-sm"
         value={item.value}
         label={item.label}
       >

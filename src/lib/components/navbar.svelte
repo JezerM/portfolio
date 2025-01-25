@@ -25,33 +25,33 @@
   <a
     href={path}
     class={[
-      "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-all",
+      "border-bg-5 bg-bg-dim flex flex-row items-center justify-center gap-2 rounded-md border px-2 py-1.5 text-center transition-all",
       "sm:min-w-32 sm:px-3",
       "hover:text-orange",
       "active:scale-95",
-      isActive && "min-w-20 border-2 border-orange",
+      isActive && "border-orange min-w-20 border-2",
     ]}
   >
     {#if Icon}
       <Icon class="relative h-5 w-5" />
     {/if}
-    <span class={["sr-only sm:not-sr-only", isActive && "!not-sr-only"]}>
+    <span class={["sr-only sm:not-sr-only", isActive && "not-sr-only!"]}>
       {label}
     </span>
   </a>
 {/snippet}
 
-<div class="fixed bottom-3 left-0 right-0 z-50 mx-auto w-fit [perspective:500px] sm:bottom-6">
+<div class="fixed right-0 bottom-3 left-0 z-50 mx-auto w-fit [perspective:500px] sm:bottom-6">
   <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <nav
-    class="rounded-md border border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft px-4 py-1.5 backdrop-blur-md transition-transform sm:px-6 sm:py-3"
+    class="border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft rounded-md border px-4 py-1.5 backdrop-blur-md transition-transform sm:px-6 sm:py-3"
     use:pushOnClick
   >
     <div class="flex flex-row gap-3 text-xs sm:gap-6 sm:text-base">
       {@render navLink($baseLocale + "/", $_("navigation.home"), House)}
       {@render navLink($baseLocale + "/services", $_("navigation.services"), FolderOpen)}
       {@render navLink($baseLocale + "/blog", $_("navigation.blog"), NotebookText)}
-      <hr class="h-auto border-[0.5px] border-fg-0" />
+      <hr class="border-fg-0 h-auto border-[0.5px]" />
       <div class="flex flex-row gap-1.5 sm:gap-3">
         <LanguageSelector />
         <ReduceTransparency />

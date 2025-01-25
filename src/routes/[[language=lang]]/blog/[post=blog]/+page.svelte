@@ -30,15 +30,15 @@
 
   <style>
     body {
-      @apply !bg-bg-dim;
+      background-color: var(--color-bg-dim) !important;
     }
   </style>
 </svelte:head>
 
-<article class="container mx-auto 2xl:max-w-screen-lg">
-  <div class="mb-4 mt-8 flex w-full flex-col border-b border-b-bg-5 pb-4">
+<article class="container mx-auto 2xl:max-w-(--breakpoint-lg)">
+  <div class="border-b-bg-5 mt-8 mb-4 flex w-full flex-col border-b pb-4">
     <h1
-      class="mb-4 transform-gpu select-none text-left font-raster text-4xl text-aqua drop-shadow-glow"
+      class="font-raster text-aqua drop-shadow-glow mb-4 transform-gpu text-left text-4xl select-none"
     >
       {post.title}
     </h1>
@@ -50,7 +50,7 @@
       {$_("blog.language")}
       {language}
     </span>
-    <blockquote class="mt-1 text-grey-0">
+    <blockquote class="text-grey-0 mt-1">
       {post.description}
     </blockquote>
   </div>
@@ -66,7 +66,7 @@
     <!--     {$_("blog.toc")} -->
     <!--   </h2> -->
     <!--   <div -->
-    <!--     class="custom-toc max-h-[calc(100svh_-_112px)] overflow-scroll hover:prose-a:text-yellow focus:prose-a:text-yellow prose-ol:border-l-2 prose-ol:border-l-bg-5 prose-ol:pl-5" -->
+    <!--     class="custom-toc max-h-[calc(100svh_-_112px)] overflow-scroll prose-a:hover:text-yellow prose-a:focus:text-yellow prose-ol:border-l-2 prose-ol:border-l-bg-5 prose-ol:pl-5" -->
     <!--   > -->
     <!--     {@render tocSection(post.toc)} -->
     <!--   </div> -->
@@ -81,12 +81,12 @@
           "prose-h3:text-xl prose-h3:text-yellow",
           "prose-h4:text-lg prose-h4:text-blue",
           "prose-p:mb-3 prose-p:leading-relaxed prose-a:font-raster",
-          "prose-a:text-orange prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-yellow focus:prose-a:text-yellow",
+          "prose-a:text-orange prose-a:underline prose-a:underline-offset-4 prose-a:hover:text-yellow prose-a:focus:text-yellow",
           "prose-figure:mx-auto prose-figure:my-6 prose-figure:flex prose-figure:w-full prose-figure:max-w-4xl prose-figure:flex-col prose-figure:gap-2",
-          "prose-img:prose-figure:w-full",
+          "prose-figure:prose-img:w-full",
           "prose-figcaption:text-center prose-figcaption:font-video prose-figcaption:text-grey-0",
           "prose-code:bg-bg-0 prose-code:px-2 prose-code:py-1 prose-code:font-raster",
-          "prose-code:prose-pre:bg-transparent prose-code:prose-pre:p-0",
+          "prose-pre:prose-code:bg-transparent prose-pre:prose-code:p-0",
           "prose-pre:mb-3 prose-pre:overflow-scroll prose-pre:bg-bg-0 prose-pre:px-3.5 prose-pre:py-2.5",
         ]}
       >
@@ -97,14 +97,16 @@
 </article>
 
 <style>
+  @reference "tailwindcss/theme";
+
   .custom-prose :global(.article-heading-link) {
     display: inline-block;
     vertical-align: middle;
     margin-left: 6px;
-    @apply text-grey-0;
+    color: var(--color-grey-0);
 
     &:hover {
-      @apply text-yellow;
+      color: var(--color-yellow);
     }
   }
 

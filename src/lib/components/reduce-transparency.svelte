@@ -11,11 +11,11 @@
 {#if !prefersReducedTransparency.current}
   <button
     class={[
-      "flex flex-row items-center justify-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-center transition-all",
+      "border-bg-5 bg-bg-dim flex flex-row items-center justify-center gap-2 rounded-md border px-2 py-1.5 text-center transition-all",
       "sm:px-3",
       "hover:text-orange",
       "active:scale-95",
-      $isReducedTransparency && "border-2 border-orange text-orange",
+      $isReducedTransparency && "border-orange text-orange border-2",
     ]}
     onclick={() => (forcedReducedTransparency.current = !forcedReducedTransparency.current)}
   >

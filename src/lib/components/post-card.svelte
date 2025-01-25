@@ -16,16 +16,16 @@
 
 <a
   href="{$baseLocale}/blog/{post.name}"
-  class="relative flex flex-col gap-1.5 overflow-hidden rounded-xl border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md transition-all [perspective:500px] hover:border-orange focus:border-orange"
+  class="border-bg-5 bg-bg-dim/50 bg-kraft hover:border-orange focus:border-orange relative flex flex-col gap-1.5 overflow-hidden rounded-xl border p-4 backdrop-blur-md transition-all [perspective:500px]"
   use:pushOnClick={10}
 >
   <time
     datetime={post.meta.date.toISOString()}
-    class="flex justify-between gap-4 font-print text-grey-0"
+    class="font-print text-grey-0 flex justify-between gap-4"
   >
     <span>{formattedDate}</span>
     <span>{formattedTime}</span>
   </time>
-  <h2 class="font-video text-xl text-fg-1">{post.meta.title}</h2>
-  <p class="text-sm text-grey-0">{post.meta.description}</p>
+  <h2 class="font-video text-fg-1 text-xl">{post.meta.title}</h2>
+  <p class="text-grey-0 text-sm">{post.meta.description}</p>
 </a>

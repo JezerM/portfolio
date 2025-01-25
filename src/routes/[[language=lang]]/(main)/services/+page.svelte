@@ -23,7 +23,7 @@
 </svelte:head>
 
 <h1
-  class="mt-4 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+  class="font-raster text-red drop-shadow-glow mt-4 transform-gpu text-center text-4xl select-none"
 >
   {$_("services.title")}
 </h1>
@@ -34,11 +34,11 @@
   {/each}
 
   <div class="mx-auto flex max-w-2xl flex-col items-center gap-4 text-center">
-    <h2 class="z-10 transform-gpu select-none font-video text-3xl drop-shadow-glow">
+    <h2 class="font-video drop-shadow-glow z-10 transform-gpu text-3xl select-none">
       {$_("services.extra.title")}
     </h2>
     <div
-      class="flex flex-col items-center gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-4 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft flex flex-col items-center gap-4 rounded-md border p-4 backdrop-blur-md"
     >
       {#each descriptionLines as line}
         <p>
@@ -48,7 +48,7 @@
 
       <a
         href="mailto:jezer.mejia@icloud.com?subject=Request services"
-        class="flex flex-row items-center gap-2 rounded-md border border-bg-5 bg-bg-dim px-2 py-1.5 text-sm transition-colors hover:text-orange focus:text-orange sm:text-base"
+        class="border-bg-5 bg-bg-dim hover:text-orange focus:text-orange flex flex-row items-center gap-2 rounded-md border px-2 py-1.5 text-sm transition-colors sm:text-base"
       >
         <Mail class="h-5 w-5" />
         {$_("services.email_me")}
@@ -58,7 +58,7 @@
 </div>
 
 <h1
-  class="mt-24 transform-gpu select-none text-center font-raster text-4xl text-red drop-shadow-glow"
+  class="font-raster text-red drop-shadow-glow mt-24 transform-gpu text-center text-4xl select-none"
 >
   {$_("projects.title")}
 </h1>
@@ -73,29 +73,29 @@
   src="/static/deco/44.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-[600px] right-0 top-[150px] -z-10 mx-auto w-72 lg:top-[150px]"
+  class="absolute top-[150px] right-0 left-[600px] -z-10 mx-auto w-72 lg:top-[150px]"
 />
 <enhanced:img
   src="/static/deco/02.png?w=300;400"
   sizes="300px, (min-width:640px) 400px"
   alt=""
-  class="absolute left-0 right-[500px] top-[540px] -z-10 mx-auto w-48"
+  class="absolute top-[540px] right-[500px] left-0 -z-10 mx-auto w-48"
 />
 <enhanced:img
   src="/static/deco/06.png?w=300;400"
   sizes="300px, (min-width:640px) 400px"
   alt=""
-  class="absolute left-[180px] right-0 top-[740px] -z-10 mx-auto w-48 lg:left-[850px]"
+  class="absolute top-[740px] right-0 left-[180px] -z-10 mx-auto w-48 lg:left-[850px]"
 />
 <enhanced:img
   src="/static/deco/84.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-0 right-[700px] top-[1000px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
+  class="absolute top-[1000px] right-[700px] left-0 -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
 />
 <enhanced:img
   src="/static/deco/84.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-0 right-0 top-[1950px] -z-10 mx-auto w-72 sm:left-[350px]"
+  class="absolute top-[1950px] right-0 left-0 -z-10 mx-auto w-72 sm:left-[350px]"
 />

@@ -21,11 +21,11 @@
 </svelte:head>
 
 <div class="mx-auto mb-8 flex w-fit flex-col items-center gap-4 sm:mt-16">
-  <div class="aspect-square size-56 overflow-hidden rounded-full border-4 border-bg-5 bg-purple">
+  <div class="border-bg-5 bg-purple aspect-square size-56 overflow-hidden rounded-full border-4">
     <enhanced:img class="block size-full" src="/static/JezerPicture.png" alt="JezerM anime" />
   </div>
   <h1
-    class="mt-4 transform-gpu select-none text-center font-raster text-4xl text-aqua drop-shadow-glow"
+    class="font-raster text-aqua drop-shadow-glow mt-4 transform-gpu text-center text-4xl select-none"
   >
     {@html $_("home.greeting")}
   </h1>
@@ -34,7 +34,7 @@
 
 <div class="mx-auto max-w-[840px] space-y-8">
   <div
-    class="flex flex-col gap-4 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
+    class="border-bg-5 bg-bg-dim/50 bg-kraft flex flex-col gap-4 rounded-md border p-8 backdrop-blur-md"
   >
     <p>
       {@html $_("home.about_1")}
@@ -50,11 +50,11 @@
 
   <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
     <div
-      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft space-y-2.5 rounded-md border p-8 backdrop-blur-md"
     >
-      <h3 class="font-video text-xl text-fg-1">Work</h3>
+      <h3 class="font-video text-fg-1 text-xl">Work</h3>
       <p
-        class="prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-yellow focus:prose-a:text-yellow"
+        class="prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4 prose-a:hover:text-yellow prose-a:focus:text-yellow"
       >
         {@html $_("home.work")}
         <a
@@ -73,9 +73,9 @@
     </div>
 
     <div
-      class="space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft space-y-2.5 rounded-md border p-8 backdrop-blur-md"
     >
-      <h3 class="font-video text-xl text-fg-1">
+      <h3 class="font-video text-fg-1 text-xl">
         {$_("home.extra.title")}
       </h3>
       <ul class="list-[square] pl-8">
@@ -86,15 +86,15 @@
     </div>
   </div>
 
-  <h2 class="transform-gpu select-none text-center font-raster text-2xl text-blue drop-shadow-glow">
+  <h2 class="font-raster text-blue drop-shadow-glow transform-gpu text-center text-2xl select-none">
     {@html $_("home.skills_title")}
   </h2>
 
   <div class="grid grid-cols-3 gap-8 sm:grid-cols-6">
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft col-span-3 space-y-2.5 rounded-md border p-8 backdrop-blur-md"
     >
-      <h3 class="font-video text-xl text-fg-1">Web Development</h3>
+      <h3 class="font-video text-fg-1 text-xl">Web Development</h3>
       <ul class="list-[square] pl-8">
         <li>Svelte/SvelteKit</li>
         <li>Vue/Nuxt</li>
@@ -106,9 +106,9 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft col-span-3 space-y-2.5 rounded-md border p-8 backdrop-blur-md"
     >
-      <h3 class="font-video text-xl text-fg-1">Systems</h3>
+      <h3 class="font-video text-fg-1 text-xl">Systems</h3>
       <ul class="list-[square] pl-8">
         <li>C and C++</li>
         <li>Rust</li>
@@ -120,9 +120,9 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft col-span-3 space-y-2.5 rounded-md border p-8 backdrop-blur-md md:col-span-2"
     >
-      <h3 class="font-video text-xl text-fg-1">Databases</h3>
+      <h3 class="font-video text-fg-1 text-xl">Databases</h3>
       <ul class="list-[square] pl-8">
         <li>MySQL</li>
         <li>PostgreSQL</li>
@@ -131,9 +131,9 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft col-span-3 space-y-2.5 rounded-md border p-8 backdrop-blur-md md:col-span-2"
     >
-      <h3 class="font-video text-xl text-fg-1">Mobile</h3>
+      <h3 class="font-video text-fg-1 text-xl">Mobile</h3>
       <ul class="list-[square] pl-8">
         <li>React Native</li>
         <li>Kotlin Jetpack Compose</li>
@@ -142,9 +142,9 @@
     </div>
 
     <div
-      class="col-span-3 space-y-2.5 rounded-md border border-bg-5 bg-bg-dim/50 bg-kraft p-8 backdrop-blur-md md:col-span-2"
+      class="border-bg-5 bg-bg-dim/50 bg-kraft col-span-3 space-y-2.5 rounded-md border p-8 backdrop-blur-md md:col-span-2"
     >
-      <h3 class="font-video text-xl text-fg-1">Design</h3>
+      <h3 class="font-video text-fg-1 text-xl">Design</h3>
       <ul class="list-[square] pl-8">
         <li>Figma</li>
         <li>Inkscape</li>
@@ -159,29 +159,29 @@
   src="/static/deco/44.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-0 right-[110px] top-[80px] -z-10 mx-auto w-72 lg:top-[100px]"
+  class="absolute top-[80px] right-[110px] left-0 -z-10 mx-auto w-72 lg:top-[100px]"
 />
 <enhanced:img
   src="/static/deco/02.png?w=300;400"
   sizes="300px, (min-width:640px) 400px"
   alt=""
-  class="absolute left-0 right-[900px] top-[540px] -z-10 mx-auto w-48"
+  class="absolute top-[540px] right-[900px] left-0 -z-10 mx-auto w-48"
 />
 <enhanced:img
   src="/static/deco/06.png?w=300;400"
   sizes="300px, (min-width:640px) 400px"
   alt=""
-  class="absolute left-[180px] right-0 top-[640px] -z-10 mx-auto w-48 lg:left-[850px]"
+  class="absolute top-[640px] right-0 left-[180px] -z-10 mx-auto w-48 lg:left-[850px]"
 />
 <enhanced:img
   src="/static/deco/84.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-[200px] right-0 top-[1000px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
+  class="absolute top-[1000px] right-0 left-[200px] -z-10 mx-auto w-80 sm:left-[210px] lg:top-[940px]"
 />
 <enhanced:img
   src="/static/deco/84.png?w=300;500"
   sizes="300px, (min-width:640px) 500px"
   alt=""
-  class="absolute left-0 right-[150px] top-[2000px] -z-10 mx-auto w-72 sm:hidden"
+  class="absolute top-[2000px] right-[150px] left-0 -z-10 mx-auto w-72 sm:hidden"
 />
