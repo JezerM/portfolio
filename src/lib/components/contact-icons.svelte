@@ -25,11 +25,7 @@
 
 <div class="flex flex-row gap-2">
   {@render contactIcon("https://github.com/JezerM", "GitHub", Github)}
-  {@render contactIcon(
-    "https://www.linkedin.com/in/jezer-josué-mejía-otero-111b39227/",
-    "LinkedIn",
-    Linkedin
-  )}
+  {@render contactIcon("https://www.linkedin.com/in/jezerm", "LinkedIn", Linkedin)}
   {@render contactIcon("http://discordapp.com/users/530819150969438208", "Discord", Discord)}
   {@render contactIcon("mailto:jezer.mejia@icloud.com", "Email", Mail)}
   {@render contactIcon("https://ko-fi.com/jezerm", "Ko-fi", KoFi)}
