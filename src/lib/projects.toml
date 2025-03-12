@@ -21,6 +21,7 @@ image = "/thumbnails/florece-la-memoria.png"
 
 [alajuela]
 name = "Alajuela"
+github = "https://github.com/JezerM/AlajuelaReact"
 link = "https://appshunter.io/ios/app/6465571099"
 image = "/thumbnails/alajuela.png"
 
