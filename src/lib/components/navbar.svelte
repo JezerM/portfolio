@@ -42,7 +42,6 @@
 {/snippet}
 
 <div class="fixed right-0 bottom-3 left-0 z-50 mx-auto w-fit [perspective:500px] sm:bottom-6">
-  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
   <nav
     class="border-bg-status-line-3 bg-bg-status-line-2/50 bg-kraft rounded-md border px-4 py-1.5 backdrop-blur-md transition-transform sm:px-6 sm:py-3"
     use:pushOnClick
