@@ -27,7 +27,7 @@
     class={[
       "border-bg-5 bg-bg-dim flex flex-row items-center justify-center gap-2 rounded-md border px-2 py-1.5 text-center transition-all",
       "sm:min-w-32 sm:px-3",
-      "hover:text-orange",
+      "hover:text-orange hover:transition-none",
       "active:scale-95",
       isActive && "border-orange min-w-20 border-2",
     ]}

@@ -54,7 +54,10 @@
     >
       <h3 class="font-video text-fg-1 text-xl">Work</h3>
       <p
-        class="prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4 prose-a:hover:text-yellow prose-a:focus:text-yellow"
+        class={[
+          "prose-a:font-raster prose-a:text-orange prose-a:underline prose-a:underline-offset-4",
+          "prose-a:hover:text-yellow prose-a:focus:text-yellow prose-a:hover:transition-none",
+        ]}
       >
         {@html $_("home.work")}
         <a

@@ -31,7 +31,11 @@
         <a
           href={project.github}
           target="_blank"
-          class="border-bg-5 bg-bg-dim hover:text-orange focus:text-orange flex flex-row items-center gap-2 rounded-md border px-2 py-1.5 text-sm transition-colors sm:text-base"
+          class={[
+            "border-bg-5 bg-bg-dim flex flex-row items-center gap-2 rounded-md border px-2 py-1.5 text-sm transition-colors",
+            "hover:text-orange focus:text-orange hover:transition-none",
+            "sm:text-base",
+          ]}
         >
           <Github class="h-5 w-5" />
           GitHub
@@ -42,7 +46,11 @@
         <a
           href={project.link}
           target="_blank"
-          class="border-bg-5 bg-bg-dim hover:text-orange focus:text-orange flex flex-row items-center gap-2 rounded-md border px-2 py-1.5 text-sm transition-colors sm:text-base"
+          class={[
+            "border-bg-5 bg-bg-dim flex flex-row items-center gap-2 rounded-md border px-2 py-1.5 text-sm transition-colors",
+            "hover:text-orange focus:text-orange hover:transition-none",
+            "sm:text-base",
+          ]}
         >
           <Globe class="h-5 w-5" />
           {$_("projects.open")}

@@ -16,7 +16,11 @@
 
 <a
   href="{$baseLocale}/blog/{post.name}"
-  class="border-bg-5 bg-bg-dim/50 bg-kraft hover:border-orange focus:border-orange relative flex flex-col gap-1.5 overflow-hidden rounded-xl border p-4 backdrop-blur-md transition-all [perspective:500px]"
+  class={[
+    "border-bg-5 bg-bg-dim/50 bg-kraft relative flex flex-col gap-1.5 overflow-hidden rounded-xl border p-4 backdrop-blur-md transition-all",
+    "hover:border-orange focus:border-orange hover:transition-none",
+    "[perspective:500px]",
+  ]}
   use:pushOnClick={10}
 >
   <time
