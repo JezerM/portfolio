@@ -90,7 +90,7 @@
           "prose-pre:prose-code:bg-transparent prose-pre:prose-code:p-0",
           "prose-pre:mb-3 prose-pre:overflow-scroll prose-pre:bg-bg-0 prose-pre:px-3.5 prose-pre:py-2.5",
           "prose-[del]:text-grey-0",
-          "prose-blockquote:pl-4 prose-blockquote:bg-bg-0/80 prose-blockquote:py-2 prose-blockquote:rounded-md prose-blockquote:text-grey-2 prose-blockquote:border prose-blockquote:border-bg-status-line-3",
+          "prose-blockquote:pl-4 prose-blockquote:bg-bg-0/80 prose-blockquote:py-2 prose-blockquote:rounded-md prose-blockquote:text-grey-2 prose-blockquote:border prose-blockquote:border-bg-status-line-3 prose-blockquote:mb-3",
           "prose-ol:list-decimal prose-ol:pl-10 prose-ol:my-3 prose-ol:pb-3 prose-ol:marker:text-green prose-ol:marker:font-raster prose-ol:border-b prose-ol:border-green/60",
         ]}
       >
