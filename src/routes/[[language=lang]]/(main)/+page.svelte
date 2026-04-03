@@ -84,7 +84,6 @@
       <ul class="list-[square] pl-8">
         <li>{$_("home.extra.nationality")}</li>
         <li>{$_("home.extra.age_desc", { values: { age } })}</li>
-        <li>{$_("home.extra.gender")}</li>
       </ul>
     </div>
   </div>
@@ -105,6 +104,7 @@
         <li>ExpressJS</li>
         <li>Java SpringBoot</li>
         <li>Rust Actix web</li>
+        <li>Ruby on Rails</li>
       </ul>
     </div>
 
@@ -130,6 +130,7 @@
         <li>MySQL</li>
         <li>PostgreSQL</li>
         <li>MSSQL</li>
+        <li>Redis</li>
       </ul>
     </div>
 
